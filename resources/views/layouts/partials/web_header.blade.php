@@ -1,188 +1,3 @@
-{{-- <header>
-  <div id="top-container">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 pull-right">
-                  <div class="flat-address topbarContact">
-                      <div class="custom-info">
-                          <i class="fa fa-phone"></i> Hotline: <a href="tel:+880 1478523691" class="topCon">+880 1478-523691</a>
-                          <i class="fa fa-envelope" style="margin-left: 15px;"></i> Email: <a href="mailto:admin@pinnacleschool.com" class="topCon">admin@pinnacleschool.com</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-  </div>
-  <div class="container">
-      <div class="logo">
-          <a href="index.html" title="Kids Life"><img src="{{asset('website/images/pinnacle.jpg')}}" alt="Kids Life" title="Kids Life" class="mainlogo"></a>
-      </div>
-      <div class="logo logoText">
-          <h1 class="schtitle">Pinnacle Chartered School & College</h1>
-      </div>
-      <div class="contact-details">
-          <p class="mail">
-              <a href="#">admin@pinnacleschool.com</a>
-              <span class="fa fa-envelope"></span>
-          </p>
-          <p class="phone-no">
-              <i>+1 959 552 5963</i>
-              <span class="fa fa-phone"></span>
-          </p>
-      </div>
-  </div>
-
-  <div id="menu-container">
-      <div class="container">
-
-          <nav id="main-menu">
-              <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span
-                      class="dt-menu-toggle-icon"></span></div>
-              <ul id="menu-main-menu" class="menu">
-                  <li class="current_page_item
-                      menu-item-simple-parent menu-item-depth-0
-                      red"> <a href="index.html"> Home </a>
-                  </li>
-                  <li class="mustard"> <a href="about.html"> About
-                          us </a> </li>
-                   <li class="menu-item-simple-parent
-                          menu-item-depth-0 blue"><a
-                              href="portfolio-four-column.html"
-                              title=""> Class </a>
-                          <ul class="sub-menu">
-                              <li><a
-                                      href="portfolio-four-column.html">One to Nine </a></li>
-                              <li><a
-                                      href="portfolio-three-column.html">Nine to Twlb </a>
-    
-                              </li>
-                          </ul>
-                          <a class="dt-menu-expand">+</a>
-                      </li>
-                  <li class="green"> <a href="our-staffs.html">
-                          Our Teachers </a> </li>
-                  <li class="yellow"> <a href="services.html">
-                          Events </a> </li>
-                  <li class="menu-item-simple-parent
-                      menu-item-depth-0 red"><a
-                          href="portfolio-four-column.html"
-                          title=""> Pages </a>
-                      <ul class="sub-menu">
-                          <li><a
-                                  href="portfolio-four-column.html">Photo
-                                  Gallery </a></li>
-                          <li><a
-                                  href="portfolio-three-column.html">Video
-                                  Gallery </a>
-
-                          </li>
-                      </ul>
-                      <a class="dt-menu-expand">+</a>
-                  </li>
-                  <li class="menu-item-simple-parent
-                      menu-item-depth-0 blue"><a
-                          href="portfolio-four-column.html"
-                          title=""> Gallery </a>
-                      <ul class="sub-menu">
-                          <li><a
-                                  href="portfolio-four-column.html">Photo
-                                  Gallery </a></li>
-                          <li><a
-                                  href="portfolio-three-column.html">Video
-                                  Gallery </a>
-
-                          </li>
-                      </ul>
-                      <a class="dt-menu-expand">+</a>
-                  </li>
-                  <li class="menu-item-simple-parent
-                      menu-item-depth-0 purple"><a
-                          href="portfolio-four-column.html"
-                          title=""> Hostel </a>
-                      <ul class="sub-menu">
-                          <li><a
-                                  href="portfolio-four-column.html">Boys </a></li>
-                          <li><a
-                                  href="portfolio-three-column.html">Girls </a>
-
-                          </li>
-                      </ul>
-                      <a class="dt-menu-expand">+</a>
-                  </li>
-                  <li class="menu-item-simple-parent
-                      menu-item-depth-0 lavender"><a
-                          href="blog.html" title="">Blog</a>
-                      <ul class="sub-menu">
-                          <li><a href="blog-two-column.html">Blog
-                                  Two Column</a>
-                              <ul class="sub-menu">
-                                  <li><a
-                                          href="blog-two-column-with-sidebar.html">With
-                                          Sidebar</a></li>
-                              </ul>
-                              <a class="dt-menu-expand">+</a>
-                          </li>
-                          <li><a href="blog.html">Blog One Column</a>
-                              <ul class="sub-menu">
-                                  <li><a
-                                          href="blog-with-sidebar.html">With
-                                          Sidebar</a></li>
-                              </ul>
-                              <a class="dt-menu-expand">+</a>
-                          </li>
-                      </ul>
-                      <a class="dt-menu-expand">+</a>
-                  </li>
-                  <li class="purple"><a href="shop.html" title="">Shop</a></li>
-                  <li class="menu-item-simple-parent
-                  menu-item-depth-0 blue"><a
-                      href="portfolio-four-column.html"
-                      title=""> Transport </a>
-                  <ul class="sub-menu">
-                      <li><a
-                              href="portfolio-four-column.html">Bus </a></li>
-                      <li><a
-                              href="portfolio-three-column.html">Car</a>
-
-                      </li>
-                  </ul>
-                  <a class="dt-menu-expand">+</a>
-              </li>
-                 <li class="pink"><a href="contact.html"
-                          title="">Notice</a></li>
-              
-             
-                <li class="blue"><a href="contact.html"
-                          title="">Contact us</a>
-                </li>
-                <li class="green"><a href="contact.html"
-                          title="">Health & Services</a>
-                </li>
-              </ul>
-          </nav>
-
-          <ul class="dt-sc-social-icons">
-              <li><a href="#" title="Facebook"
-                      class="dt-sc-tooltip-top facebook"><span
-                          class="fa fa-facebook"></span></a></li>
-              <li><a href="#" title="Youtube"
-                      class="dt-sc-tooltip-top youtube"><span
-                          class="fa fa-youtube"></span></a></li>
-              <li><a href="#" title="Twitter"
-                      class="dt-sc-tooltip-top twitter"><span
-                          class="fa fa-twitter"></span></a></li>
-              <li><a href="#" title="Google Plus"
-                      class="dt-sc-tooltip-top gplus"><span
-                          class="fa fa-google-plus"></span></a></li>
-          </ul>
-    
-      </div>
-  </div>
-
-</header> --}}
-
-
 <header>
     <div id="top-container">
         <div class="container">
@@ -201,8 +16,7 @@
     </div>
     <div class="container">
         <div class="logo">
-            <a href="{{ route('home') }}" title="{{ $content->name }}"><img src="{{ asset($content->logo) }}"
-                    alt="{{ $content->name }}" title="{{ $content->name }}" class="mainlogo"></a>
+            <a href="{{ route('home') }}" title="{{ $content->name }}"><img src="{{ asset($content->logo) }}" alt="{{ $content->name }}" title="{{ $content->name }}" class="mainlogo"></a>
         </div>
         <div class="logo logoText">
             <a href="{{ route('home') }}"><h1 class="schtitle">{{ $content->name }}</h1></a>
@@ -239,15 +53,15 @@
                         <ul class="sub-menu">
                             <li><a href="#">Hostel</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('hostel.boys') }}">Boys Hostel</a></li>
-                                    <li><a href="{{ route('hostel.girls') }}">Girls Hostel</a></li>
+                                    <li><a href="{{ route('facilities') }}/#boyshostel">Boys Hostel</a></li>
+                                    <li><a href="{{ route('facilities') }}/#girlshostel">Girls Hostel</a></li>
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
                             </li>
                             <li><a href="#">Transports</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('transport.haice') }}">Haice</a></li>
-                                    <li><a href="{{ route('transport.bus') }}">Bus</a></li>
+                                    <li><a href="{{ route('facilities') }}/#transport-haice">Haice</a></li>
+                                    <li><a href="{{ route('facilities') }}/#transport-bus">Bus</a></li>
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
                             </li>
@@ -262,11 +76,11 @@
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
                             </li>
-                            <li><a href="{{ route('computerlab') }}">Computer Lab</a></li>
-                            <li><a href="{{ route('sciencelab') }}">Science Lab</a></li>
-                            <li><a href="{{ route('chemistrylab') }}">Chemistry Lab</a></li>
-                            <li><a href="{{ route('biologylab') }}">Biology Lab</a></li>
-                            <li><a href="{{ route('healthservice') }}">Health Service</a></li>
+                            <li><a href="{{ route('facilities') }}/#computer-lab">Computer Lab</a></li>
+                            <li><a href="{{ route('facilities') }}/#science-lab">Science Lab</a></li>
+                            <li><a href="{{ route('facilities') }}/#chemistry-lab">Chemistry Lab</a></li>
+                            <li><a href="{{ route('facilities') }}/#biology-lab">Biology Lab</a></li>
+                            <li><a href="{{ route('facilities') }}/#health-service">Health Service</a></li>
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
@@ -274,10 +88,10 @@
 
                     <li class="menu-item-simple-parent menu-item-depth-0 purple"><a href="#" title="">Notice</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Notice for Teacher</a></li>
-                            <li><a href="#">Notice for Student</a></li>
-                            <li><a href="#">Notice for Guardian</a></li>
-                            <li><a href="#">Notice for Job</a></li>
+                            <li><a href="{{ route('notices') }}/#teacher">Notice for Teacher</a></li>
+                            <li><a href="{{ route('notices') }}/#student">Notice for Student</a></li>
+                            <li><a href="{{ route('notices') }}/#guardian">Notice for Guardian</a></li>
+                            <li><a href="{{ route('notices') }}/#career">Notice for Job</a></li>
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
@@ -301,7 +115,7 @@
             </ul>
         </div>
     </div>
-</header> 
+</header>
 
 
 

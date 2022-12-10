@@ -27,8 +27,34 @@
 
                 <div class="column dt-sc-one-half">
                     <h2>Our Leisure Time</h2>
-                    <p class="justify sDesLimit">{{  $content->s_description }}</p>
+                    <p class="justify">{{  $content->about }}</p>
                     <a href="#" class="dt-sc-button small read-more"> Read More <span class="fa fa-chevron-circle-right"> </span></a>
+                </div>
+
+                <div class="dt-sc-hr"></div>
+
+                <div class="dt-sc-one column">
+                    <h2>Meet Our Founder</h2>
+                    <div class="author-details">
+                        <div class="author-thumb">
+                            <img class="item-mask" src="{{ asset('website/images/author-hexa-bg.png') }}" alt="" title="">
+                            <img src="{{ asset('website/images/founder.jpg') }}" alt="" title="">
+                        </div>
+                        <div class="author-description">
+                            <h5><a href="#">James Bond</a></h5>
+                            <span class="author-role">Music Trainer, Specialist in <a href="#">Classical
+                                    Music</a></span>
+                            <a href="#" class="students-count"><span class="fa fa-user"></span> 25 STUDENTS</a>
+                            <div class="rating-review">
+                                <span class="author-rating rating-4"></span> <a href="#">2 reviews</a>
+                            </div>
+                            <p>Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. Sed cursus ipsum vitae
+                                justo scelerisque, ac viverra tellus eleifend. Etiam interdum justo nunc, ac volutpat erat
+                                elementum id. Fusce dapibus mauris ac dictum porta. Sed pretium luctus elementum. In
+                                sollicitudin felis semper purus imperdiet lobortis. In odio tellus, rhoncus eget dolor in,
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="dt-sc-hr"></div>
@@ -57,63 +83,26 @@
                     </div>
                 </div>
 
-
                 <div class="dt-sc-one-half column">
-                    <h2>Some Words from Parents</h2>
-                    <div class="dt-sc-testimonial-carousel-wrapper">
-                        <ul class='dt-sc-testimonial-carousel'>
-                            <li>
-                                <div class='dt-sc-testimonial'>
-                                    <blockquote><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit
-                                            vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                            elit. Donec hendrerit vehiculaest, in consequat. Donec hendrerit vehicula est,
-                                            in consequat. Donec hendrerit vehicula est, in consequat.</q></blockquote>
-                                    <div class='author'>
-                                        <img src="{{ asset('website/images/parent.jpg') }}" alt="" title="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <p> Rooney </p>
-                                        <span>CEO &amp; Founder - Dhoom Inc</span>
-                                        <span class="author-rating rating-4"></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='dt-sc-testimonial'>
-                                    <blockquote><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit
-                                            vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                            elit. Donec hendrerit vehiculaest, in consequat. Donec hendrerit vehicula est,
-                                            in consequat. Donec hendrerit vehicula est, in consequat.</q></blockquote>
-                                    <div class='author'>
-                                        <img src="{{ asset('website/images/parent.jpg') }}" alt="" title="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <p> Rooney </p>
-                                        <span>CEO &amp; Founder - Dhoom Inc</span>
-                                        <span class="author-rating rating-4"></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class='dt-sc-testimonial'>
-                                    <blockquote><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit
-                                            vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                            elit. Donec hendrerit vehiculaest, in consequat. Donec hendrerit vehicula est,
-                                            in consequat. Donec hendrerit vehicula est, in consequat.</q></blockquote>
-                                    <div class='author'>
-                                        <img src="{{ asset('website/images/parent.jpg') }}" alt="" title="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <p> Rooney </p>
-                                        <span>CEO &amp; Founder - Dhoom Inc</span>
-                                        <span class="author-rating rating-4"></span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="carousel-arrows">
-                            <a href="#" class="testimonial-prev"><span class="fa fa-angle-left"></span></a>
-                            <a href="#" class="testimonial-next"><span class="fa fa-angle-right"></span></a>
+                    <h2>Meet Our Founder</h2>
+                    <div class="author-details">
+                        <div class="author-thumb">
+                            <img class="item-mask" src="{{ asset('website/images/author-hexa-bg.png') }}" alt="" title="">
+                            <img src="{{ asset('website/images/founder.jpg') }}" alt="" title="">
+                        </div>
+                        <div class="author-description">
+                            <h5><a href="#">James Bond</a></h5>
+                            <span class="author-role">Music Trainer, Specialist in <a href="#">Classical
+                                    Music</a></span>
+                            <a href="#" class="students-count"><span class="fa fa-user"></span> 25 STUDENTS</a>
+                            <div class="rating-review">
+                                <span class="author-rating rating-4"></span> <a href="#">2 reviews</a>
+                            </div>
+                            <p>Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. Sed cursus ipsum vitae
+                                justo scelerisque, ac viverra tellus eleifend. Etiam interdum justo nunc, ac volutpat erat
+                                elementum id. Fusce dapibus mauris ac dictum porta. Sed pretium luctus elementum. In
+                                sollicitudin felis semper purus imperdiet lobortis. In odio tellus, rhoncus eget dolor in,
+                            </p>
                         </div>
                     </div>
                 </div>

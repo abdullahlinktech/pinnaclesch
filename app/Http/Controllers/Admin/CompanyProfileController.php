@@ -16,7 +16,7 @@ class CompanyProfileController extends Controller
         return view('pages.admin.company.content', compact('company'));
     }
 
-    // Company profile Update 
+    // Company profile Update
     public function update(Request $request, CompanyProfile $company)
     {
         // dd($request->all());
@@ -75,11 +75,11 @@ class CompanyProfileController extends Controller
             $company->about_image = $AboutImage;
             $company->bg_image = $BgImage;
             $company->save();
-            return redirect()->back()->with('success','Update Successful!');        
+            return redirect()->back()->with('success','Update Successful!');
 
         } catch (\Throwable $th) {
             // return redirect()->back()->withInput();
             return redirect()->back()->with('error', 'Update Failed!');
-        }    
+        }
     }
 }

@@ -96,40 +96,12 @@ class HomeController extends Controller
         return view('pages.website.video', compact('video', 'backimage'));
     }
 
-    public function transporthaice() {
-        return view('pages.website.transportHaice');
+    public function facilities() {
+        return view('pages.website.facilities');
     }
 
-    public function transportbus() {
-        return view('pages.website.transportBus');
-    }
-
-    public function boyshostel() {
-        return view('pages.website.boysHostel');
-    }
-
-    public function girlshostel() {
-        return view('pages.website.girlsHostel');
-    }
-
-    public function computerlab() {
-        return view('pages.website.computerLab');
-    }
-
-    public function sciencelab() {
-        return view('pages.website.scienceLab');
-    }
-
-    public function biologylab() {
-        return view('pages.website.biologyLab');
-    }
-
-    public function chemistrylab() {
-        return view('pages.website.chemistryLab');
-    }
-
-    public function healthservice() {
-        return view('pages.website.healthService');
+    public function notices() {
+        return view('pages.website.notices');
     }
 
     public function contact() {

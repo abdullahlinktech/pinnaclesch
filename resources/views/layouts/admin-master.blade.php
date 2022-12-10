@@ -19,8 +19,8 @@
         @stack('admin-css')
     </head>
     <body class="sb-nav-fixed">
-      
-     
+
+
 
             <div class="modal fade" id="passwordChange" tabindex="-1" role="dialog" >
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -56,7 +56,7 @@
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
         <script src="{{ asset('assets/demo/datatables-demo.js') }}"></script>
         <script src="{{ asset('js/toastr.min.js') }}"></script>
-     
+
     </body>
 </html> --}}
 
@@ -110,12 +110,12 @@
            @include('layouts.partials.sidebar')
             <!-- Sidebar Area End Here -->
             <div class="dashboard-content-one">
-           
+
                 <!-- Dashboard summery Start Here -->
                @yield('admin-content')
                 <!-- Dashboard summery End Here -->
-             
-              
+
+
             <div class="modal fade" id="passwordChange" tabindex="-1" role="dialog" >
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -144,7 +144,7 @@
             </div>
                 <!-- Footer Area Start Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">pinnacle</a> 2022. All rights reserved. Designed by <a
+                    <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
                             href="#">Link-Up Technology LTD.</a></div>
                 </footer>
                 <!-- Footer Area End Here -->
@@ -152,8 +152,8 @@
         </div>
         <!-- Page Area End Here -->
     </div>
-    
-    
+
+
     <!-- jquery-->
     <script src="{{asset('backend/js/jquery-3.3.1.min.js')}}"></script>
     <!-- Plugins js -->

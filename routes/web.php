@@ -45,8 +45,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
 Route::get('/classes', [HomeController::class, 'classes'])->name('classes');
+Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/news-events', [HomeController::class, 'newsevents'])->name('newsevents');
 Route::get('/news-details/{id}', [HomeController::class, 'newsdetails'])->name('newsdetails');
+Route::get('/notices', [HomeController::class, 'notices'])->name('notices');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/video', [HomeController::class, 'video'])->name('video');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
@@ -54,24 +56,6 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 // Shop
 Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->name('productdetails');
-
-// Hostel
-Route::get('/hostel/boys', [HomeController::class, 'boyshostel'])->name('hostel.boys');
-Route::get('/hostel/girls', [HomeController::class, 'girlshostel'])->name('hostel.girls');
-
-// Transport
-Route::get('/transport/haice', [HomeController::class, 'transporthaice'])->name('transport.haice');
-Route::get('/transport/bus', [HomeController::class, 'transportbus'])->name('transport.bus');
-
-// Lab
-Route::get('/computer-lab', [HomeController::class, 'computerlab'])->name('computerlab');
-Route::get('/science-lab', [HomeController::class, 'sciencelab'])->name('sciencelab');
-Route::get('/biology-lab', [HomeController::class, 'biologylab'])->name('biologylab');
-Route::get('/chemistry-lab', [HomeController::class, 'chemistrylab'])->name('chemistrylab');
-
-Route::get('/health-service', [HomeController::class, 'healthservice'])->name('healthservice');
-
-
 
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
@@ -90,7 +74,7 @@ Route::group(['middleware' => ['auth']] , function(){
     // logout
     Route::get('logout', [AuthenticationController::class, 'logout'])->name('logout');
     Route::put('/login', [AuthenticationController::class, 'passwordUpdate'])->name('password.change');
-    // company profile 
+    // company profile
     Route::get('company-profile', [CompanyProfileController::class, 'edit'])->name('company.edit');
     Route::put('company-profile/{company}', [CompanyProfileController::class, 'update'])->name('company.update');
     // about us
@@ -132,14 +116,14 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('service/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('edit.service');
     Route::post('service/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('update.service');
     Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete'])->name('delete.service');
-    
+
     // Gallery Route
     Route::get('/galleries', [GalleryController::class, 'gallery'])->name('gallery.index');
     Route::post('gallery/insert', [GalleryController::class, 'galleryInsert'])->name('store.gallery');
     Route::get('gallery/edit/{id}', [GalleryController::class, 'galleryEdit'])->name('edit.gallery');
     Route::post('gallery/update/{id}', [GalleryController::class, 'galleryUpdate'])->name('update.gallery');
     Route::get('gallery/delete/{id}', [GalleryController::class, 'galleryDelete'])->name('delete.gallery');
-    
+
     // Video Route
     Route::get('/videos', [VideoController::class, 'index'])->name('videos');
     Route::post('video/insert', [VideoController::class, 'store'])->name('store.video');
@@ -179,24 +163,24 @@ Route::group(['middleware' => ['auth']] , function(){
 
     Route::get('/messages', [MessageController::class, 'message'])->name('admin.message');
     Route::get('messages/delete/{id}', [MessageController::class, 'messageDelete'])->name('admin.message.delete');
-    
+
     Route::get('/queries', [QueryController::class, 'query'])->name('admin.query');
     Route::get('queries/delete/{id}', [QueryController::class, 'queryDelete'])->name('admin.query.delete');
 
     Route::resource('/partner', PartnerController::class)->except('show', 'create');
-    // our teacher 
+    // our teacher
     Route::get('/admin-teacher',[TeacherController::class,'index'])->name('teacher.index');
     Route::post('/admin-teacher-store',[TeacherController::class,'store'])->name('teacher.store');
     Route::get('/admin-teacher-edit/{id}',[TeacherController::class,'edit'])->name('teacher.edit');
     Route::put('/admin-teacher-update/{teacher}',[TeacherController::class,'update'])->name('teacher.update');
     Route::delete('/admin-teacher-delete/{teacher}',[TeacherController::class,'delete'])->name('teacher.delete');
-    //activity 
+    //activity
     Route::get('admin-activity',[ActivityController::class,'index'])->name('activity.index');
     Route::post('admin-activity-store',[ActivityController::class,'store'])->name('activity.store');
     Route::get('admin-activity-edit/{id}',[ActivityController::class,'edit'])->name('activity.edit');
     Route::put('admin-activity-update/{activity}',[ActivityController::class,'update'])->name('activity.update');
     Route::delete('admin-activity-delete/{activity}',[ActivityController::class,'delete'])->name('activity.delete');
-    //dress code 
+    //dress code
     Route::get('admin-dress',[DressController::class,'index'])->name('dress.index');
     Route::post('admin-dress-store',[DressController::class,'store'])->name('dress.store');
     Route::get('admin-dress-edit/{id}',[DressController::class,'edit'])->name('dress.edit');
@@ -214,7 +198,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-notice-edit/{id}',[NoticeController::class,'edit'])->name('notice.edit');
     Route::put('admin-notice-update/{notice}',[NoticeController::class,'update'])->name('notice.update');
     Route::delete('admin-notice-delete/{notice}',[NoticeController::class,'delete'])->name('notice.delete');
-    // hostel 
+    // hostel
     Route::get('admin-hostel',[HostelController::class,'index'])->name('hostel.index');
     Route::post('admin-hostel-store',[HostelController::class,'store'])->name('hostel.store');
     Route::get('admin-hostel-edit/{id}',[HostelController::class,'edit'])->name('hostel.edit');

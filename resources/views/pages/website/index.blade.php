@@ -460,7 +460,6 @@
             <!-- news events start  -->
 
             <div class="container">
-
                 <div class="dt-sc-one-half column first">
                     <div class="card-header">
                         <h2 style="margin-bottom: 0;">Upcoming Events</h2>
@@ -646,16 +645,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="dt-sc-hr-very-small"></div>
             </div>
 
             <div class="dt-sc-hr"></div>
             <!-- news events end -->
 
-
             <section class="fullwidth-background dt-sc-parallax-section gallery-bg">
-
                 <div class="container">
                     <h2 class="dt-sc-hr-green-title">Photo Gallery </h2>
                     <div class="front-portfolio-container">
