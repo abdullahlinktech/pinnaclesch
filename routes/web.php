@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\DressController;
 use App\Http\Controllers\Admin\FacilitiesController;
 use App\Http\Controllers\Admin\HostelController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\ShopController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\WhyspecailController;
 
@@ -211,4 +212,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-facilities-edit{id}',[FacilitiesController::class,'edit'])->name('facilities.edit');
     Route::put('admin-facilities-update{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
     Route::delete('admin-facilities-delete{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
+    //shop 
+    Route::get('admin-shop',[ShopController::class,'index'])->name('shop.index');
+    Route::post('admin-shop-store',[ShopController::class,'store'])->name('shop.store');
 });

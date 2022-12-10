@@ -12,7 +12,9 @@ use App\Models\Video;
 use App\Models\News;
 use App\Models\Management;
 use App\Models\BackImage;
+use App\Models\Dress;
 use App\Models\Messenger;
+use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Teacher;
 
@@ -22,15 +24,14 @@ class HomeController extends Controller
     {
         // $category = Category::orderBy('rank', 'asc')->get();
         // $slider = Slider::latest()->get();
-        // $video = Video::latest()->get();
-        // $gallery = Gallery::latest()->get();
+        $video = Video::latest()->get();
+         $gallery = Gallery::latest()->take(7)->get();
         // $management = Management::orderBy('rank', 'asc')->get();
-        // $news = News::latest()->get();
-        // $backimage = BackImage::first();
-        // $partner = Partner::latest()->get();
-        // return view('pages.website.index', compact('category', 'slider', 'gallery', 'video', 'management', 'news', 'whatwe', 'backimage', 'partner'));
-
-        return view('pages.website.index');
+         $news = News::latest()->get();
+        $notice = Notice::latest()->get();
+        $teacher = Teacher::latest()->get();
+        $dress = Dress::latest()->take(4)->get();
+        return view('pages.website.index',compact('news','notice','gallery','video','teacher','dress'));
     }
 
     public function about() {

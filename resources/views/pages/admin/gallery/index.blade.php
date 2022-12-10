@@ -33,8 +33,8 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
-                                        <label for="title"> Image Name <span class="text-danger">*</span> </label>
-                                        <input type="text" name="title" class="form-control form-control-sm shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter Image Name" value="{{ old('title') }}">
+                                        <label for="title">Title<span class="text-danger">*</span> </label>
+                                        <input type="text" name="title" class="form-control form-control-sm shadow-none @error('title') is-invalid @enderror" id="title" placeholder=" Image title" value="{{ old('title') }}">
                                         @error('title')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -76,8 +76,8 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Image</th>
                                 <th>Title</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -85,8 +85,8 @@
                             @forelse ($galleries as $key=>$user)
                                 <tr>
                                     <td>{{ $loop->index+1 }}</td>
-                                    <td><img class="border" style="height: 100px; max-width:100%;" src="{{ asset('uploads/gallery/'.$user->image) }}" alt=""></td>
                                     <td>{{ $user->title }}</td>                                    
+                                    <td><img class="border" style="height: 50px; max-width:50px" src="{{ asset('uploads/gallery/'.$user->image) }}" alt=""></td>
                                     <td>
                                         <a href="{{ url('gallery/edit/'. $user->id) }}" type="submit" class="btn btn-info btn-mod-info btn-sm mr-1"><i class="fas fa-edit"></i></button>
                                         <a href="{{ url('gallery/delete/'.$user->id) }}" type="submit" class="btn btn-danger btn-mod-danger btn-sm" onclick="return confirmDel()"><i class="fas fa-trash"></i></button>

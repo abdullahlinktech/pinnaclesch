@@ -129,7 +129,7 @@
             <div class="card my-3">
                 <div class="card-header">
                     <i class="fas fa-list"></i>
-                    All Why We Are Specail
+                    All Facilities
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

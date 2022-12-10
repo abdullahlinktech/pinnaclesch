@@ -14,10 +14,12 @@ class VideoController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
+            'title' => 'required',
             'link' => 'required|min:4',
         ]);
         try {
             $video = new Video;
+            $video->title = $request->title;
             $video->link = $request->link;
             $video->save();
             return redirect()->back()->with('success', 'Video Inserted!');
@@ -39,6 +41,7 @@ class VideoController extends Controller
         try {
             
             $video = Video::find($id);
+            $video->title = $request->title;
             $video->link = $request->link;
             $video->save();
             return Redirect()->back()->with("success", "Update Successfull");

@@ -1,4 +1,4 @@
-@extends('layouts.admin-master', ['pageName' => 'teacher', 'title' => 'Add teacher'])
+@extends('layouts.admin-master', ['pageName' => 'shop', 'title' => 'Add Shop'])
 @push('admin-css')
 @endpush
 @section('admin-content')
@@ -6,7 +6,7 @@
 
     <div class="breadcrumbs-area d-flex justify-content-between">
         <div>
-            <h3>Admin Teacher</h3>
+            <h3>Shop</h3>
         </div>
         <div class="">
             <ul>
@@ -27,55 +27,23 @@
                         <div class="card-body">
                             <div class="form">
                                 <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add new Teacher</h4>
+                                    <h4 class=""><i class="fas fa-plus"></i> Add Shop</h4>
                                 </div>
-                                <form action="{{ route('teacher.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('facilities.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="name">Name <span class="text-danger"> * </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('name') is-invalid @enderror"
-                                                        id="name" type="text" name="name"
-                                                        value="{{ old('name') }}" placeholder="Teacher Name">
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="phone">Phone <span class="text-danger"> * </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('phone') is-invalid @enderror"
-                                                        id="phone" type="text" name="phone"
-                                                        value="{{ old('phone') }}" placeholder="Teacher phone">
-                                                    @error('phone')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="specality"> Spacaility <span class="text-danger"> *
+                                                    <label for="title"> Title <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
-                                                        class="form-control form-control-sm @error('specality') is-invalid @enderror"
-                                                        id="specality" type="text" name="specality"
-                                                        value="{{ old('specality') }}" placeholder="Teacher specality">
-                                                    @error('specality')
+                                                        class="form-control form-control-sm @error('title') is-invalid @enderror"
+                                                        id="title" type="text" name="title"
+                                                        value="{{ old('title') }}" placeholder=" title">
+                                                    @error('title')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -84,25 +52,41 @@
                                             </div>
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="designation">Designation <span class="text-danger"> *
+                                                    <label for="price"> Price <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
-                                                        class="form-control form-control-sm @error('designation') is-invalid @enderror"
-                                                        id="designation" type="text" name="designation"
-                                                        value="{{ old('designation') }}" placeholder="Teacher designation">
-                                                    @error('designation')
+                                                        class="form-control form-control-sm @error('price') is-invalid @enderror"
+                                                        id="price" type="text" name="price"
+                                                        value="{{ old('price') }}" placeholder=" price">
+                                                    @error('price')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
                                                 </div>
                                             </div>
+                                    
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="image" class="">Teacher Image <small>(Size: 381px *
-                                                            331px)</small></label>
+                                                    <label for="name">Description <span class="text-danger"> *
+                                                        </span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <textarea name="description" id="editor" cols="30" rows="10"></textarea>
+                                                    @error('description')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row my-2">
+                                                <div class="col-md-3">
+                                                    <label for="image" class=""> Image <small>(Size: 400px *
+                                                            150px)</small></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
@@ -146,7 +130,7 @@
             <div class="card my-3">
                 <div class="card-header">
                     <i class="fas fa-list"></i>
-                    All Teachers
+                    All Product
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -154,43 +138,35 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Designation</th>
-                                    <th>Specality</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($teacher as $key=>$item)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->designation }}</td>
-                                        <td>{{ $item->specality }}</td>
-                                        <td><img class="border" style="height: 40px; width:50px;"
-                                                src="{{ asset($item->image) }}" alt=""></td>
-                                        <td>
-                                            <a href="{{ route('teacher.edit', $item) }}" class="btn btn-info btn-sm"><i
-                                                    class="fa fa-edit"></i></a>
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="deletePartner({{ $item->id }})"><i
-                                                    class="fa fa-trash"></i></button>
-                                            <form id="delete-form-{{ $item->id }}"
-                                                action="{{ route('teacher.delete', $item) }}" method="POST"
-                                                style="display: none;">
-                                                @csrf
-                                                @method('DELETE')
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td rowspan="5">Data Not Found</td>
-                                    </tr>
-                                @endforelse
+                                @forelse ($shop as $key=>$item)
+                                <tr>
+                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->price }}</td>
+                                    <td>{!! $item->description !!}</td>
+                                    <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
+                                    <td>
+                                        {{-- <a href="{{ route('facilities.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a> --}}
+                                        {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
+                                        <form id="delete-form-{{$item->id}}" action="{{route('facilities.delete',$item)}}" method="POST" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form> --}}
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td rowspan="5">Data Not Found</td>
+                                </tr>
+                            @endforelse
 
                             </tbody>
                         </table>
@@ -201,6 +177,14 @@
     </main>
 @endsection
 @push('admin-js')
+<script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
