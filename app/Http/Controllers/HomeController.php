@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Activity;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -17,6 +19,7 @@ use App\Models\Messenger;
 use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Teacher;
+use App\Models\Whyspecail;
 
 class HomeController extends Controller
 {
@@ -30,8 +33,10 @@ class HomeController extends Controller
          $news = News::latest()->get();
         $notice = Notice::latest()->get();
         $teacher = Teacher::latest()->get();
+        $activities = Activity::latest()->take(8)->get();
         $dress = Dress::latest()->take(4)->get();
-        return view('pages.website.index',compact('news','notice','gallery','video','teacher','dress'));
+        $specials = Whyspecail::latest()->take(8)->get();
+        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials'));
     }
 
     public function about() {

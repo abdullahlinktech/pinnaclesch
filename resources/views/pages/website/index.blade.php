@@ -276,74 +276,24 @@
 
             <div class="container">
                 <h2 class="dt-sc-hr-green-title">Our Activities </h2>
-                <div class="dt-sc-one-fourth column first">
-                    <div class="dt-sc-ico-content type1">
-                        <div class="icon">
-                            <span class="icon-outer">
-                                <img src="{{ asset('website/images/service1.jpg') }}" alt="" title="">
-                                <span class="infolayer">
-                                    <a href="#"><i class="fa fa-link"></i></a>
+                @php $newkey = [0, 4, 8]; @endphp
+                @foreach ($activities as $key=>$activity)
+                    <div class="dt-sc-one-fourth column pb-3 {{ in_array($key, $newkey) ? 'first' : '' }}">
+                        <div class="dt-sc-ico-content type1">
+                            <div class="icon">
+                                <span class="icon-outer">
+                                    <img src="{{ asset($activity->image) }}" class="actImg" alt="" title="">
+                                    {{--  <img src="{{ asset('website/images/service1.jpg') }}" alt="" title="">  --}}
+                                    <span class="infolayer">
+                                        <a href="#"><i class="fa fa-link"></i></a>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
+                            <h4><a href="#">{{ $activity->title }}</a></h4>
+                            <div class="actDescript">{!! $activity->description !!}</div>
                         </div>
-                        <h4><a href="#">Active Learning</a></h4>
-                        <p>Curabitur ultrices posuere mattis. Nam
-                            ullamcorper, diam sit amet euismod pelleo
-                            ntesque, eros risus rhoncus libero, invest
-                            tibulum nisl ligula</p>
                     </div>
-                </div>
-                <div class="dt-sc-one-fourth column">
-                    <div class="dt-sc-ico-content type1">
-                        <div class="icon">
-                            <span class="icon-outer">
-                                <img src="{{ asset('website/images/service2.jpg') }}" alt="" title="">
-                                <span class="infolayer">
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                </span>
-                            </span>
-                        </div>
-                        <h4><a href="#">Music Class</a></h4>
-                        <p>Decor ostdcaer urabitur ultrices posuere
-                            mattis. Nam ullamcorper, diam sit amet
-                            euismod pelleontesque, eros risus rhoncus
-                            libero, invest tibulum nisl ligula</p>
-                    </div>
-                </div>
-                <div class="dt-sc-one-fourth column">
-                    <div class="dt-sc-ico-content type1">
-                        <div class="icon">
-                            <span class="icon-outer">
-                                <img src="{{ asset('website/images/service3.jpg') }}" alt="" title="">
-                                <span class="infolayer">
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                </span>
-                            </span>
-                        </div>
-                        <h4><a href="#">Yoga Class</a></h4>
-                        <p>Rabitur ultrices posuere mattis. Nam
-                            ullamcorper, diam sit euismod pelleo
-                            ntesque, eros risus rhoncus libero, invest
-                            tibulum nisl gedretu osterftra ligula</p>
-                    </div>
-                </div>
-                <div class="dt-sc-one-fourth column">
-                    <div class="dt-sc-ico-content type1">
-                        <div class="icon">
-                            <span class="icon-outer">
-                                <img src="{{ asset('website/images/service4.jpg') }}" alt="" title="">
-                                <span class="infolayer">
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                </span>
-                            </span>
-                        </div>
-                        <h4><a href="#">Kung fu Class</a></h4>
-                        <p>Curabitur ultrices posuere mattis. Nam
-                            ullamcorper, diam sit amet euismod pelleo
-                            ntesque, eros risus rhoncus libero, invest
-                            tibulum nisl ligula</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="dt-sc-hr"></div>
@@ -351,49 +301,21 @@
             <section class="fullwidth-background dt-sc-parallax-section turquoise-bg">
 
                 <div class="container">
-
                     <div class="dt-sc-one-half column first">
                         <h2>Why We Are Special</h2>
 
-                        <div class="dt-sc-one-half column first">
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-glass"> </span>
+                        @foreach ($specials as $key=>$spcl)
+                            <div class="dt-sc-one-half column first">
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon">
+                                        <span class="fa fa-glass"> </span>
+                                    </div>
+                                    <h4><a href="#" target="_blank"> {{ $spcl->title }} </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
                                 </div>
-                                <h4><a href="#" target="_blank"> English
-                                        Summer Camp </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
+                                <div class="dt-sc-hr-very-small"></div>
                             </div>
-                            <div class="dt-sc-hr-very-small"></div>
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-pencil"> </span>
-                                </div>
-                                <h4><a href="#" target="_blank"> Drawing
-                                        & Painting </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
-                            </div>
-                            <div class="dt-sc-hr-very-small"></div>
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-bullseye">
-                                    </span>
-                                </div>
-                                <h4><a href="#" target="_blank">
-                                        Swimming Camp </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
-                            </div>
-                        </div>
-
+                        @endforeach
 
                         <div class="dt-sc-one-half column">
                             <div class="dt-sc-ico-content type2">
@@ -543,27 +465,24 @@
                 <div class="container">
                     <h2 class="dt-sc-hr-white-title">Video Gallery</h2>
 
-               @foreach ($video as $key => $item)
-               <div class="column dt-sc-one-fourth {{ $key == 0 ? 'first' : '' }} video_gall">
-                <div class="video">
-                    <iframe width="100%" height="150" src="{{$item->link}}"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer;
-                        autoplay; clipboard-write;
-                        encrypted-media; gyroscope;
-                        picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="title">
-                    <h2>{{$item->title}}</h2>
-                </div>
-            </div>
-               @endforeach
-
-
+                    @foreach ($video as $key => $item)
+                        <div class="column dt-sc-one-fourth {{ $key == 0 ? 'first' : '' }} video_gall">
+                            <div class="video">
+                                <iframe width="100%" height="150" src="{{$item->link}}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer;
+                                    autoplay; clipboard-write;
+                                    encrypted-media; gyroscope;
+                                    picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="title">
+                                <h2>{{$item->title}}</h2>
+                            </div>
+                        </div>
+                    @endforeach
                     <div class="aligncenter">
-                        <a href="{{route('video')}}" class="dt-sc-button medium mustard v_gallery"> Hit here to view all <span
-                                class="fa fa-chevron-circle-right"> </span></a>
+                        <a href="{{route('video')}}" class="dt-sc-button medium mustard v_gallery"> Hit here to view all <span class="fa fa-chevron-circle-right"> </span></a>
                     </div>
 
                 </div>
@@ -574,26 +493,25 @@
 
             <div class="container">
                 <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
-                @foreach ($teacher as $item)
-                <div class="column dt-sc-one-eighth first">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset($item->image) }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
+                @php $newkey = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200]; @endphp
+                @foreach ($teacher as $key=>$item)
+                    {{--  <div class="column dt-sc-one-eighth {{ $key == 0 || $newkey*($key+8) == $key  ? 'first' : ''}}">  --}}
+                    {{--  <div class="column dt-sc-one-eighth {{ $key  }} {{ $newkey*($key+1)  }}">  --}}
+                    <div class="column dt-sc-one-eighth teachersec {{ in_array($key, $newkey) ? 'first' : '' }}">
+                        <div class="dt-sc-team">
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt="" title="">
+                                <img src="{{ asset($item->image) }}" class="techImages" alt="Teacher Image" title="Teacher Image">
+                                <div class="dt-sc-image-overlay"></div>
+                            </div>
+                            <div class="team-details">
+                                <h5> {{ $item->name }} </h5>
+                                <h6> {{ $item->designation }} </h6>
+                                <p> {{ $item->specality }} </p>
                             </div>
                         </div>
-                        <div class="team-details">
-                            <h5> {{$item->name}} </h5>
-                            <h6>{{$item->designation}} </h6>
-                            <p>{{$item->specality}}</p>
-
-                        </div>
                     </div>
-                </div>
-
+                    {{--  @php $newkey++; @endphp  --}}
                 @endforeach
             </div>
 
