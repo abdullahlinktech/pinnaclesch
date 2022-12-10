@@ -86,7 +86,7 @@
                     </li>
                     <li class="lavender"><a href="{{ route('newsevents') }}">News & Events </a> </li>
 
-                    <li class="menu-item-simple-parent menu-item-depth-0 purple"><a href="#" title="">Notice</a>
+                    <li class="menu-item-simple-parent menu-item-depth-0 purple"><a href="{{route('notices')}}" title="">Notice</a>
                         <ul class="sub-menu">
                             <li><a href="{{ route('notices') }}/#teacher">Notice for Teacher</a></li>
                             <li><a href="{{ route('notices') }}/#student">Notice for Student</a></li>

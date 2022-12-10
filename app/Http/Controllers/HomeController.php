@@ -49,11 +49,8 @@ class HomeController extends Controller
     }
 
     public function newsevents() {
-        // $news = News::latest()->get();
-        // $backimage = BackImage::first();
-        // return view('pages.website.news', compact('news', 'backimage'));
-
-        return view('pages.website.newsEvents');
+        $news = News::latest()->get();
+        return view('pages.website.newsEvents',compact('news'));
     }
 
     public function newsdetails($id) {
@@ -94,9 +91,8 @@ class HomeController extends Controller
     }
 
     public function video() {
-        $backimage = BackImage::first();
         $video = Video::latest()->get();
-        return view('pages.website.video', compact('video', 'backimage'));
+        return view('pages.website.video', compact('video', ));
     }
 
     public function facilities() {

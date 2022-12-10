@@ -4,7 +4,6 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\MapController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\QueryController;
 use App\Http\Controllers\Admin\VideoController;
@@ -37,7 +36,7 @@ use App\Http\Controllers\WhyspecailController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteServiceProvider within a group noticeswhich
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -154,9 +153,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::post('slider/update/{id}', [SliderController::class, 'update'])->name('slider.update');
     Route::get('slider/delete/{id}', [SliderController::class, 'delete'])->name('slider.delete');
 
-    Route::get('/map', [MapController::class, 'edit'])->name('maps.edit');
-    Route::put('/map/{map}', [MapController::class, 'update'])->name('maps.update');
-
+   
     Route::get('/messenger', [MessengerController::class, 'edit'])->name('messenger.edit');
     Route::put('/messenger/{messenger}', [MessengerController::class, 'update'])->name('messenger.update');
 
@@ -215,4 +212,7 @@ Route::group(['middleware' => ['auth']] , function(){
     //shop 
     Route::get('admin-shop',[ShopController::class,'index'])->name('shop.index');
     Route::post('admin-shop-store',[ShopController::class,'store'])->name('shop.store');
+    Route::get('admin-shop-edit/{id}',[ShopController::class,'edit'])->name('shop.edit');
+    Route::put('admin-shop-update/{shop}',[ShopController::class,'update'])->name('shop.update');
+    Route::delete('admin-shop-delete/{shop}',[ShopController::class,'delete'])->name('shop.delete');
 });

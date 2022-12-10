@@ -29,7 +29,7 @@
                                 <div class="d-flex justify-content-between heading card-header">
                                     <h4 class=""><i class="fas fa-plus"></i> Add Shop</h4>
                                 </div>
-                                <form action="{{ route('facilities.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('shop.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">
@@ -154,12 +154,12 @@
                                     <td>{!! $item->description !!}</td>
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
-                                        {{-- <a href="{{ route('facilities.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a> --}}
-                                        {{-- <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
-                                        <form id="delete-form-{{$item->id}}" action="{{route('facilities.delete',$item)}}" method="POST" style="display: none;">
+                                        <a href="{{ route('shop.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
+                                        <form id="delete-form-{{$item->id}}" action="{{route('shop.delete',$item)}}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
-                                        </form> --}}
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

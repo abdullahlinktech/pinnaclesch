@@ -1,10 +1,10 @@
-@extends('layouts.admin-master', ['pageName'=> 'specail', 'title' => 'Edit specail'])
+@extends('layouts.admin-master', ['pageName'=> 'shop', 'title' => 'Edit shop'])
 @section('admin-content')
    <!-- Breadcubs Area Start Here -->
 
    <div class="breadcrumbs-area d-flex justify-content-between">
     <div>
-        <h3>Update Facilities </h3>
+        <h3>Update Shop </h3>
     </div>
     <div class="">
         <ul>
@@ -25,23 +25,23 @@
                     <div class="card-body">
                         <div class="form">
                             <div class="d-flex justify-content-between heading card-header">
-                                <h4 class=""><i class="fa fa-edit"></i> Edit Facilities</h4>
+                                <h4 class=""><i class="fa fa-edit"></i> Edit Shop</h4>
                                 <div>
                                     <a href="{{ route('dashboard') }}" class="btn btn-primary btn-sm overflow-hidden">Dashboard</a>
                                 </div>
                             </div>
-                            <form action="{{ route('facilities.update', $facilities) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('shop.update', $shop) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
                                         <div class="row my-2">
                                             <div class="col-md-3">
-                                                <label for="header"> Header <span class="text-danger"> * </span></label>
+                                                <label for="title"> Title <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
-                                            <input class="form-control @error('header') is-invalid @enderror" id="header" type="text" name="header" value="{{ $facilities->header }}" placeholder="header">
-                                            @error('header')
+                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $shop->title }}" placeholder="title">
+                                            @error('title')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -50,11 +50,11 @@
                                         </div>
                                         <div class="row my-2">
                                             <div class="col-md-3">
-                                                <label for="title"> Title <span class="text-danger"> * </span></label>
+                                                <label for="price"> Price <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
-                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $facilities->title }}" placeholder="title">
-                                            @error('title')
+                                            <input class="form-control @error('price') is-invalid @enderror" id="price" type="text" name="price" value="{{ $shop->price }}" placeholder="price">
+                                            @error('price')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -67,7 +67,7 @@
                                                 <label for="description"> Description <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
-                                                <textarea name="description" id="editor" cols="30" rows="10">{{ $facilities->description }}</textarea>
+                                                <textarea name="description" id="editor" cols="30" rows="10">{{ $shop->description }}</textarea>
                                               @error('description')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                 <hr class="my-2">
                                 <div class="clearfix mt-1">
                                     <div class="float-md-left">
-                                        <a href="{{route('facilities.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
+                                        <a href="{{route('shop.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
                                     
                                     </div>
@@ -131,6 +131,6 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    document.getElementById("previewImage").src="{{ asset($facilities->image) }}";
+    document.getElementById("previewImage").src="{{ asset($shop->image) }}";
 </script>
 @endpush
