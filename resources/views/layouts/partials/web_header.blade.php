@@ -49,7 +49,7 @@
                     <li class="green"> <a href="{{ route('classes') }}"> Classes </a></li>
 
 
-                    <li class="menu-item-simple-parent menu-item-depth-0 blue"> <a href="#"> Facilities </a>
+                    <li class="menu-item-simple-parent menu-item-depth-0 blue"> <a href="{{route('facilities')}}"> Facilities </a>
                         <ul class="sub-menu">
                             <li><a href="#">Hostel</a>
                                 <ul class="sub-menu">

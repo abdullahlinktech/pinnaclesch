@@ -464,59 +464,29 @@
                     <div class="card-header">
                         <h2 style="margin-bottom: 0;">Upcoming Events</h2>
                     </div>
-                    <div class="custom-card">
+                    <div class="custom-card ">
                         <div class="card-body">
-                            <!-- <marquee behavior="scroll" direction="up"
-                                scrollamount="3" onmouseover="this.stop();"
-                                onmouseout="this.start();"> -->
-                            <div class="events-list">
-                                <div class="event-thumb">
-                                    <a href="#" title="">
-                                        <img src="{{ asset('website/images/image8.jpg') }}" class=""
-                                            alt="" title="">
-                                    </a>
-                                </div>
-                                <div class="event-details">
-                                    <h2><a href="#">Maecenas sed diam eget risus varius varius</a></h2>
-                                    <div class="event-meta"><span class="fa fa-calendar"></span> 27 Jan 2014</div>
-                                    <div class="event-excerpt">
-                                        <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur. Maecenas
-                                            sed diam eget risus varius. <a href="">read more...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="events-list">
-                                <div class="event-thumb">
-                                    <a href="#" title="">
-                                        <img src="{{ asset('website/images/image9.jpg') }}"class=""alt=""
-                                            title="">
-                                    </a>
-                                </div>
-                                <div class="event-details">
-                                    <h2><a href="#">Aenean lacinia sed diam eget risus varius ibendum</a></h2>
-                                    <div class="event-meta"><span class="fa fa-calendar"></span> 28 Jan 2014</div>
-                                    <div class="event-excerpt">
-                                        <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur. Maecenas
-                                            sed diam eget risus varius. <a href="">read more...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="events-list">
-                                <div class="event-thumb">
-                                    <a href="#" title=""><img
-                                            src="{{ asset('website/images/image10.jpg') }}" class=""
-                                            alt="" title=""></a>
-                                </div>
-                                <div class="event-details">
-                                    <h2><a href="#">Multi Color Variation</a></h2>
-                                    <div class="event-meta"><span class="fa fa-calendar"></span> 29 Jan 2014</div>
-                                    <div class="event-excerpt">
-                                        <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur. Maecenas
-                                            sed diam eget risus varius. <a href="">read more...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- </marquee> -->
+                         
+                            
+                            @foreach ($news as $item)
+                            <div class="events-list "height="365">
+                               <div class="event-thumb">
+                                   <a href="{{route('newsdetails',$item->id)}}" title="">
+                                       <img src="{{ asset($item->image) }}" class=""
+                                           alt="" title="">
+                                   </a>
+                               </div>
+                               <div class="event-details">
+                                   <h2><a href="#">{{$item->title}}</a></h2>
+                                   <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
+                                   <div class="event-excerpt">
+                                       {!! Str::of($item->description)->words(16, '...');!!} <a href="{{route('newsdetails',$item->id)}}">read more</a>
+                                   </div>
+                               </div>
+                           </div>
+                                
+                            @endforeach
+                 
                             <a class="read_more" href=""> View All <span
                                     class="fa fa-chevron-circle-right"></span></a>
                         </div>
@@ -533,112 +503,17 @@
                         <div class="card-body">
                             <marquee height="365" behavior="scroll" direction="up" scrollamount="3"
                                 onmouseover="this.stop();" onmouseout="this.start();">
-                                <div class="events-list">
-                                    <div class="event-details">
-                                        <h2><a href="#">Maecenas sed diam eget risus varius varius</a></h2>
-                                        <div class="event-meta"><span class="fa fa-calendar"></span> 27 Jan 2014</div>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur.
-                                                Maecenas sed diam eget risus varius. <a href="">read more...</a></p>
-                                        </div>
+                             @foreach ($notice as $item)
+                             <div class="events-list">
+                                <div class="event-details">
+                                    <h2><a href="#">{{$item->title}}</a></h2>
+                                    <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
+                                    <div class="event-excerpt">
+                                        {!! Str::of($item->description)->words(16, '...');!!} <a href="{{route('newsdetails',$item->id)}}">read more</a>
                                     </div>
                                 </div>
-                                <div class="dt-sc-hr-small"></div>
-                                <div class="events-list">
-
-                                    <div class="event-details">
-                                        <h2><a href="#">Aenean lacinia sed diam eget risus varius ibendum</a></h2>
-                                        <div class="event-meta"><span class="fa fa-calendar"></span> 28 Jan 2014</div>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur.
-                                                Maecenas sed diam eget risus varius. <a href="">read more...</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dt-sc-hr-small"></div>
-                                <div class="events-list">
-
-                                    <div class="event-details">
-                                        <h2><a href="#">Multi Color Variation</a></h2>
-                                        <div class="event-meta"><span class="fa fa-calendar"></span> 29 Jan 2014</div>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur.
-                                                Maecenas sed diam eget risus varius. <a href="">read more...</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dt-sc-hr-small"></div>
-                                <div class="events-list">
-
-                                    <div class="event-details">
-                                        <div class="event-meta">
-                                            <span class="fa fa-calendar">
-                                            </span> 27
-                                            Jan 2014
-                                        </div>
-                                        <h2><a href="#">Maecenas sed diam eget
-                                                risus
-                                                varius varius</a></h2>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur.
-                                                Maecenas sed diam
-                                                eget
-                                                risus varius bla nditsed diam
-                                                eget
-                                                risus varius. <a href="">read more...</a></p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dt-sc-hr-small"></div>
-                                <div class="events-list">
-
-                                    <div class="event-details">
-                                        <div class="event-meta">
-                                            <span class="fa fa-calendar">
-                                            </span> 27
-                                            Jan 2014
-                                        </div>
-                                        <h2><a href="#">Maecenas sed diam eget
-                                                risus
-                                                varius varius</a></h2>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget
-                                                risus
-                                                varius ibendum nulla sed
-                                                consectetur. Maecenas sed diam
-                                                eget
-                                                risus varius bla nditsed diam
-                                                eget
-                                                risus varius. <a href="">read more...</a></p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dt-sc-hr-small"></div>
-                                <div class="events-list">
-
-                                    <div class="event-details">
-                                        <div class="event-meta">
-                                            <span class="fa fa-calendar">
-                                            </span> 27
-                                            Jan 2014
-                                        </div>
-                                        <h2><a href="#">Maecenas sed diam eget
-                                                risus
-                                                varius varius</a></h2>
-                                        <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget
-                                                risus
-                                                varius ibendum nulla sed
-                                                consectetur. Maecenas sed diam
-                                                eget
-                                                risus varius bla nditsed diam
-                                                eget
-                                                risus varius. <a href="">read more...</a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                             @endforeach
                             </marquee>
                             <a class="read_more" href=""> View All <span
                                     class="fa fa-chevron-circle-right"></span></a>
@@ -655,19 +530,19 @@
                 <div class="container">
                     <h2 class="dt-sc-hr-green-title">Photo Gallery </h2>
                     <div class="front-portfolio-container">
-                        <div class="portfolio-content portfolio-content1">
+                        @foreach ($gallery as $key => $item)
+                        <div class="portfolio-content portfolio-content{{$key+1}}">
                             <div class="front-portfolio">
                                 <div class="portfolio-outer">
                                     <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image1.jpg') }}" alt=""
+                                        <img src="{{ asset('uploads/gallery/'.$item->image) }}" alt=""
                                             title="">
                                         <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
+                                            <h5><a href="portfolio-detail.html">{{$item->title}}</a></h5>
                                             <a href="portfolio-detail.html" class="link"><span
                                                     class="fa
                                                 fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image1.jpg') }}"
+                                            <a href="{{ asset('uploads/gallery/'.$item->image) }}"
                                                 data-gal="prettyPhoto[gallery]" class="zoom"><span
                                                     class="fa
                                                 fa-search"></span></a>
@@ -675,136 +550,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content2">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image2.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image2.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content3">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image3.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image3.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content4">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image4.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image4.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content5">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image5.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image5.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content6">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image6.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image6.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content portfolio-content7">
-                            <div class="front-portfolio">
-                                <div class="portfolio-outer">
-                                    <div class="portfolio-thumb">
-                                        <img src="{{ asset('website/images/image7.jpg') }}" alt=""
-                                            title="">
-                                        <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
-                                            <a href="{{ asset('website/images/image7.jpg') }}"
-                                                data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> 
+                        @endforeach
                         <div class="dt-sc-hr-small"></div>
                         <div class="aligncenter">
-                            <a href="#" class="dt-sc-button medium mustard"> Hit here to view all <span
+                            <a href="{{route('gallery')}}" class="dt-sc-button medium mustard"> Hit here to view all <span
                                     class="fa fa-chevron-circle-right"> </span></a>
                         </div>
                     </div>
@@ -816,112 +566,28 @@
 
                 <div class="container">
                     <h2 class="dt-sc-hr-white-title">Video Gallery</h2>
-                    <div class="column dt-sc-one-fourth first video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall ">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth first
-                        video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
-                    </div>
-                    <div class="column dt-sc-one-fourth video_gall">
-                        <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer;
-                                autoplay; clipboard-write;
-                                encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="title">
-                            <h2>video class</h2>
-                        </div>
+             
+               @foreach ($video as $key => $item)
+               <div class="column dt-sc-one-fourth {{ $key == 0 ? 'first' : '' }} video_gall">
+                <div class="video">
+                    <iframe width="100%" height="150" src="{{$item->link}}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer;
+                        autoplay; clipboard-write;
+                        encrypted-media; gyroscope;
+                        picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="title">
+                    <h2>{{$item->title}}</h2>
+                </div>
+            </div>
+               @endforeach
+              
+                  
+                    <div class="aligncenter">
+                        <a href="{{route('video')}}" class="dt-sc-button medium mustard v_gallery"> Hit here to view all <span
+                                class="fa fa-chevron-circle-right"> </span></a>
                     </div>
 
                 </div>
@@ -932,557 +598,27 @@
 
             <div class="container">
                 <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
+                @foreach ($teacher as $item)
                 <div class="column dt-sc-one-eighth first">
                     <div class="dt-sc-team">
                         <div class="image">
                             <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
                                 title="">
-                            <img src="{{ asset('website/images/team1.jpg') }}" alt="" title="">
+                            <img src="{{ asset($item->image) }}" alt="" title="">
                             <div class="dt-sc-image-overlay">
 
                             </div>
                         </div>
                         <div class="team-details">
-                            <h5> Jack Daniels </h5>
-                            <h6> Senior Supervisor </h6>
-                            <p>Speciality</p>
+                            <h5> {{$item->name}} </h5>
+                            <h6>{{$item->designation}} </h6>
+                            <p>{{$item->specality}}</p>
 
                         </div>
                     </div>
                 </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team2.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Linda Glendell </h5>
-                            <h6> Teaching Professor </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team3.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kate Dennings </h5>
-                            <h6> Children Diet </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kate Dennings </h5>
-                            <h6> Children Diet </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team1.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kate Dennings </h5>
-                            <h6> Children Diet </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team2.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kate Dennings </h5>
-                            <h6> Children Diet </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team3.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kate Dennings </h5>
-                            <h6> Children Diet </h6>
-                            <p>Speciality</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team3.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team1.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team2.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team4.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team3.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team1.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team2.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column dt-sc-one-eighth">
-                    <div class="dt-sc-team">
-                        <div class="image">
-                            <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt=""
-                                title="">
-                            <img src="{{ asset('website/images/team3.jpg') }}" alt="" title="">
-                            <div class="dt-sc-image-overlay">
-
-                            </div>
-                        </div>
-                        <div class="team-details">
-                            <h5> Kristof Slinghot </h5>
-                            <h6> Management </h6>
-                            <p>Speciality</p>
-                        </div>
-                    </div>
-                </div>
+                    
+                @endforeach
             </div>
 
             <div class="dt-sc-hr"></div>
@@ -1491,57 +627,18 @@
                 <div class="container">
                     <h2 class="dt-sc-hr-white-title">Dress Code</h2>
                     <ul class="products">
-                        <li class="dt-sc-one-fourth column first">
-                            <div class="product-thumb">
-                                <a href="#"><img src="{{ asset('website/images/product1.jpg') }}" alt="" title=""></a>
-                                <div class="image-overlay"></div>
-                            </div>
-                            <div class="product-details">
-                                <h5 style="text-align: center;">Winter Dress For Boys</h5>
-                            </div>
-                        </li>
-                        <li class="dt-sc-one-fourth column">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="{{ asset('website/images/product2.jpg') }}" alt=""
-                                        title="">
-                                </a>
-                                <div class="image-overlay">
-
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h5 style="text-align: center;"> Winter Dress For Girls</h5>
-                            </div>
-                        </li>
-                        <li class="dt-sc-one-fourth column">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="{{ asset('website/images/product3.jpg') }}" alt=""
-                                        title="">
-                                </a>
-                                <div class="image-overlay">
-
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h5 style="text-align: center;"> Summer Dress For Boys</h5>
-                            </div>
-                        </li>
-                        <li class="dt-sc-one-fourth column">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="{{ asset('website/images/product4.jpg') }}" alt=""
-                                        title="">
-                                </a>
-                                <div class="image-overlay">
-
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <h5 style="text-align: center;"> Summer Dress For Girls</h5>
-                            </div>
-                        </li>
+                      @foreach ($dress as $item)
+                      <li class="dt-sc-one-fourth column {{ $key == 0 ? 'first' : '' }}">
+                        <div class="product-thumb">
+                            <a href="#"><img src="{{ asset($item->image) }}" alt="" title=""></a>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="product-details">
+                            <h5 style="text-align: center;">{{$item->title}}</h5>
+                        </div>
+                    </li>
+                          
+                      @endforeach
                     </ul>
                 </div>
             </section>

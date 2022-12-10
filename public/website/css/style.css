@@ -25,7 +25,7 @@ a.highlighter:hover, .portfolio-title p a:hover{border-bottom:1px dotted #008c99
 
 .copyright, .widget .mailchimp-form input[type="submit"], .dt-sc-music-audio, .dt-sc-testimonial blockquote, .fullwidth-background.turquoise-plain-bg, h5.dt-sc-toggle-accordion.active:before, .dt-sc-testimonial-carousel-wrapper .carousel-arrows a:hover, .dt-sc-ico-content.type1 .infolayer a, .date, .comments, .entry_format, .dt-sc-ico-content.type3 .icon, .pagination ul li a:hover, .pagination .next-post a:hover, .pagination .prev-post a:hover, form.cart input[type="button"], th, h5.dt-sc-toggle.active:before, .dt-sc-pr-tb-col.selected .dt-sc-tb-header .dt-sc-price, .class_hours h2, .dt-sc-titled-box h4.dt-sc-titled-box-title, .mean-container a.meanmenu-reveal, .mean-nav, header ul.dt-sc-social-icons li a:after, .dt-menu-toggle{background:#008c99;}
 
-a:hover, ul.tweet_list li a:hover, .copyright p a:hover, .breadcrumb-section .breadcrumb a:hover, .sorting-container a, .portfolio-detail h5 a, .fullwidth-background.orange-bg a:hover, .dt-sc-ico-content.type3:hover h4 a{color:#434343;}
+a:hover, ul.tweet_list li a:hover, .copyright p a:hover, .breadcrumb-section .breadcrumb a:hover, .sorting-container a, .portfolio-detail h5 a, .fullwidth-background.orange-bg a:hover, .dt-sc-ico-content.type3:hover h4 a{color:#fff;}
 
 p{margin:0px 0px 10px; padding:0px;}
 
@@ -954,7 +954,7 @@ ul.commentlist li ul.children{width:100%; float:left; clear:both; margin:20px 0p
 
 .fullwidth-background.orange-bg .entry-title h3 a:hover{color:#a2bc56;}
 
-.fullwidth-background.orange-bg a, .fullwidth-background.orange-bg .date p, .fullwidth-background.orange-bg .date span{color:#cf571c;}
+.fullwidth-background.orange-bg a, .fullwidth-background.orange-bg .date p, .fullwidth-background.orange-bg .date span{color:#fff;}
 
 .fullwidth-background.orange-bg .entry-meta .date:after, .fullwidth-background.orange-bg .entry-meta .comments:after, .fullwidth-background.orange-bg .entry-meta .entry_format:after{border-color:#FFFFFF transparent transparent;}
 

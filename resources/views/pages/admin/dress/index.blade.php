@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="row my-2">
                                         <div class="col-md-3">
-                                            <label for="image" class="mt-1">Dress Image <small>(Size: 400px * 150px)</small></label>
+                                            <label for="image" class="mt-1">Dress Image <small>(Size: 510px * 715px)</small></label>
                                         </div>
                                         <div class="col-md-9">
                                             <input class="form-control form-control-sm @error('image') is-invalid @enderror" id="image" type="file" name="image" onchange="readURL(this);">
