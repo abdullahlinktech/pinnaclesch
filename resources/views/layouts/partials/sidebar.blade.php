@@ -333,7 +333,7 @@
                          <a href="{{route('hostel.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Hostel</a>
                      </li>
                      <li class="nav-item">
-                         <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Shop</a>
+                         <a href="{{route('facilities.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Facilities</a>
                      </li>
                      <li class="nav-item">
                          <a href="{{ route('partner.index') }}" class="nav-link"><i class="fas fa-angle-right"></i>Transport</a>

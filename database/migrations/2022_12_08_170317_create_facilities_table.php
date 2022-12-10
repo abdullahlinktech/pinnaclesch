@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWhyspecailsTable extends Migration
+class CreateFacilitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateWhyspecailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('whyspecails', function (Blueprint $table) {
+        Schema::create('facilities', function (Blueprint $table) {
             $table->id();
+            $table->string('header');
             $table->string('title');
             $table->longText('description');
             $table->string('image');
@@ -29,6 +30,6 @@ class CreateWhyspecailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('whyspecails');
+        Schema::dropIfExists('facilities');
     }
 }

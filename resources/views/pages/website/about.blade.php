@@ -16,11 +16,11 @@
         <div class="container">
             <section id="primary" class="content-full-width pt-5">
                 <div class="column dt-sc-one-half first">
-                    <div class="about-slider-wrapper">
-                        <ul class="about-slider">
+                    <div class="about-wrapper">
+                        <ul class="about">
                             <li> <img src="{{ asset('website/images/activity1.jpg') }}" alt="" title=""> </li>
-                            <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li>
-                            <li> <img src="{{ asset('website/images/activity3.jpg') }}" alt="" title=""> </li>
+                            {{-- <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li>
+                            <li> <img src="{{ asset('website/images/activity3.jpg') }}" alt="" title=""> </li> --}}
                         </ul>
                     </div>
                 </div>
