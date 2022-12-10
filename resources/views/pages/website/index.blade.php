@@ -366,8 +366,6 @@
                     </div>
                     <div class="custom-card ">
                         <div class="card-body">
-
-
                             @foreach ($news as $item)
                             <div class="events-list "height="365">
                                <div class="event-thumb">

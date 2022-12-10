@@ -117,6 +117,16 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label for="map">Google Map</label>
+                                    <textarea type="text" id="mapp" name="mapp" class="form-control form-control-sm shadow-none @error('mapp') is-invalid @enderror mb-2" rows="5">{{ $company->mapp }}</textarea>
+                                    @error('mapp')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                                 <div class="col-md-6 mb-2">
                                     <label for="f_title"> Footer Title</label>
                                     <input type="text" name="f_title" value="{{ $company->f_title }}" class="form-control form-control-sm shadow-none @error('f_title') is-invalid @enderror mb-2" id="f_title">
@@ -126,6 +136,13 @@
                                         </span>
                                     @enderror
                                 </div>
+                                 <div class="col-md-6 mb-2">
+                                    <label for="logo"> Logo</label>
+                                    <input class="form-control form-control-sm" id="logo" type="file" name="logo" onchange="readURL(this);">
+                                    <div class="form-group my-2">
+                                        <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 160px;height: 130px;">
+                                    </div>
+                                </div> 
                                 {{-- <div class="col-md-6 mb-2">
                                     <label for="instagram"> Instagram</label>
                                     <input type="url" name="instagram" value="{{ $company->instagram }}" class="form-control form-control-sm shadow-none @error('instagram') is-invalid @enderror mb-2" id="instagram">
@@ -137,16 +154,16 @@
                                 </div> --}}
 
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-4 mb-2">
-                                    <label for="logo">Organization Logo</label>
+                                    <label for="logo"> Logo</label>
                                     <input class="form-control form-control-sm" id="logo" type="file" name="logo" onchange="readURL(this);">
                                     <div class="form-group my-2">
                                         <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 160px;height: 130px;">
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                             <hr class="mt-0">
                             <div class="clearfix mt-1">

@@ -31,6 +31,7 @@ class CreateCompanyProfilesTable extends Migration
             $table->string('bg_image')->nullable();
             $table->string('f_title')->nullable();
             $table->longText('welcome_note')->nullable();
+            $table->longText('mapp')->nullable();
             $table->timestamps();
         });
         // Create a default one

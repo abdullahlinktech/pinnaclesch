@@ -30,4 +30,29 @@ class ShopController extends Controller
         }
         return redirect()->back()->withInput();
     }
+    public function edit($id){
+        $shop = Shop::find($id);
+        return view('pages.admin.shop.edit',compact('shop'));
+    }
+    public function update(Request $request , Shop $shop){
+        $shopImage = '';
+        if ($request->hasFile('image')) {
+            if (!empty($shop->image) && file_exists($shop->image)) {
+                unlink($shop->image);
+            }
+            $shopImage = $this->imageUpload($request, 'image', 'uploads/shop');
+        }else{
+            $shopImage = $shop->image;
+        }
+        $shop->title = $request->title;
+        $shop->price = $request->price;
+        $shop->description = $request->description;
+        $shop->image = $shopImage;
+        $shop->save();
+        if($shop)
+        {
+            return redirect()->back();
+        }
+        return redirect()->back()->withInput()->with('success', 'Update Success');
+    }
 }

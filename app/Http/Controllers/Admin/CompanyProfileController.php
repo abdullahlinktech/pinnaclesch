@@ -71,6 +71,7 @@ class CompanyProfileController extends Controller
             $company->twitter = $request->twitter;
             $company->linkedin = $request->linkedin;
             $company->f_title = $request->f_title;
+            $company->mapp = $request->mapp;
             $company->logo = $companyLogo;
             $company->about_image = $AboutImage;
             $company->bg_image = $BgImage;

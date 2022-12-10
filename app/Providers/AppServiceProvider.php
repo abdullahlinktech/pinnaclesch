@@ -27,6 +27,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->share('content', CompanyProfile::first());
-        view()->share('map', Map::first());
     }
 }

@@ -15,53 +15,14 @@
 
         <div class="container">
             <section id="primary" class="with-sidebar pt-5">
-                <div class="column dt-sc-one-third first">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @php $newkey = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30]; @endphp
+                @foreach ($video as $key => $item)
+                <div class="column dt-sc-one-third {{ in_array($key, $newkey) ? 'first' : '' }}">
+                    <iframe class="entry-thumb" width="100%" height="170" src="{{$item->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                    
+                @endforeach
 
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third first">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third first">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third first">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="column dt-sc-one-third">
-                    <iframe class="entry-thumb" width="100%" height="170" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
             </section>
 
 
@@ -86,19 +47,7 @@
                         </li>
                     </ul>
                 </aside>
-                <aside class="widget widget_text">
-                    <h3 class="widgettitle">Kids Achievements</h3>
-                    <p>In lobortis rhoncus pulvinar. Pellentesque habitant morbi tristique <a href="#"
-                            class="highlighter">senectus</a> et netus et malesuada fames ac turpis egestas. </p>
-                    <p>Sed tempus ligula ac mi iaculis lobortis. Nam consectetur justo non nisi dapibus, ac commodo mi
-                        sagittis. Integer enim odio.</p>
-                </aside>
-
-                <aside class="widget widget_text">
-                    <h3 class="widgettitle">Visual Guidance</h3>
-                    <p>Our methods of teaching and level of quality instructors all add up to a well-rounded experience.</p>
-                    <iframe src="https://player.vimeo.com/video/21195297" width="420" height="200"></iframe>
-                </aside>
+      
             </section>
         </div>
     </div>
