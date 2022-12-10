@@ -356,6 +356,11 @@ color: #000 !important;
     overflow: hidden;
 }
 
+.techImages {
+    width: 100% !important;
+    height: 104px !important;
+}
+
 @media only screen and (max-width:767px){
     #top-container {
         height: 50px;
@@ -372,5 +377,17 @@ color: #000 !important;
     }
     .contact-details{
         display: none;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    .teachersec {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .techImages {
+        width: 100% !important;
+        height: 192px !important;
     }
 }

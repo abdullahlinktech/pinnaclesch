@@ -8,13 +8,8 @@
 </head>
 <body>
 	<form class="box" method="POST" action="{{ route('login') }}">
-    <div class="alert alert-warning">
-      <strong>Warning!</strong> .
-    </div>
 		@csrf
-          <div class="logo">
-            <img src="user.png">
-          </div>
+          <div class="logo"><img src="user.png"></div>
         <h1>Admin Login</h1>
         <input type="text" name="username" placeholder="username" required>
         <input type="password" name="password" placeholder="password" required>

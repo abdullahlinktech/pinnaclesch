@@ -1,7 +1,7 @@
 @extends('layouts.admin-master', ['pageName' => 'register', 'title' => 'Registration'])
 {{-- @section('title', 'Create User') --}}
 @push('admin-css')
-@endpush    
+@endpush
 @section('admin-content')
 <main>
     <div class="container-fluid">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="clearfix border-top">
                             <div class="float-md-right mt-2">
                                 <button type="reset" class="btn btn-dark btn-sm">Reset</button>
@@ -93,14 +93,13 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->username }}</td>
-                            
                                 </tr>
                             @empty
                                 <tr>
                                     <td rowspan="5">Data Not Found</td>
                                 </tr>
                             @endforelse
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -114,7 +113,7 @@
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            
+
             reader.onload = function (e) {
                 $('#previewImage')
                     .attr('src', e.target.result)

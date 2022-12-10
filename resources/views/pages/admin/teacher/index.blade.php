@@ -35,14 +35,13 @@
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="name">Teacher Name <span class="text-danger"> *
-                                                        </span></label>
+                                                    <label for="name">Name <span class="text-danger"> * </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
                                                         class="form-control form-control-sm @error('name') is-invalid @enderror"
                                                         id="name" type="text" name="name"
-                                                        value="{{ old('name') }}" placeholder="teacher Name">
+                                                        value="{{ old('name') }}" placeholder="Teacher Name">
                                                     @error('name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -52,14 +51,13 @@
                                             </div>
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="phone">Teacher Phone <span class="text-danger"> *
-                                                        </span></label>
+                                                    <label for="phone">Phone <span class="text-danger"> * </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
                                                         class="form-control form-control-sm @error('phone') is-invalid @enderror"
                                                         id="phone" type="text" name="phone"
-                                                        value="{{ old('phone') }}" placeholder="teacher phone">
+                                                        value="{{ old('phone') }}" placeholder="Teacher phone">
                                                     @error('phone')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -103,8 +101,8 @@
                                             </div>
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="image" class="">Teacher Image <small>(Size: 400px *
-                                                            150px)</small></label>
+                                                    <label for="image" class="">Teacher Image <small>(Size: 381px *
+                                                            331px)</small></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
@@ -166,27 +164,33 @@
                             </thead>
                             <tbody>
                                 @forelse ($teacher as $key=>$item)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->designation }}</td>
-                                    <td>{{ $item->specality }}</td>
-                                    <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
-                                    <td>
-                                        <a href="{{ route('teacher.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
-                                        <form id="delete-form-{{$item->id}}" action="{{route('teacher.delete',$item)}}" method="POST" style="display: none;">
-                                            @csrf
-                                            @method('DELETE')
-                                        </form>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td rowspan="5">Data Not Found</td>
-                                </tr>
-                            @endforelse
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td>{{ $item->designation }}</td>
+                                        <td>{{ $item->specality }}</td>
+                                        <td><img class="border" style="height: 40px; width:50px;"
+                                                src="{{ asset($item->image) }}" alt=""></td>
+                                        <td>
+                                            <a href="{{ route('teacher.edit', $item) }}" class="btn btn-info btn-sm"><i
+                                                    class="fa fa-edit"></i></a>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="deletePartner({{ $item->id }})"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <form id="delete-form-{{ $item->id }}"
+                                                action="{{ route('teacher.delete', $item) }}" method="POST"
+                                                style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td rowspan="5">Data Not Found</td>
+                                    </tr>
+                                @endforelse
 
                             </tbody>
                         </table>

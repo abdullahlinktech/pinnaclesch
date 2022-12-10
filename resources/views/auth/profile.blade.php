@@ -1,7 +1,7 @@
 @extends('layouts.admin-master', ['pageName' => 'profile', 'title' => 'Profile'])
 {{-- @section('title', 'Update Profile') --}}
 @push('admin-css')
-@endpush    
+@endpush
 @section('admin-content')
 <main>
     <div class="container-fluid">
@@ -54,10 +54,10 @@
                                 {{-- <div class="col-md-6 mb-2">
                                     <label for="image" class="mb-1">Welcome Note</label>
                                     <textarea name="welcome_note" id="editor" cols="30" rows="10"></textarea>
-                                   
+
                                 </div> --}}
                             </div>
-                            
+
                             <div class="clearfix border-top">
                                 <div class="float-md-right mt-2">
                                     <button type="reset" class="btn btn-dark btn-sm">Reset</button>
@@ -86,7 +86,7 @@
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            
+
             reader.onload = function (e) {
                 $('#previewImage')
                     .attr('src', e.target.result)

@@ -4,7 +4,7 @@
             <div class="column dt-sc-one-fourth first">
                 <aside class="widget widget_text">
                     <h3 class="widgettitle red_sketch"> About Pinnacle </h3>
-                    <p class="schshortDes">{{ $content->s_description }}</p>
+                    <div class="schshortDes">{!! $content->s_description !!}</div>
                 </aside>
             </div>
             <div class="column dt-sc-one-fourth">

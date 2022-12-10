@@ -14,6 +14,7 @@ use App\Models\Management;
 use App\Models\BackImage;
 use App\Models\Messenger;
 use App\Models\Partner;
+use App\Models\Teacher;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,8 @@ class HomeController extends Controller
     }
 
     public function teachers() {
-        return view('pages.website.teachers');
+        $teachers = Teacher::latest()->get();
+        return view('pages.website.teachers', compact('teachers'));
     }
 
     public function classes() {

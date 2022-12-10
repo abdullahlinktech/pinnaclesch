@@ -397,45 +397,27 @@
 
                         <div class="dt-sc-one-half column">
                             <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-tachometer">
-                                    </span>
-                                </div>
-                                <h4><a href="#" target="_blank"> Sports
-                                        Camp </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
+                                <div class="icon"><span class="fa fa-tachometer"></span></div>
+                                <h4><a href="#" target="_blank"> Sports Camp </a></h4>
+                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
+                                    tibulum nisl ligula....</p>
                             </div>
                             <div class="dt-sc-hr-very-small"></div>
                             <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-magic"> </span>
-                                </div>
-                                <h4><a href="#" target="_blank">
-                                        Personalizing </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
+                                <div class="icon"><span class="fa fa-magic"> </span></div>
+                                <h4><a href="#" target="_blank">Personalizing </a></h4>
+                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
+                                    tibulum nisl ligula....</p>
                             </div>
                             <div class="dt-sc-hr-very-small"></div>
                             <div class="dt-sc-ico-content type2">
-                                <div class="icon">
-                                    <span class="fa fa-music"> </span>
-                                </div>
-                                <h4><a href="#" target="_blank"> Sing &
-                                        Dance </a></h4>
-                                <p>Nam ullamcorper, diam sit amet
-                                    euismod pelleontesque, eros risus
-                                    rhoncus libero, inst tibulum nisl
-                                    ligula....</p>
+                                <div class="icon"><span class="fa fa-music"></span></div>
+                                <h4><a href="#" target="_blank"> Sing & Dance </a></h4>
+                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
+                                    tibulum nisl ligula....</p>
                             </div>
                         </div>
-
                     </div>
-
 
                     <div class="dt-sc-one-half column">
                         <h2>With Music4Kids, music is childs play!</h2>
@@ -450,15 +432,11 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
-
             </section>
-
             <div class="dt-sc-hr"></div>
 
-            <!-- news events start  -->
-
+            <!-- News Events Start  -->
             <div class="container">
                 <div class="dt-sc-one-half column first">
                     <div class="card-header">
@@ -467,8 +445,8 @@
                     <div class="custom-card">
                         <div class="card-body">
                             <!-- <marquee behavior="scroll" direction="up"
-                                scrollamount="3" onmouseover="this.stop();"
-                                onmouseout="this.start();"> -->
+                                    scrollamount="3" onmouseover="this.stop();"
+                                    onmouseout="this.start();"> -->
                             <div class="events-list">
                                 <div class="event-thumb">
                                     <a href="#" title="">
@@ -520,10 +498,8 @@
                             <a class="read_more" href=""> View All <span
                                     class="fa fa-chevron-circle-right"></span></a>
                         </div>
-
                     </div>
                 </div>
-
 
                 <div class="dt-sc-one-half column">
                     <div class="card-header">
@@ -545,7 +521,6 @@
                                 </div>
                                 <div class="dt-sc-hr-small"></div>
                                 <div class="events-list">
-
                                     <div class="event-details">
                                         <h2><a href="#">Aenean lacinia sed diam eget risus varius ibendum</a></h2>
                                         <div class="event-meta"><span class="fa fa-calendar"></span> 28 Jan 2014</div>
@@ -572,39 +547,25 @@
 
                                     <div class="event-details">
                                         <div class="event-meta">
-                                            <span class="fa fa-calendar">
-                                            </span> 27
-                                            Jan 2014
+                                            <span class="fa fa-calendar"> </span> 27 Jan 2014
                                         </div>
-                                        <h2><a href="#">Maecenas sed diam eget
-                                                risus
-                                                varius varius</a></h2>
+                                        <h2><a href="#">Maecenas sed diam eget risus varius varius</a></h2>
                                         <div class="event-excerpt">
                                             <p>Aenean lacinia sed diam eget risus varius ibendum nulla sed consectetur.
-                                                Maecenas sed diam
-                                                eget
-                                                risus varius bla nditsed diam
-                                                eget
-                                                risus varius. <a href="">read more...</a></p>
-
+                                                Maecenas sed diam eget risus varius bla nditsed diam eget risus varius. <a
+                                                    href="">read more...</a></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="dt-sc-hr-small"></div>
                                 <div class="events-list">
-
                                     <div class="event-details">
                                         <div class="event-meta">
-                                            <span class="fa fa-calendar">
-                                            </span> 27
-                                            Jan 2014
+                                            <span class="fa fa-calendar"></span> 27 Jan 2014
                                         </div>
-                                        <h2><a href="#">Maecenas sed diam eget
-                                                risus
-                                                varius varius</a></h2>
+                                        <h2><a href="#">Maecenas sed diam eget risus varius varius</a></h2>
                                         <div class="event-excerpt">
-                                            <p>Aenean lacinia sed diam eget
-                                                risus
+                                            <p>Aenean lacinia sed diam eget risus
                                                 varius ibendum nulla sed
                                                 consectetur. Maecenas sed diam
                                                 eget
@@ -746,15 +707,12 @@
                                         <img src="{{ asset('website/images/image5.jpg') }}" alt=""
                                             title="">
                                         <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">Gifts
-                                                    at Large</a></h5>
+                                            <h5><a href="portfolio-detail.html">Gifts at Large</a></h5>
                                             <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
+                                                    class="fa fa-link"></span></a>
                                             <a href="{{ asset('website/images/image5.jpg') }}"
                                                 data-gal="prettyPhoto[gallery]" class="zoom"><span
-                                                    class="fa
-                                                fa-search"></span></a>
+                                                    class="fa fa-search"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -818,7 +776,10 @@
                     <h2 class="dt-sc-hr-white-title">Video Gallery</h2>
                     <div class="column dt-sc-one-fourth first video_gall">
                         <div class="video">
-                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/qM9cqXCJ9N4"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                         </div>
                         <div class="title">
                             <h2>video class</h2>
@@ -1503,8 +1464,7 @@
                         <li class="dt-sc-one-fourth column">
                             <div class="product-thumb">
                                 <a href="#">
-                                    <img src="{{ asset('website/images/product2.jpg') }}" alt=""
-                                        title="">
+                                    <img src="{{ asset('website/images/product2.jpg') }}" alt="" title="">
                                 </a>
                                 <div class="image-overlay">
 
