@@ -1,14 +1,14 @@
-@extends('layouts.website', ['pageName' => 'transportbus'])
-@section('title', 'Transport Bus')
+@extends('layouts.website', ['pageName' => 'sciencelab'])
+@section('title', 'Science Lab')
 @section('web-content')
     <div id="main">
         <div class="breadcrumb-section">
             <div class="container">
-                <h1>Haice</h1>
+                <h1>Science Lab</h1>
                 <div class="breadcrumb">
                     <a href="{{ route('home') }}">Home</a>
                     <span class="fa fa-angle-double-right"></span>
-                    <span class="current">Bus</span>
+                    <span class="current">Science Lab</span>
                 </div>
             </div>
         </div>
@@ -16,17 +16,18 @@
         <div class="container">
             <section id="primary" class="content-full-width pt-5 pb-5">
                 <div class="column dt-sc-one-half first">
-                    <h2>Haice for Students</h2>
-                    <p class="justify">{{ $content->s_description }}</p>
-                </div>
-                <div class="column dt-sc-one-half">
                     <div class="about-wrapper">
                         <ul class="about">
-                            {{-- <li> <img src="{{ asset('website/images/activity1.jpg') }}" alt="" title=""> </li>
-                            <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li> --}}
-                            <li> <img src="{{ asset('website/images/activity3.jpg') }}" alt="" title=""> </li>
+                            {{-- <li> <img src="{{ asset('website/images/activity1.jpg') }}" alt="" title=""> </li> --}}
+                            <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li>
+                            {{-- <li> <img src="{{ asset('website/images/activity3.jpg') }}" alt="" title=""> </li> --}}
                         </ul>
                     </div>
+                </div>
+
+                <div class="column dt-sc-one-half">
+                    <h2>Science Lab for Students</h2>
+                    <p class="justify">{{ $content->s_description }}</p>
                 </div>
             </section>
         </div>

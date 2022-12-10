@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\CompanyProfileController;
 use App\Http\Controllers\Admin\DressController;
+use App\Http\Controllers\Admin\FacilitiesController;
 use App\Http\Controllers\Admin\HostelController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -204,4 +205,10 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-hostel-edit/{id}',[HostelController::class,'edit'])->name('hostel.edit');
     Route::put('admin-hostel-update/{hostel}',[HostelController::class,'update'])->name('hostel.update');
     Route::delete('admin-hostel-delete/{hostel}',[HostelController::class,'delete'])->name('hostel.delete');
+    // facilities
+    Route::get('admin-facilities',[FacilitiesController::class,'index'])->name('facilities.index');
+    Route::post('admin-facilities-store',[FacilitiesController::class,'store'])->name('facilities.store');
+    Route::get('admin-facilities-edit{id}',[FacilitiesController::class,'edit'])->name('facilities.edit');
+    Route::put('admin-facilities-update{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
+    Route::delete('admin-facilities-delete{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
 });
