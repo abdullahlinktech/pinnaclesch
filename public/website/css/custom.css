@@ -366,6 +366,11 @@ color: #000 !important;
     width: 115px;
 }
 
+.spcImg{
+    height: 115px;
+    width: 115px;
+}
+
 .actDescript{
     height: 65px;
     overflow: hidden;
