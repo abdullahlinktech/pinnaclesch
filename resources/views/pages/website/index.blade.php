@@ -308,10 +308,16 @@
                             <div class="dt-sc-one-half column first">
                                 <div class="dt-sc-ico-content type2">
                                     <div class="icon">
-                                        <span class="fa fa-glass"> </span>
+                                        <span class="icon-outer">
+                                            <img src="{{ asset($spcl->image) }}" class="spcImg" alt="" title="">
+                                        </span>
                                     </div>
+
+                                    {{--  <div class="icon">
+                                        <span class="fa fa-glass"> </span>
+                                    </div>  --}}
                                     <h4><a href="#" target="_blank"> {{ $spcl->title }} </a></h4>
-                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                    <p>{!! $spcl->description !!}</p>
                                 </div>
                                 <div class="dt-sc-hr-very-small"></div>
                             </div>
