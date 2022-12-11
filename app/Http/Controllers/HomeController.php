@@ -96,9 +96,16 @@ class HomeController extends Controller
     }
 
     public function facilities() {
-        $facilitites = Facilities::latest()->get();
-
-        return view('pages.website.facilities', compact('facilitites'));
+        $boyshostel = Facilities::where('facilitie_type', 'boys')->latest()->get();
+        $girlshostel = Facilities::where('facilitie_type', 'girls')->latest()->get();
+        $haices = Facilities::where('facilitie_type', 'haice')->latest()->get();
+        $buses = Facilities::where('facilitie_type', 'bus')->latest()->get();
+        $computerlab = Facilities::where('facilitie_type', 'computer')->latest()->get();
+        $sciencelab = Facilities::where('facilitie_type', 'science')->latest()->get();
+        $chemistrylab = Facilities::where('facilitie_type', 'chemistry')->latest()->get();
+        $biologylab = Facilities::where('facilitie_type', 'biology')->latest()->get();
+        $healthservices = Facilities::where('facilitie_type', 'health')->latest()->get();
+        return view('pages.website.facilities', compact('boyshostel', 'girlshostel', 'haices', 'buses', 'computerlab', 'sciencelab', 'chemistrylab', 'biologylab', 'healthservices'));
     }
 
     public function notices() {
