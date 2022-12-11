@@ -3,17 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
     public function index(){
+        $category = Category::get();
         $shop = Shop::latest()->get();
-        return view('pages.admin.shop.index',compact('shop'));
+        return view('pages.admin.product.index',compact('shop','category'));
     }
     
     public function store(Request $request ){
+    //    return $request->all();
         $request->validate([
             'title' => 'required',
             'price' => 'required',
@@ -22,18 +25,20 @@ class ShopController extends Controller
         $shop = new Shop();
         $shop->title = $request->title;
         $shop->price = $request->price;
+        $shop->category_id = $request->category_id;
         $shop->s_description = $request->s_description;
         $shop->description = $request->description;
         $shop->image = $this->imageUpload($request, 'image', 'uploads/shop') ?? '';
         $shop->save();
         if($shop) {
-            return redirect()->route('shop.index')->with('success', 'Insert Successfull');
+            return redirect()->route('product.index')->with('success', 'Insert Successfull');
         }
         return redirect()->back()->withInput();
     }
     public function edit($id){
+        $category = Category::get();
         $shop = Shop::find($id);
-        return view('pages.admin.shop.edit',compact('shop'));
+        return view('pages.admin.product.edit',compact('shop','category'));
     }
     public function update(Request $request , Shop $shop){
         $shopImage = '';
@@ -47,6 +52,7 @@ class ShopController extends Controller
         }
         $shop->title = $request->title;
         $shop->price = $request->price;
+        $shop->category_id = $request->category_id;
         $shop->s_description = $request->s_description;
         $shop->description = $request->description;
         $shop->image = $shopImage;

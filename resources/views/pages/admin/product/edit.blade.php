@@ -1,10 +1,10 @@
-@extends('layouts.admin-master', ['pageName'=> 'shop', 'title' => 'Edit shop'])
+@extends('layouts.admin-master', ['pageName'=> 'product', 'title' => 'Edit Product'])
 @section('admin-content')
    <!-- Breadcubs Area Start Here -->
 
    <div class="breadcrumbs-area d-flex justify-content-between">
     <div>
-        <h3>Update Shop </h3>
+        <h3>Update Product </h3>
     </div>
     <div class="">
         <ul>
@@ -25,16 +25,30 @@
                     <div class="card-body">
                         <div class="form">
                             <div class="d-flex justify-content-between heading card-header">
-                                <h4 class=""><i class="fa fa-edit"></i> Edit Shop</h4>
+                                <h4 class=""><i class="fa fa-edit"></i> Edit Product</h4>
                                 <div>
                                     <a href="{{ route('dashboard') }}" class="btn btn-primary btn-sm overflow-hidden">Dashboard</a>
                                 </div>
                             </div>
-                            <form action="{{ route('shop.update', $shop) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('product.update', $shop) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
+                                        <div class="row my-2">
+                                            <div class="col-md-3">
+                                                <label for="title"> Category Name <span class="text-danger"> *
+                                                    </span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                              <select name="category_id" class="form-control form-control-sm" id="category_id">
+                                                <option value="" label="-- Select Category--"></option>
+                                                @foreach ($category as $item)
+                                                <option value="{{$item->id}}" {{$item->id == $shop->category_id ? 'selected' : ''}}>{{$item->name}}</option>
+                                                @endforeach
+                                              </select>
+                                            </div>
+                                        </div>
                                         <div class="row my-2">
                                             <div class="col-md-3">
                                                 <label for="title"> Title <span class="text-danger"> * </span></label>
@@ -105,7 +119,7 @@
                                 <hr class="my-2">
                                 <div class="clearfix mt-1">
                                     <div class="float-md-left">
-                                        <a href="{{route('shop.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
+                                        <a href="{{route('product.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
                                     
                                     </div>

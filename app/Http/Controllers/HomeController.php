@@ -6,9 +6,6 @@ use App\Models\Activity;
 use App\Models\Allclass;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Gallery;
 use App\Models\Video;
@@ -122,30 +119,30 @@ class HomeController extends Controller
     }
 
 
-    public function subcategory($id) {
-        $category = Category::find($id);
-        if (isset($category)) {
-            $subcategory = Subcategory::where('category_id', $id)->get();
-            $backimage = BackImage::first();
-            return view('pages.website.subcategory', compact('category', 'subcategory', 'backimage'));
-        } else {
-            $backimage = BackImage::first();
-            return view('pages.website.not-found', compact('backimage'));
-        }
-    }
+    // public function subcategory($id) {
+    //     $category = Category::find($id);
+    //     if (isset($category)) {
+    //         $subcategory = Subcategory::where('category_id', $id)->get();
+    //         $backimage = BackImage::first();
+    //         return view('pages.website.subcategory', compact('category', 'subcategory', 'backimage'));
+    //     } else {
+    //         $backimage = BackImage::first();
+    //         return view('pages.website.not-found', compact('backimage'));
+    //     }
+    // }
     // subcategory id pass bellow
-    public function productSubcate($id) {
-        $messenger = Messenger::first();
-        $subcategory = Subcategory::find($id); // subcategory id retrieve which the product contain
-        if (isset($subcategory)) {
-            $category = Category::where('id', $subcategory->category_id)->first();
-            $product = Product::where('subcategory_id', $id)->get();
-            $backimage = BackImage::first();
-            return view('pages.website.product-subcat', compact('subcategory','product', 'category', 'backimage', 'messenger'));
-        } else {
-            $backimage = BackImage::first();
-            return view('pages.website.not-found', compact('backimage'));
-        }
-    }
+    // public function productSubcate($id) {
+    //     $messenger = Messenger::first();
+    //     $subcategory = Subcategory::find($id); // subcategory id retrieve which the product contain
+    //     if (isset($subcategory)) {
+    //         $category = Category::where('id', $subcategory->category_id)->first();
+    //         $product = Product::where('subcategory_id', $id)->get();
+    //         $backimage = BackImage::first();
+    //         return view('pages.website.product-subcat', compact('subcategory','product', 'category', 'backimage', 'messenger'));
+    //     } else {
+    //         $backimage = BackImage::first();
+    //         return view('pages.website.not-found', compact('backimage'));
+    //     }
+    // }
 
 }
