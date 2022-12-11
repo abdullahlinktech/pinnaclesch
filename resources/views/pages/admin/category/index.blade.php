@@ -1,4 +1,4 @@
-@extends('layouts.admin-master', ['pageName' => 'teacher', 'title' => 'Add teacher'])
+@extends('layouts.admin-master', ['pageName' => 'category', 'title' => 'Add Category'])
 @push('admin-css')
 @endpush
 @section('admin-content')
@@ -6,7 +6,7 @@
 
     <div class="breadcrumbs-area d-flex justify-content-between">
         <div>
-            <h3>Admin Teacher</h3>
+            <h3>Admin Category</h3>
         </div>
         <div class="">
             <ul>
@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="form">
                                 <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add new Teacher</h4>
+                                    <h4 class=""><i class="fas fa-plus"></i> Add new Category</h4>
                                 </div>
                                 <form action="{{ route('teacher.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -49,79 +49,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="phone">Phone <span class="text-danger"> * </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('phone') is-invalid @enderror"
-                                                        id="phone" type="text" name="phone"
-                                                        value="{{ old('phone') }}" placeholder="Teacher phone">
-                                                    @error('phone')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="specality"> Spacaility <span class="text-danger"> *
-                                                        </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('specality') is-invalid @enderror"
-                                                        id="specality" type="text" name="specality"
-                                                        value="{{ old('specality') }}" placeholder="Teacher specality">
-                                                    @error('specality')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="designation">Designation <span class="text-danger"> *
-                                                        </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('designation') is-invalid @enderror"
-                                                        id="designation" type="text" name="designation"
-                                                        value="{{ old('designation') }}" placeholder="Teacher designation">
-                                                    @error('designation')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="image" class="">Teacher Image <small>(Size: 381px *
-                                                            331px)</small></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('image') is-invalid @enderror"
-                                                        id="image" type="file" name="image"
-                                                        onchange="readURL(this);">
-                                                    @error('image')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="col-md-4 d-md-flex justify-content-center align-items-center">
-                                            <img class="form-controlo img-thumbnail" src="#" id="previewImage"
-                                                style="width: 150px;height: 120px; background: #3f4a49;">
+                                 
                                         </div>
                                     </div>
                                     <hr class="my-2">

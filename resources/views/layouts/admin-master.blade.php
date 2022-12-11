@@ -143,10 +143,10 @@
                 </div>
             </div>
                 <!-- Footer Area Start Here -->
-                <footer class="footer-wrap-layout1">
+                {{-- <footer class="footer-wrap-layout1">
                     <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
                             href="#">Link-Up Technology LTD.</a></div>
-                </footer>
+                </footer> --}}
                 <!-- Footer Area End Here -->
             </div>
         </div>

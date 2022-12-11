@@ -13,6 +13,7 @@ class FacilitiesController extends Controller
         return view('pages.admin.facilities.index',compact('facilities'));
     }
     public function store(Request $request){
+        // return $request->all();
         $request->validate([
             'title' => 'required',
             'header' => 'required',
@@ -22,6 +23,7 @@ class FacilitiesController extends Controller
         $facilities->header = $request->header;
         $facilities->title = $request->title;
         $facilities->description = $request->description;
+        $facilities->facilitie_type = $request->facilitie_type;
         $facilities->image = $this->imageUpload($request, 'image', 'uploads/facilities') ?? '';
         $facilities->save();
         if($facilities) {
@@ -46,6 +48,7 @@ class FacilitiesController extends Controller
         $facilities->header = $request->header;
         $facilities->title = $request->title;
         $facilities->description = $request->description;
+        $facilities->facilitie_type = $request->facilitie_type;
         $facilities->image = $facilitiesImage;
         $facilities->save();
         if($facilities)

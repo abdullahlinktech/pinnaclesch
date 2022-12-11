@@ -19,7 +19,7 @@
 
     </div>
     <!-- Breadcubs Area End Here -->
-    <main class="vh-100">
+    <main class="">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-12">

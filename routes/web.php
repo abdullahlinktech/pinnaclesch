@@ -65,9 +65,9 @@ Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->
 
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
-// Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
-// Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
-// Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
+Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
+Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
 
 
 // login
@@ -92,29 +92,6 @@ Route::group(['middleware' => ['auth']] , function(){
 
     Route::get('/settings', [RegistrationController::class, 'settings'])->name('settings');
     Route::put('/registration', [RegistrationController::class, 'profileUpdate'])->name('register.update');
-
-    // Category Routes
-    // Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
-    // Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
-    // Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-    // Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
-    // Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
-
-    // Subcategory Routes
-    // Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('admin.subcategories');
-    // Route::post('/subcategory/store', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
-    // Route::get('/subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->name('admin.subcategory.edit');
-    // Route::post('/subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
-    // Route::get('/subcategory/delete/{id}', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.delete');
-
-    // Product Routes
-    // Route::get('/products', [ProductController::class, 'index'])->name('admin.products');
-    // Route::get('/product-list', [ProductController::class, 'productList'])->name('admin.product-list');
-    // Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
-    // Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
-    // Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
-    // Route::get('/product/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
-    // Route::get('/product/subcategory/get/{subcat_id}', [ProductController::class, 'getSubCate'])->name('admin.product.get.subcat');
 
     // Service Route
     Route::get('/services', [ServiceController::class, 'service'])->name('service');
@@ -221,6 +198,8 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-shop-edit/{id}',[ShopController::class,'edit'])->name('shop.edit');
     Route::put('admin-shop-update/{shop}',[ShopController::class,'update'])->name('shop.update');
     Route::delete('admin-shop-delete/{shop}',[ShopController::class,'delete'])->name('shop.delete');
+    //category
+    Route::get('admin-category',[CategoryController::class,'index'])->name('category.index');
     //class 
     Route::get('admin-class',[ClassController::class,'index'])->name('class.index');
     Route::post('admin-class-store',[ClassController::class,'store'])->name('class.store');

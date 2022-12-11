@@ -19,7 +19,7 @@
 
     </div>
     <!-- Breadcubs Area End Here -->
-    <main class="vh-100">
+    <main class="">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -35,7 +35,7 @@
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="radio1">Hostel Type <span class="text-danger"> *
+                                                    <label for="radio1"> Hostel Type <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
                                                 <div class="col-md-9">

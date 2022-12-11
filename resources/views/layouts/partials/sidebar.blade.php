@@ -36,19 +36,18 @@
                      </li>
                  </ul>
              </li> --}}
-             {{-- <li class="nav-item sidebar-nav-item">
-                 <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
+
+             <li class="nav-item sidebar-nav-item">
+                 <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Product Info</span></a>
                  <ul class="nav sub-group-menu">
                      <li class="nav-item">
-                         <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                             Book</a>
+                         <a href="{{route('category.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Category Entry</a>
                      </li>
                      <li class="nav-item">
-                         <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                             Book</a>
+                         <a href="{{route('shop.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add peoduct</a>
                      </li>
                  </ul>
-             </li> --}}
+             </li>
      
              <li class="nav-item">
                  <a href="{{route('class.index')}}" class="nav-link"><i

@@ -19,7 +19,7 @@
 
     </div>
     <!-- Breadcubs Area End Here -->
-    <main class="vh-100">
+    <main class="">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -40,10 +40,10 @@
                                                 </div>
                                                 <div class="col-md-9">
 
-                                                    <select class=" form-control form-control-sm" name="" id="" >
+                                                    <select class=" form-control form-control-sm" name="facilitie_type" id="" for="facilite" >
                                                         <option value="" label="-- Select facilities type--"></option>
-                                                        <option value="boys">Boys Hostel</option>
-                                                        <option value="girls">Girls Hostel</option>
+                                                        <option id="facilite" name="facilitie_type" value="boys">Boys Hostel</option>
+                                                        <option value="girls">Girls Hostel</option> 
                                                         <option value="bus"> Bus</option>
                                                         <option value="haice">Haice</option>
                                                         <option value="computer">Computer lab</option>
@@ -160,7 +160,7 @@
                                     <th>SL</th>
                                     <th>Header</th>
                                     <th>Title</th>
-                                    <th>Description</th>
+                                    <th>Facilite Type</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -171,7 +171,8 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->header }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{!! $item->description !!}</td>
+                                    <td>{{ $item->facilitie_type }}</td>
+                                    {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
                                         <a href="{{ route('facilities.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>

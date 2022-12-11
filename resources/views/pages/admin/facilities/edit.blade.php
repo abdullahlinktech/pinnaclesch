@@ -37,6 +37,27 @@
                                     <div class="col-md-6 mb-2">
                                         <div class="row my-2">
                                             <div class="col-md-3">
+                                                <label for="header"> Facilities Type <span class="text-danger"> *
+                                                    </span></label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <select class=" form-control form-control-sm" name="facilitie_type" id="" >
+                                                    <option value="" label="-- Select facilities type--"></option>
+                                                    <option {{ $facilities->facilitie_type == 'boys' ? 'selected' : ''}} value="boys">Boys Hostel</option>
+                                                    <option {{ $facilities->facilitie_type == 'girls' ? 'selected' : ''}} value="girls">Girls Hostel</option> 
+                                                    <option {{ $facilities->facilitie_type == 'bus' ? 'selected' : ''}} value="bus"> Bus</option>
+                                                    <option {{ $facilities->facilitie_type == 'haice' ? 'selected' : ''}} value="haice">Haice</option>
+                                                    <option {{ $facilities->facilitie_type == 'computer' ? 'selected' : ''}} value="computer">Computer lab</option>
+                                                    <option {{ $facilities->facilitie_type == 'science' ? 'selected' : ''}} value="science">Science Lab</option>
+                                                    <option {{ $facilities->facilitie_type == 'chemistry' ? 'selected' : ''}} value="chemistry">Chemistry Lab</option>
+                                                    <option {{ $facilities->facilitie_type == 'biology' ? 'selected' : ''}} value="biology">Biology Lab</option>
+                                                    <option {{ $facilities->facilitie_type == 'health' ? 'selected' : ''}} value="health">Health And Service</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-3">
                                                 <label for="header"> Header <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
