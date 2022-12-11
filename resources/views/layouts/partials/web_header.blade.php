@@ -71,7 +71,7 @@
                                     <li><a href="#">Copy</a></li>
                                     <li><a href="#">Stationery</a></li>
                                     <li><a href="#">School Dress</a></li>
-                                    <li><a href="#">Sprot Dress</a></li>
+                                    <li><a href="#">Sports Dress</a></li>
                                     <li><a href="#">Bags</a></li>
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
