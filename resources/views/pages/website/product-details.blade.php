@@ -44,29 +44,17 @@
                 <aside class="widget widget_categories">
                     <h3 class="widgettitle">Categories</h3>
                     <ul>
-                        <li>
-                            <a href="#">Play School<span>(16)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Academic Performance<span>(3)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Co-curricular<span>(26)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Visual Education<span>(18)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Inter Competition<span>(4)</span></a>
-                        </li>
+                        <li><a href="#">Book<span>(16)</span></a></li>
+                        <li><a href="#">Copy<span>(3)</span></a></li>
+                        <li><a href="#">Stationery<span>(26)</span></a></li>
+                        <li><a href="#">School Dress<span>(18)</span></a></li>
+                        <li><a href="#">Sports Dress<span>(4)</span></a></li>
+                        <li><a href="#">Bags<span>(4)</span></a></li>
                     </ul>
                 </aside>
                 <aside class="widget widget_text">
                     <h3 class="widgettitle">Kids Achievements</h3>
-                    <p>In lobortis rhoncus pulvinar. Pellentesque habitant morbi tristique <a href="#"
-                            class="highlighter">senectus</a> et netus et malesuada fames ac turpis egestas. </p>
-                    <p>Sed tempus ligula ac mi iaculis lobortis. Nam consectetur justo non nisi dapibus, ac commodo mi
-                        sagittis. Integer enim odio.</p>
+                    <p class="justify">Our kids are involved in many different things. They play multiple sports, are involved in other extracurricular activities, and have a wide variety of interests. Sometimes they achieve a lot, others they don’t achieve as much.</p>
                 </aside>
             </section>
         </div>
