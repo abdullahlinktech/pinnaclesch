@@ -19,6 +19,7 @@ class CreateNoticesTable extends Migration
             $table->date('date');
             $table->longText('description');
             $table->string('link');
+            $table->string('notice_type');
             $table->timestamps();
         });
     }

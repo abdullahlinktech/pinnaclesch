@@ -27,6 +27,8 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // $category = Category::orderBy('rank', 'asc')->get();
+        // $slider = Slider::latest()->get();
         $video = Video::latest()->get();
         $gallery = Gallery::latest()->take(7)->get();
         $management = Management::take(1)->get();
@@ -36,8 +38,7 @@ class HomeController extends Controller
         $activities = Activity::take(8)->get();
         $dress = Dress::latest()->take(4)->get();
         $specials = Whyspecail::latest()->take(8)->get();
-        $categories = Category::get();
-        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management', 'categories'));
+        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management'));
     }
 
     public function about() {

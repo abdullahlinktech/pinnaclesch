@@ -37,6 +37,23 @@
                                     <div class="col-md-6 mb-2">
                                         <div class="row my-2">
                                             <div class="col-md-3">
+                                                <label for="title"> Notice Type <span class="text-danger"> *
+                                                    </span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <select class=" form-control form-control-sm" name="notice_type" id=""  >
+                                                    <option value="" label="-- Select notice type --"></option>
+                                                    <option {{ $notice->notice_type == 'tn' ? 'selected' : ''}} value="tn">Teachers Notice</option>
+                                                    <option {{ $notice->notice_type == 'sn' ? 'selected' : ''}} value="sn">Students Notice</option>
+                                                    <option {{ $notice->notice_type == 'gn' ? 'selected' : ''}} value="gn">Gaurdian Notice</option>
+                                                    <option {{ $notice->notice_type == 'jn' ? 'selected' : ''}} value="jn">Job Notice</option>
+                                            
+                                                 
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-3">
                                                 <label for="title"> Title <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
