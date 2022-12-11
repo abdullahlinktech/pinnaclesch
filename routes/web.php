@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ManagementController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\Admin\AuthenticationController;
+use App\Http\Controllers\Admin\ClassController;
 use App\Http\Controllers\Admin\CompanyProfileController;
 use App\Http\Controllers\Admin\DressController;
 use App\Http\Controllers\Admin\FacilitiesController;
@@ -60,9 +61,9 @@ Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->
 
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
-Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
-Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
-Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+// Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
+// Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
+// Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
 
 
 // login
@@ -89,27 +90,27 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::put('/registration', [RegistrationController::class, 'profileUpdate'])->name('register.update');
 
     // Category Routes
-    Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
-    Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
-    Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-    Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
-    Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
+    // Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
+    // Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
+    // Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
+    // Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
+    // Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
 
     // Subcategory Routes
-    Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('admin.subcategories');
-    Route::post('/subcategory/store', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
-    Route::get('/subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->name('admin.subcategory.edit');
-    Route::post('/subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
-    Route::get('/subcategory/delete/{id}', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.delete');
+    // Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('admin.subcategories');
+    // Route::post('/subcategory/store', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
+    // Route::get('/subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->name('admin.subcategory.edit');
+    // Route::post('/subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('admin.subcategory.update');
+    // Route::get('/subcategory/delete/{id}', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.delete');
 
     // Product Routes
-    Route::get('/products', [ProductController::class, 'index'])->name('admin.products');
-    Route::get('/product-list', [ProductController::class, 'productList'])->name('admin.product-list');
-    Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
-    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
-    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
-    Route::get('/product/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
-    Route::get('/product/subcategory/get/{subcat_id}', [ProductController::class, 'getSubCate'])->name('admin.product.get.subcat');
+    // Route::get('/products', [ProductController::class, 'index'])->name('admin.products');
+    // Route::get('/product-list', [ProductController::class, 'productList'])->name('admin.product-list');
+    // Route::post('/product/store', [ProductController::class, 'store'])->name('admin.product.store');
+    // Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
+    // Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
+    // Route::get('/product/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
+    // Route::get('/product/subcategory/get/{subcat_id}', [ProductController::class, 'getSubCate'])->name('admin.product.get.subcat');
 
     // Service Route
     Route::get('/services', [ServiceController::class, 'service'])->name('service');
@@ -161,6 +162,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::put('backimage/{backimage}', [BackImageController::class, 'update'])->name('backimage.update');
 
     Route::get('/messages', [MessageController::class, 'message'])->name('admin.message');
+    Route::post('/messages-store', [MessageController::class, 'store'])->name('store.message');
     Route::get('messages/delete/{id}', [MessageController::class, 'messageDelete'])->name('admin.message.delete');
 
     Route::get('/queries', [QueryController::class, 'query'])->name('admin.query');
@@ -186,11 +188,11 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::put('admin-dress-update/{dress}',[DressController::class,'update'])->name('dress.update');
     Route::delete('admin-dress-delete/{dress}',[DressController::class,'delete'])->name('dress.delete');
     //why we are specail
-    Route::get('admin-sppecail',[WhyspecailController::class,'index'])->name('specail.index');
-    Route::post('admin-sppecail-store',[WhyspecailController::class,'store'])->name('specail.store');
-    Route::get('admin-sppecail-edit/{id}',[WhyspecailController::class,'edit'])->name('specail.edit');
-    Route::put('admin-sppecail-update/{specail}',[WhyspecailController::class,'update'])->name('specail.update');
-    Route::delete('admin-sppecail-delete/{specail}',[WhyspecailController::class,'delete'])->name('specail.delete');
+    Route::get('admin-special',[WhyspecailController::class,'index'])->name('specail.index');
+    Route::post('admin-special-store',[WhyspecailController::class,'store'])->name('specail.store');
+    Route::get('admin-special-edit/{id}',[WhyspecailController::class,'edit'])->name('specail.edit');
+    Route::put('admin-special-update/{specail}',[WhyspecailController::class,'update'])->name('specail.update');
+    Route::delete('admin-special-delete/{specail}',[WhyspecailController::class,'delete'])->name('specail.delete');
     //notice
     Route::get('admin-notice',[NoticeController::class,'index'])->name('notice.index');
     Route::post('admin-notice-store',[NoticeController::class,'store'])->name('notice.store');
@@ -215,4 +217,10 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-shop-edit/{id}',[ShopController::class,'edit'])->name('shop.edit');
     Route::put('admin-shop-update/{shop}',[ShopController::class,'update'])->name('shop.update');
     Route::delete('admin-shop-delete/{shop}',[ShopController::class,'delete'])->name('shop.delete');
+    //class 
+    Route::get('admin-class',[ClassController::class,'index'])->name('class.index');
+    Route::post('admin-class-store',[ClassController::class,'store'])->name('class.store');
+    Route::get('admin-class-edit/{id}',[ClassController::class,'edit'])->name('class.edit');
+    Route::put('admin-class-update/{class}',[ClassController::class,'update'])->name('class.update');
+    Route::delete('admin-class-delete/{class}',[ClassController::class,'delete'])->name('class.delete');
 });

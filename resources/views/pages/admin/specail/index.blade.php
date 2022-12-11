@@ -1,4 +1,4 @@
-@extends('layouts.admin-master', ['pageName' => 'specail', 'title' => 'Add specail'])
+@extends('layouts.admin-master', ['pageName' => 'special', 'title' => 'Add Special'])
 @push('admin-css')
 @endpush
 @section('admin-content')
@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="form">
                                 <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Why We Are Specail</h4>
+                                    <h4 class=""><i class="fas fa-plus"></i> Add Why We Are Special</h4>
                                 </div>
                                 <form action="{{ route('specail.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -112,7 +112,7 @@
             <div class="card my-3">
                 <div class="card-header">
                     <i class="fas fa-list"></i>
-                    All Why We Are Specail
+                    All Why We Are Special
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

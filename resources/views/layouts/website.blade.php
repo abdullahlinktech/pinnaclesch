@@ -64,9 +64,28 @@
     <script type="text/javascript" src="{{ asset('website/js/layerslider.kreaturamedia.jquery.js') }}"></script>
     <script type='text/javascript' src="{{ asset('website/js/greensock.js') }}"></script>
     <script type='text/javascript' src="{{ asset('website/js/layerslider.transitions.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script type="text/javascript">var lsjQuery = jQuery;</script>
     <script  type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_1','jquery'); } else { lsjQuery("#layerslider_4").layerSlider({responsiveUnder: 1170, layersContainer: 1170, skinsPath: 'js/layerslider/skins/'}) } }); </script>
+    <script>
+        @if(Session::has('success'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+        toastr.success("{{ session('success') }}");
+        @endif
 
+        @if(Session::has('error'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.error("{{ session('error') }}");
+        @endif
+    </script>
     @stack('web-js')
 </body>
 </html>

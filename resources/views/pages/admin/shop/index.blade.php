@@ -70,6 +70,19 @@
                                     
                                             <div class="row my-2">
                                                 <div class="col-md-3">
+                                                    <label for="name">Short Description </label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <textarea name="s_description" id="editor1" cols="30" rows="10"></textarea>
+                                                    @error('s_description')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-md-3">
                                                     <label for="name">Description <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
@@ -140,7 +153,8 @@
                                     <th>SL</th>
                                     <th>Title</th>
                                     <th>Price</th>
-                                    <th>Description</th>
+                                    {{-- <th>Short Description</th> --}}
+                                    {{-- <th>Description</th> --}}
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -151,7 +165,8 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->price }}</td>
-                                    <td>{!! $item->description !!}</td>
+                                    {{-- <td>{!!$item->s_description!!}</td> --}}
+                                    {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
                                         <a href="{{ route('shop.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
@@ -181,6 +196,13 @@
 <script>
     ClassicEditor
         .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor1' ) )
         .catch( error => {
             console.error( error );
         } );

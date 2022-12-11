@@ -304,7 +304,11 @@ jQuery(document).ready(function($){
 					 confirm('The page save failed.');
 				   },
 				  success: function (response) {
-					$('#ajax_contact_msg').html(response);
+					if(response) {
+						alert('successfully Your message is sent!');
+						location.reload();
+					}
+					// $('#ajax_contact_msg').html(response);
 					$('#ajax_contact_msg').slideDown('slow');
 				 }
 			});

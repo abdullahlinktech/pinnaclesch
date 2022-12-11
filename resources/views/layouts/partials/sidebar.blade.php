@@ -51,7 +51,7 @@
              </li> --}}
      
              <li class="nav-item">
-                 <a href="#" class="nav-link"><i
+                 <a href="{{route('class.index')}}" class="nav-link"><i
                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
                 </li>
                 <li class="nav-item">
