@@ -35,6 +35,23 @@
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
+                                                    <label for="title"> Notice Type <span class="text-danger"> *
+                                                        </span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select class=" form-control form-control-sm" name="notice_type" id=""  >
+                                                        <option value="" label="-- Select notice type --"></option>
+                                                        <option  value="tn">Teachers Notice</option>
+                                                        <option  value="sn">Students Notice</option>
+                                                        <option  value="gn">Gaurdian Notice</option>
+                                                        <option  value="jn">Job Notice</option>
+                                                
+                                                     
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-md-3">
                                                     <label for="title"> Title <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
@@ -50,6 +67,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
+                                       
                                             <div class="row my-2">
                                                 <div class="col-md-3">
                                                     <label for="date"> Date <span class="text-danger"> *
@@ -139,7 +157,8 @@
                                     <th>SL</th>
                                     <th>Title</th>
                                     <th>Date</th>
-                                    <th>Description</th>
+                                    {{-- <th>Description</th> --}}
+                                    <th>Notice Type</th>
                                     <th>file</th>
                                     <th>Action</th>
                                 </tr>
@@ -150,7 +169,8 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->date }}</td>
-                                    <td>{!! $item->description !!}</td>
+                                    <td>{{ $item->notice_type }}</td>
+                                    {{-- <td>{!! $item->description !!}</td> --}}
                                     <td> <iframe src="{{ asset($item->link) }}" height="50px" width="50px" frameborder="0"></iframe>
                                         {{-- <img class="border" style="height: 40px; width:50px;" src="{{ asset($item->link) }}" alt=""></td> --}}
                                     <td>

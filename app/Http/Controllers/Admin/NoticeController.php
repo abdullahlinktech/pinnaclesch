@@ -24,6 +24,7 @@ class NoticeController extends Controller
         $notice->title = $request->title;
         $notice->date = $request->date;
         $notice->description = $request->description;
+        $notice->notice_type = $request->notice_type;
         $notice->link = $this->imageUpload($request, 'link', 'uploads/notice') ?? '';
         $notice->save();
         if($notice) {
@@ -47,6 +48,7 @@ class NoticeController extends Controller
         }
         $notice->title = $request->title;
         $notice->description = $request->description;
+        $notice->notice_type = $request->notice_type;
         $notice->link = $noticeImage;
         $notice->save();
         if($notice)

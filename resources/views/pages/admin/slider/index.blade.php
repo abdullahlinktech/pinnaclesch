@@ -41,7 +41,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror --}}
-                                        <div class="row">
+                                        <div class="row my-2">
                                             <div class="col-md-3">
                                                 <label for="headerline">Slider Headline</label>
                                             </div>
@@ -54,7 +54,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row my-2">
                                             <div class="col-md-3">
                                                 <label for="description">Slider Sub Text</label>
                                             </div>
@@ -68,9 +68,9 @@
                                             </div>
                                         </div>
         
-                                        <div class="row">
+                                        <div class="row my-2">
                                             <div class="col-md-3">
-                                                <label for="image" class="mt-1">Slider Image <small>(Size: 1350px x 550px)</small></label>
+                                                <label for="image" class="mt-1">Slider Image <small>(Size: 1920px x 610px)</small></label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input class="form-control form-control-sm" id="image" type="file" name="image" onchange="readURL(this);">
