@@ -16,7 +16,7 @@
         <div class="container">
             <section id="primary" class="with-sidebar pt-5">
                 <div class="dt-sc-portfolio-container">
-                    <div class="portfolio dt-sc-one-third column first music">
+                    <div class="portfolio dt-sc-one-fourth column first music">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon1.jpg') }}" alt="" title="">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all music">
+                    <div class="portfolio dt-sc-one-fourth column all music">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon2.jpg') }}" alt="" title="">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all arts fun listen">
+                    <div class="portfolio dt-sc-one-fourth column all arts fun listen">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon3.jpg') }}" alt="" title="">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column first all music">
+                    <div class="portfolio dt-sc-one-fourth column first all music">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon4.jpg') }}" alt="" title="">
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all fun music listen">
+                    <div class="portfolio dt-sc-one-fourth column all fun music listen">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon5.jpg') }}" alt="" title="">
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all innovation listen">
+                    <div class="portfolio dt-sc-one-fourth column all innovation listen">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon6.jpg') }}" alt="" title="">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all listen">
+                    <div class="portfolio dt-sc-one-fourth column all listen">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon7.jpg') }}" alt="" title="">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third first column all fun">
+                    <div class="portfolio dt-sc-one-fourth first column all fun">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon8.jpg') }}" alt="" title="">
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all innovation music listen">
+                    <div class="portfolio dt-sc-one-fourth column all innovation music listen">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon9.jpg') }}" alt="" title="">
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all">
+                    <div class="portfolio dt-sc-one-fourth column all">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon10.jpg') }}" alt="" title="">
@@ -176,7 +176,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all innovation">
+                    <div class="portfolio dt-sc-one-fourth column all innovation">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon11.jpg') }}" alt="" title="">
@@ -192,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio dt-sc-one-third column all fun music">
+                    <div class="portfolio dt-sc-one-fourth column all fun music">
                         <div class="portfolio-thumb">
                             <img class="item-mask" src="{{ asset('website/images/portfolio-mask.png') }}" alt="" title="">
                             <img src="{{ asset('website/images/cartoon12.jpg') }}" alt="" title="">
@@ -213,7 +213,7 @@
             </section>
 
 
-            <section id="secondary">
+            {{-- <section id="secondary">
                 <aside class="widget widget_categories">
                     <h3 class="widgettitle">Categories</h3>
                     <ul>
@@ -283,7 +283,7 @@
                         <a href="#">Target</a>
                     </div>
                 </aside>
-            </section>
+            </section> --}}
         </div>
     </div>
 @endsection
