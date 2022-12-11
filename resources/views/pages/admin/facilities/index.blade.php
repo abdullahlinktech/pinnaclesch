@@ -43,7 +43,7 @@
                                                     <select class=" form-control form-control-sm" name="facilitie_type" id="" for="facilite" >
                                                         <option value="" label="-- Select facilities type--"></option>
                                                         <option id="facilite" name="facilitie_type" value="boys">Boys Hostel</option>
-                                                        <option value="girls">Girls Hostel</option> 
+                                                        <option value="girls">Girls Hostel</option>
                                                         <option value="bus"> Bus</option>
                                                         <option value="haice">Haice</option>
                                                         <option value="computer">Computer lab</option>
@@ -88,7 +88,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                     
+
                                             <div class="row my-2">
                                                 <div class="col-md-3">
                                                     <label for="name">Description <span class="text-danger"> *
