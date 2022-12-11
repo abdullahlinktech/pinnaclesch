@@ -387,7 +387,16 @@ color: #000 !important;
 .classImg {
     height: 250px;
     width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    /* overflow: hidden;
+    transition: all linear .3s; */
 }
+
+/* .classImg:hover {
+    transform: scale(1.1);
+} */
 
 .aboutText{
     height: 150px;
