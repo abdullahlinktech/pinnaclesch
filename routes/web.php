@@ -65,9 +65,9 @@ Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->
 
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
-Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
-Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
-Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+// Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
+// Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
+// Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
 
 
 // login
@@ -193,14 +193,17 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::put('admin-facilities-update{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
     Route::delete('admin-facilities-delete{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
     //shop
-    Route::get('admin-shop',[ShopController::class,'index'])->name('shop.index');
-    Route::post('admin-shop-store',[ShopController::class,'store'])->name('shop.store');
-    Route::get('admin-shop-edit/{id}',[ShopController::class,'edit'])->name('shop.edit');
-    Route::put('admin-shop-update/{shop}',[ShopController::class,'update'])->name('shop.update');
-    Route::delete('admin-shop-delete/{shop}',[ShopController::class,'delete'])->name('shop.delete');
+    Route::get('admin-product',[ShopController::class,'index'])->name('product.index');
+    Route::post('admin-product-store',[ShopController::class,'store'])->name('product.store');
+    Route::get('admin-product-edit/{id}',[ShopController::class,'edit'])->name('product.edit');
+    Route::put('admin-product-update/{shop}',[ShopController::class,'update'])->name('product.update');
+    Route::delete('admin-product-delete/{shop}',[ShopController::class,'delete'])->name('product.delete');
     //category
     Route::get('admin-category',[CategoryController::class,'index'])->name('category.index');
     Route::post('admin-category-store',[CategoryController::class,'store'])->name('category.store');
+    Route::get('admin-category-edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+    Route::put('admin-category-update/{category}',[CategoryController::class,'update'])->name('category.update');
+    Route::delete('admin-category-delete/{category}',[CategoryController::class,'delete'])->name('category.delete');
     //class 
     Route::get('admin-class',[ClassController::class,'index'])->name('class.index');
     Route::post('admin-class-store',[ClassController::class,'store'])->name('class.store');

@@ -24,8 +24,8 @@ class DashboardController extends Controller
     {
         $users = count(User::all());
         $slider = count(Slider::all());
-        $product = count(Product::all());
-        $category = count(Category::all());
-        return view('pages.admin.home', compact('users', 'slider', 'product','category'));
+        // $product = count(Product::all());
+        // $category = count(Category::all());
+        return view('pages.admin.home', compact('users', 'slider',));
     }
 }

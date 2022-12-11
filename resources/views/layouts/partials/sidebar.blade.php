@@ -44,7 +44,7 @@
                          <a href="{{route('category.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Category Entry</a>
                      </li>
                      <li class="nav-item">
-                         <a href="{{route('shop.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add peoduct</a>
+                         <a href="{{route('product.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add peoduct</a>
                      </li>
                  </ul>
              </li>
@@ -66,9 +66,9 @@
              <li class="nav-item">
                  <a href="{{route('facilities.index')}}" class="nav-link"><i class="flaticon-checklist"></i><span>Facilities</span></a>
              </li>
-             <li class="nav-item">
+             {{-- <li class="nav-item">
                 <a href="{{route('shop.index')}}" class="nav-link"><i class="flaticon-bed"></i><span>Shop </span></a> 
-            </li>
+            </li> --}}
              <li class="nav-item">
                  <a href="{{ route('dress.index') }}" class="nav-link"><i class="flaticon-checklist"></i><span>Dress Code</span></a>
              </li>

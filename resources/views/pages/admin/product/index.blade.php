@@ -1,4 +1,4 @@
-@extends('layouts.admin-master', ['pageName' => 'shop', 'title' => 'Add Shop'])
+@extends('layouts.admin-master', ['pageName' => 'product', 'title' => 'Add Product'])
 @push('admin-css')
 @endpush
 @section('admin-content')
@@ -6,7 +6,7 @@
 
     <div class="breadcrumbs-area d-flex justify-content-between">
         <div>
-            <h3>Shop</h3>
+            <h3>Product</h3>
         </div>
         <div class="">
             <ul>
@@ -27,22 +27,36 @@
                         <div class="card-body">
                             <div class="form">
                                 <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Shop</h4>
+                                    <h4 class=""><i class="fas fa-plus"></i> Add Product</h4>
                                 </div>
-                                <form action="{{ route('shop.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="title"> Title <span class="text-danger"> *
+                                                    <label for="title"> Category Name <span class="text-danger"> *
+                                                        </span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                  <select name="category_id" class="form-control form-control-sm" id="category_id">
+                                                    <option value="" label="-- Select Category--"></option>
+                                                    @foreach ($category as $item)
+                                                    <option value="{{$item->id}}" >{{$item->name}}</option>
+                                                    @endforeach
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-md-3">
+                                                    <label for="title"> Name <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
                                                         class="form-control form-control-sm @error('title') is-invalid @enderror"
                                                         id="title" type="text" name="title"
-                                                        value="{{ old('title') }}" placeholder=" title">
+                                                        value="{{ old('title') }}" placeholder=" Name">
                                                     @error('title')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -153,6 +167,7 @@
                                     <th>SL</th>
                                     <th>Title</th>
                                     <th>Price</th>
+                                    <th>Category</th>
                                     {{-- <th>Short Description</th> --}}
                                     {{-- <th>Description</th> --}}
                                     <th>Image</th>
@@ -165,13 +180,14 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->price }}</td>
+                                    <td>{{ optional($item->category)->name }}</td>
                                     {{-- <td>{!!$item->s_description!!}</td> --}}
                                     {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
-                                        <a href="{{ route('shop.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('product.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
-                                        <form id="delete-form-{{$item->id}}" action="{{route('shop.delete',$item)}}" method="POST" style="display: none;">
+                                        <form id="delete-form-{{$item->id}}" action="{{route('product.delete',$item)}}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
                                         </form>

@@ -21,8 +21,8 @@
     <!-- Breadcubs Area End Here -->
     <main class="">
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
+            <div class="row ">
+                <div class="col-md-6">
                     <div class="card height-auto">
                         <div class="card-body">
                             <div class="form">
@@ -32,7 +32,7 @@
                                 <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6 mb-2">
+                                        <div class="col-md-12 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
                                                     <label for="name">Name <span class="text-danger"> * </span></label>
@@ -68,60 +68,52 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="card my-3">
-                <div class="card-header">
-                    <i class="fas fa-list"></i>
-                    All Teachers
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Designation</th>
-                                    <th>Specality</th>
-                                    <th>Image</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($teacher as $key=>$item)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->designation }}</td>
-                                        <td>{{ $item->specality }}</td>
-                                        <td><img class="border" style="height: 40px; width:50px;"
-                                                src="{{ asset($item->image) }}" alt=""></td>
-                                        <td>
-                                            <a href="{{ route('teacher.edit', $item) }}" class="btn btn-info btn-sm"><i
-                                                    class="fa fa-edit"></i></a>
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="deletePartner({{ $item->id }})"><i
-                                                    class="fa fa-trash"></i></button>
-                                            <form id="delete-form-{{ $item->id }}"
-                                                action="{{ route('teacher.delete', $item) }}" method="POST"
-                                                style="display: none;">
-                                                @csrf
-                                                @method('DELETE')
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td rowspan="5">Data Not Found</td>
-                                    </tr>
-                                @endforelse
-
-                            </tbody>
-                        </table>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-list"></i>
+                            All Categoris
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>SL</th>
+                                            <th>Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($category as $key=>$item)
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ $item->name }}</td>
+                                               
+                                                <td>
+                                                    <a href="{{ route('category.edit', $item) }}" class="btn btn-info btn-sm"><i
+                                                            class="fa fa-edit"></i></a>
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onclick="deletePartner({{ $item->id }})"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <form id="delete-form-{{ $item->id }}"
+                                                        action="{{ route('category.delete', $item) }}" method="POST"
+                                                        style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td rowspan="5">Data Not Found</td>
+                                            </tr>
+                                        @endforelse
+        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

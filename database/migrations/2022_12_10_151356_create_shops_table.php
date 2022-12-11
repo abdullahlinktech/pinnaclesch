@@ -15,6 +15,9 @@ class CreateShopsTable extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')
+            ->constrained('categories')
+            ->onDelete('cascade');
             $table->string('title');
             $table->string('price');
             $table->longText('s_description');
