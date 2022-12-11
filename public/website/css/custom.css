@@ -12,18 +12,20 @@ color: #000 !important;
 
 }
 .chairman_message{
-    height: 65px;
+    height: 85px;
     overflow: hidden;
 }
-.chairman_message p{
-font-size: 14px;
-color: #000;
-text-align: justify;
-}
-.chairman_message h2{
-color: #000 !important;
 
+.chairman_message p{
+    font-size: 14px;
+    color: #000;
+    text-align: justify;
 }
+
+.chairman_message h2{
+    color: #000 !important;
+}
+
 .read_more{
     float: right;
 }
@@ -361,19 +363,46 @@ color: #000 !important;
     height: 104px !important;
 }
 
+.chairImg {
+    height: 80px;
+    width: 90px;
+}
+
 .actImg{
-    height: 115px;
+    height: 112px;
     width: 115px;
 }
 
-.spcImg{
-    height: 115px;
-    width: 115px;
+.spcImg {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.proimg {
+    height: 250px;
+    width: 100%;
+}
+
+.aboutText{
+    height: 150px;
+    overflow: hidden;
 }
 
 .actDescript{
     height: 65px;
     overflow: hidden;
+}
+
+.spclhead{
+    height: 45px;
+    overflow: hidden;
+}
+
+.spcldes p {
+    height: 45px;
+    overflow: hidden;
+    margin-right: 10px !important;
 }
 
 

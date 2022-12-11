@@ -15,9 +15,11 @@ use App\Models\News;
 use App\Models\Management;
 use App\Models\BackImage;
 use App\Models\Dress;
+use App\Models\Facilities;
 use App\Models\Messenger;
 use App\Models\Notice;
 use App\Models\Partner;
+use App\Models\Shop;
 use App\Models\Teacher;
 use App\Models\Whyspecail;
 
@@ -28,20 +30,21 @@ class HomeController extends Controller
         // $category = Category::orderBy('rank', 'asc')->get();
         // $slider = Slider::latest()->get();
         $video = Video::latest()->get();
-         $gallery = Gallery::latest()->take(7)->get();
-        // $management = Management::orderBy('rank', 'asc')->get();
-         $news = News::latest()->get();
+        $gallery = Gallery::latest()->take(7)->get();
+        $management = Management::take(1)->get();
+        $news = News::latest()->get();
         $notice = Notice::latest()->get();
         $teacher = Teacher::latest()->get();
-        $activities = Activity::latest()->take(8)->get();
+        $activities = Activity::take(8)->get();
         $dress = Dress::latest()->take(4)->get();
         $specials = Whyspecail::latest()->take(8)->get();
-        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials'));
+        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management'));
     }
 
     public function about() {
         $backimage = BackImage::first();
-        return view('pages.website.about', compact('backimage'));
+        $management = Management::take(1)->get();
+        return view('pages.website.about', compact('backimage', 'management'));
     }
 
     public function teachers() {
@@ -70,23 +73,15 @@ class HomeController extends Controller
     }
 
     public function product() {
-        // $backimage = BackImage::first();
-        // $messenger = Messenger::first();
-        // $product = Product::orderBy('rank', 'asc')->get();
-        // return view('pages.website.product', compact('backimage', 'product', 'messenger'));
+        $products = Shop::orderBy('id', 'DESC')->get();
 
-        return view('pages.website.product');
+        return view('pages.website.product', compact('products'));
     }
 
     public function productdetails($id) {
-        // $messenger = Messenger::first();
-        // $product = Product::find($id);
-        // $category = Category::where('id', $product->category_id)->first();
-        // $subcategory = Subcategory::where('id', $product->subcategory_id)->first();
-        // $backimage = BackImage::first();
-        // return view('pages.website.product-detail', compact('messenger','product', 'category', 'backimage', 'subcategory'));
+        $product = Shop::find($id);
 
-        return view('pages.website.product-details');
+        return view('pages.website.product-details', compact('product'));
     }
 
     public function gallery() {
@@ -101,7 +96,9 @@ class HomeController extends Controller
     }
 
     public function facilities() {
-        return view('pages.website.facilities');
+        $facilitites = Facilities::latest()->get();
+
+        return view('pages.website.facilities', compact('facilitites'));
     }
 
     public function notices() {

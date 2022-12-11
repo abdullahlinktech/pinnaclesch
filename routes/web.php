@@ -58,6 +58,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->name('productdetails');
 
+
+
+
+
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
 Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
@@ -153,7 +157,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::post('slider/update/{id}', [SliderController::class, 'update'])->name('slider.update');
     Route::get('slider/delete/{id}', [SliderController::class, 'delete'])->name('slider.delete');
 
-   
+
     Route::get('/messenger', [MessengerController::class, 'edit'])->name('messenger.edit');
     Route::put('/messenger/{messenger}', [MessengerController::class, 'update'])->name('messenger.update');
 
@@ -209,7 +213,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-facilities-edit{id}',[FacilitiesController::class,'edit'])->name('facilities.edit');
     Route::put('admin-facilities-update{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
     Route::delete('admin-facilities-delete{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
-    //shop 
+    //shop
     Route::get('admin-shop',[ShopController::class,'index'])->name('shop.index');
     Route::post('admin-shop-store',[ShopController::class,'store'])->name('shop.store');
     Route::get('admin-shop-edit/{id}',[ShopController::class,'edit'])->name('shop.edit');

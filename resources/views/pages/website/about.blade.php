@@ -33,22 +33,22 @@
                 <div class="dt-sc-hr"></div>
 
                 {{-- Founder Message --}}
-                {{--  <div class="dt-sc-one column">
-                    <h2>Meet Our Founder</h2>
-                    <div class="author-details">
-                        <div class="author-thumb">
-                            <img class="item-mask" src="{{ asset('website/images/author-hexa-bg.png') }}" alt="" title="">
-                            <img src="{{ asset('website/images/founder.jpg') }}" alt="" title="">
-                        </div>
-                        <div class="author-description">
-                            <h5><a href="#">James Bond</a></h5>
-                            <span class="author-role">Music Trainer, Specialist in <a href="#">Classical Music</a></span>
-                            <a href="#" class="students-count"><span class="fa fa-user"></span> 25 STUDENTS</a>
-                            <div class="rating-review"><span class="author-rating rating-4"></span> <a href="#">2 reviews</a></div>
-                            <p>Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. Sed cursus ipsum vitae justo scelerisque, ac viverra tellus eleifend. Etiam interdum justo nunc, ac volutpat erat elementum id. Fusce dapibus mauris ac dictum porta. Sed pretium luctus elementum. In sollicitudin felis semper purus imperdiet lobortis. In odio tellus, rhoncus eget dolor in,</p>
+                @foreach ($management as $chair)
+                    <div class="dt-sc-one column" id="chairman-message">
+                        <h2>Meet Our Founder</h2>
+                        <div class="author-details">
+                            <div class="author-thumb">
+                                <img class="item-mask" src="{{ asset('website/images/author-hexa-bg.png') }}" alt="" title="">
+                                <img src="{{ asset('uploads/management/'.$chair->image) }}" alt="" title="">
+                            </div>
+                            <div class="author-description">
+                                <h5><a href="#">{{ $chair->name }}</a></h5>
+                                <span class="author-role">{{ $chair->designation }}</span>
+                            </div>
+                            <div class="justify">{!! $chair->description !!}</div>
                         </div>
                     </div>
-                </div>  --}}
+                @endforeach
 
                 {{--  <div class="dt-sc-hr"></div>
 

@@ -213,58 +213,36 @@
                             <div class="card-body">
                                 <div class="welcome-wrap">
                                     <h2>Welcome To {{ $content->name }}</h2>
-
-                                    <p>Pinnacle Chartered College is an educational establishment that is located at
-                                        House-19, road-6 Amin Jutre Mills Panchlaish Chittagong. Its Educational Institute
-                                        Identification Number or EIIN, is 134159. The alternative name for Pinnacle
-                                        Chartered College is পিনাকল চার্টার্ড কলেজ. Pinnacle Chartered College is under
-                                        Chittagong Education Board. Education has been keeping an unique contribution to the
-                                        social, cultural and economic development of the country from time immemorial. My
-                                        earnest effort to establish Pinnacle Chartered School & College at the important and
-                                        charming places of Nasirabad, Chittagong and its Branch at Narshingdi is to keep
-                                        pace with these developments along with the stream of educational development. My
-                                        first and foremost aim is to make the learners science oriented in full digitalised
-                                        way to keep up with the ages and to make exceptional modern institution for the
-                                        students for attaining human qualities edowed with patriotism.
-                                    </p>
+                                    <div class="justify aboutText">{!! $content->about !!}</div>
                                 </div>
-                                <a class="read_more" href="{{ route('about') }}"> Read More About Us <span
-                                        class="fa fa-chevron-circle-right"></span></a>
+                                <a class="read_more" href="{{ route('about') }}"> Read More About Us <span class="fa fa-chevron-circle-right"></span></a>
                             </div>
                         </div>
                     </div>
 
-
                     <div class="dt-sc-one-third column">
-                        <div class="card">
-                            <div class="card-header custom-card-header
-                                ">
-                                <h2>Message Of Chairman </h2>
-                            </div>
-                            <div class="card-body">
-                                <div class="chairman">
-                                    <div class="chairman_img">
-                                        <img src="{{ asset('website/images/author.jpg') }}" alt="chairman">
-                                    </div>
-                                    <div class="chaiman_name">
-                                        <h3>Solaiman Khan Masum</h3>
-                                        <p>Chairman of Pinnacle</p>
-                                    </div>
+                        @foreach ($management as $chair)
+                            <div class="card">
+                                <div class="card-header custom-card-header">
+                                    <h2>Message Of Chairman </h2>
                                 </div>
-                                <div class="chairman_message">
-                                    <p>Education has been keeping an unique contribution to the social, cultural and
-                                        economic development of the country from time immemorial. My earnest effort to
-                                        establish Pinnacle Chartered School & College at the important and charming places
-                                        of Nasirabad, Chittagong and its Branch at Narshingdi is to keep pace with these
-                                        developments along with the stream of educational development. My first and foremost
-                                        aim is to make the learners science oriented in full digitalised way to keep up with
-                                        the ages and to make exceptional modern institution for the students for attaining
-                                        human qualities edowed with patriotism.</p>
+                                <div class="card-body">
+                                    <div class="chairman">
+                                        <div class="chairman_img">
+                                            <img src="{{ asset('uploads/management/'.$chair->image) }}" alt="chairman" class="chairImg">
+                                        </div>
+                                        <div class="chaiman_name">
+                                            <h3>{{ $chair->name }}</h3>
+                                            <p>{{ $chair->designation }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="chairman_message">
+                                        <div class="justify">{!! $chair->description !!}</div>
+                                    </div>
+                                    <a class="read_more" href="{{ route('about') }}/#chairman-message"> Read More <span class="fa fa-chevron-circle-right"></span></a>
                                 </div>
-                                <a class="read_more" href=""> Read More <span
-                                        class="fa fa-chevron-circle-right"></span></a>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -276,9 +254,9 @@
 
             <div class="container">
                 <h2 class="dt-sc-hr-green-title">Our Activities </h2>
-                @php $newkey = [0, 4, 8]; @endphp
+                @php $actkey = [0, 4, 8]; @endphp
                 @foreach ($activities as $key=>$activity)
-                    <div class="dt-sc-one-fourth column pb-3 {{ in_array($key, $newkey) ? 'first' : '' }}">
+                    <div class="dt-sc-one-fourth column pb-3 {{ in_array($key, $actkey) ? 'first' : '' }}">
                         <div class="dt-sc-ico-content type1">
                             <div class="icon">
                                 <span class="icon-outer">
@@ -299,52 +277,28 @@
             <div class="dt-sc-hr"></div>
 
             <section class="fullwidth-background dt-sc-parallax-section turquoise-bg">
-
                 <div class="container">
                     <div class="dt-sc-one-half column first">
                         <h2>Why We Are Special</h2>
-
+                        @php $spclkey = [0, 2, 4, 6, 8]; @endphp
                         @foreach ($specials as $key=>$spcl)
-                            <div class="dt-sc-one-half column first">
+                            <div class="dt-sc-one-half column {{ in_array($key, $spclkey) ? 'first' : '' }}">
                                 <div class="dt-sc-ico-content type2">
-                                    <div class="icon">
-                                        <span class="icon-outer">
-                                            <img src="{{ asset($spcl->image) }}" class="spcImg" alt="" title="">
-                                        </span>
+                                    <div class="dt-sc-one-fourth column">
+                                        <div class="icon">
+                                            <span class="icon-outer">
+                                                <img src="{{ asset($spcl->image) }}" class="spcImg" alt="" title="">
+                                            </span>
+                                        </div>
                                     </div>
-
-                                    {{--  <div class="icon">
-                                        <span class="fa fa-glass"> </span>
-                                    </div>  --}}
-                                    <h4><a href="#" target="_blank"> {{ $spcl->title }} </a></h4>
-                                    <p>{!! $spcl->description !!}</p>
+                                    <div class="dt-sc-one-half column spclhead">
+                                        <h4><a href="#" target="_blank"> {{ $spcl->title }} </a></h4>
+                                    </div>
+                                    <div class="justify spcldes">{!! $spcl->description !!}</div>
                                 </div>
                                 <div class="dt-sc-hr-very-small"></div>
                             </div>
                         @endforeach
-
-                        <div class="dt-sc-one-half column">
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon"><span class="fa fa-tachometer"></span></div>
-                                <h4><a href="#" target="_blank"> Sports Camp </a></h4>
-                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
-                                    tibulum nisl ligula....</p>
-                            </div>
-                            <div class="dt-sc-hr-very-small"></div>
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon"><span class="fa fa-magic"> </span></div>
-                                <h4><a href="#" target="_blank">Personalizing </a></h4>
-                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
-                                    tibulum nisl ligula....</p>
-                            </div>
-                            <div class="dt-sc-hr-very-small"></div>
-                            <div class="dt-sc-ico-content type2">
-                                <div class="icon"><span class="fa fa-music"></span></div>
-                                <h4><a href="#" target="_blank"> Sing & Dance </a></h4>
-                                <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst
-                                    tibulum nisl ligula....</p>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="dt-sc-one-half column">
@@ -497,11 +451,9 @@
 
             <div class="container">
                 <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
-                @php $newkey = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200]; @endphp
+                @php $techkey = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200]; @endphp
                 @foreach ($teacher as $key=>$item)
-                    {{--  <div class="column dt-sc-one-eighth {{ $key == 0 || $newkey*($key+8) == $key  ? 'first' : ''}}">  --}}
-                    {{--  <div class="column dt-sc-one-eighth {{ $key  }} {{ $newkey*($key+1)  }}">  --}}
-                    <div class="column dt-sc-one-eighth teachersec {{ in_array($key, $newkey) ? 'first' : '' }}">
+                    <div class="column dt-sc-one-eighth teachersec {{ in_array($key, $techkey) ? 'first' : '' }}">
                         <div class="dt-sc-team">
                             <div class="image">
                                 <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt="" title="">
@@ -515,7 +467,6 @@
                             </div>
                         </div>
                     </div>
-                    {{--  @php $newkey++; @endphp  --}}
                 @endforeach
             </div>
 

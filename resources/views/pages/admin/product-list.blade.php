@@ -3,7 +3,7 @@
 {{-- @section('title') Add Product @endsection --}}
 
 @push('admin-css')
-    <link href="{{ asset('summernote/summernote-bs4.min.css') }}" rel="stylesheet">  
+    <link href="{{ asset('summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 @endpush
 
 @section('admin-content')
@@ -89,7 +89,7 @@
                 alert('danger');
             }
         });
-        
+
     });
 </script>
 

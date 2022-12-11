@@ -16,153 +16,26 @@
         <div class="container">
             <section id="primary" class="with-sidebar pt-5">
                 <ul class="products">
-                    <li class="dt-sc-one-third column first">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product1.jpg') }}" alt="" title="">
-                            </a>
-                            <span class="sale"> Sale! </span>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
+                    @php $prokey = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 165, 160, 164, 168, 172, 176, 180, 184, 188, 192, 196, 200]; @endphp
+                    @foreach ($products as $key=>$item)
+                        <li class="dt-sc-one-third column {{ in_array($key, $prokey) ? 'first' : '' }}">
+                            <div class="product-thumb">
+                                <a href="#">
+                                    <img src="{{ asset($item->image) }}" alt="" title="Product Image" class="proimg">
+                                </a>
+
+                                <div class="image-overlay">
+                                    <div class="product-button">
+                                        <a href="#" class="add-cart-btn"> <span class="fa fa-eye"></span> </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product2.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
+                            <div class="product-details">
+                                <h5><a href="{{ route('productdetails',$item->id) }}"> {{ $item->title }} </a></h5>
+                                <span class="price"> ৳{{ $item->price }} </span>
                             </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product3.jpg') }}" alt="" title="">
-                            </a>
-                            <span class="sale"> Sale! </span>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column first">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product4.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product5.jpg') }}" alt="" title="">
-                            </a>
-                            <span class="sale"> Sale! </span>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Pretty Little Girl </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product6.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column first">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product7.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product8.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
-                    <li class="dt-sc-one-third column">
-                        <div class="product-thumb">
-                            <a href="#">
-                                <img src="{{ asset('website/images/product9.jpg') }}" alt="" title="">
-                            </a>
-                            <div class="image-overlay">
-                                <div class="product-button">
-                                    <a href="#" class="add-cart-btn"> Add to cart </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-details">
-                            <h5><a href="product.html"> Ellents Style Grade </a></h5>
-                            <span class="price"> $20.00 </span>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
                 </ul>
 
                 <div class="pagination">
