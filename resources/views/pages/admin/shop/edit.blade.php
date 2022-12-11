@@ -61,6 +61,19 @@
                                             @enderror
                                             </div>
                                         </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-3">
+                                                <label for="name">Short Description </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <textarea name="s_description" id="editor1" cols="30" rows="10">{{ $shop->s_description }}</textarea>
+                                                @error('s_description')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
                                
                                         <div class="row my-2">
                                             <div class="col-md-3">
@@ -111,6 +124,13 @@
 <script>
     ClassicEditor
         .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor1' ) )
         .catch( error => {
             console.error( error );
         } );

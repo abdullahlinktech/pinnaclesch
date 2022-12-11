@@ -1,10 +1,10 @@
-@extends('layouts.admin-master', ['pageName'=> 'special', 'title' => 'Edit Special'])
+@extends('layouts.admin-master', ['pageName'=> 'class', 'title' => 'Edit Class'])
 @section('admin-content')
    <!-- Breadcubs Area Start Here -->
 
    <div class="breadcrumbs-area d-flex justify-content-between">
     <div>
-        <h3>Update Why We Are special </h3>
+        <h3>Update Class </h3>
     </div>
     <div class="">
         <ul>
@@ -25,12 +25,12 @@
                     <div class="card-body">
                         <div class="form">
                             <div class="d-flex justify-content-between heading card-header">
-                                <h4 class=""><i class="fa fa-edit"></i> Edit Why We Are Special</h4>
+                                <h4 class=""><i class="fa fa-edit"></i> Edit Class</h4>
                                 <div>
                                     <a href="{{ route('dashboard') }}" class="btn btn-primary btn-sm overflow-hidden">Dashboard</a>
                                 </div>
                             </div>
-                            <form action="{{ route('specail.update', $specail) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('class.update', $class) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
@@ -40,7 +40,7 @@
                                                 <label for="title"> Title <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
-                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $specail->title }}" placeholder="title">
+                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $class->title }}" placeholder="title">
                                             @error('title')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -54,7 +54,7 @@
                                                 <label for="description"> Description <span class="text-danger"> * </span></label>
                                             </div>
                                             <div class="col-md-9">
-                                                <textarea name="description" id="editor" cols="30" rows="10">{{ $specail->description }}</textarea>
+                                                <textarea name="description" id="editor" cols="30" rows="10">{{ $class->description }}</textarea>
                                               @error('description')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -79,7 +79,7 @@
                                 <hr class="my-2">
                                 <div class="clearfix mt-1">
                                     <div class="float-md-left">
-                                        <a href="{{route('specail.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
+                                        <a href="{{route('class.index')}}" id="prev" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
                                     
                                     </div>
@@ -118,6 +118,6 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    document.getElementById("previewImage").src="{{ asset($specail->image) }}";
+    document.getElementById("previewImage").src="{{ asset($class->image) }}";
 </script>
 @endpush

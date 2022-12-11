@@ -22,6 +22,7 @@ class ShopController extends Controller
         $shop = new Shop();
         $shop->title = $request->title;
         $shop->price = $request->price;
+        $shop->s_description = $request->s_description;
         $shop->description = $request->description;
         $shop->image = $this->imageUpload($request, 'image', 'uploads/shop') ?? '';
         $shop->save();
@@ -46,6 +47,7 @@ class ShopController extends Controller
         }
         $shop->title = $request->title;
         $shop->price = $request->price;
+        $shop->s_description = $request->s_description;
         $shop->description = $request->description;
         $shop->image = $shopImage;
         $shop->save();

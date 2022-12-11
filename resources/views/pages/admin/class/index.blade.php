@@ -1,4 +1,4 @@
-@extends('layouts.admin-master', ['pageName' => 'facilities', 'title' => 'Add Facilities'])
+@extends('layouts.admin-master', ['pageName' => 'class', 'title' => 'Add Class'])
 @push('admin-css')
 @endpush
 @section('admin-content')
@@ -6,7 +6,7 @@
 
     <div class="breadcrumbs-area d-flex justify-content-between">
         <div>
-            <h3>Facilities</h3>
+            <h3>Class </h3>
         </div>
         <div class="">
             <ul>
@@ -27,50 +27,12 @@
                         <div class="card-body">
                             <div class="form">
                                 <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Facilities</h4>
+                                    <h4 class=""><i class="fas fa-plus"></i> Add Class</h4>
                                 </div>
-                                <form action="{{ route('facilities.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('class.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="header"> Facilities Type <span class="text-danger"> *
-                                                        </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-
-                                                    <select class=" form-control form-control-sm" name="" id="" >
-                                                        <option value="" label="-- Select facilities type--"></option>
-                                                        <option value="boys">Boys Hostel</option>
-                                                        <option value="girls">Girls Hostel</option>
-                                                        <option value="bus"> Bus</option>
-                                                        <option value="haice">Haice</option>
-                                                        <option value="computer">Computer lab</option>
-                                                        <option value="science">Science Lab</option>
-                                                        <option value="chemistry">Chemistry Lab</option>
-                                                        <option value="biology">Biology Lab</option>
-                                                        <option value="health">Health And Service</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="col-md-3">
-                                                    <label for="header"> Header <span class="text-danger"> *
-                                                        </span></label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input
-                                                        class="form-control form-control-sm @error('header') is-invalid @enderror"
-                                                        id="header" type="text" name="header"
-                                                        value="{{ old('header') }}" placeholder=" header">
-                                                    @error('header')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
                                             <div class="row my-2">
                                                 <div class="col-md-3">
                                                     <label for="title"> Title <span class="text-danger"> *
@@ -150,7 +112,7 @@
             <div class="card my-3">
                 <div class="card-header">
                     <i class="fas fa-list"></i>
-                    All Facilities
+                    All Class
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -158,25 +120,23 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Header</th>
                                     <th>Title</th>
-                                    <th>Description</th>
+                                    {{-- <th>Description</th> --}}
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($facilities as $key=>$item)
+                                @forelse ($class as $key=>$item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $item->header }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{!! $item->description !!}</td>
+                                    {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
-                                        <a href="{{ route('facilities.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('class.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>
-                                        <form id="delete-form-{{$item->id}}" action="{{route('facilities.delete',$item)}}" method="POST" style="display: none;">
+                                        <form id="delete-form-{{$item->id}}" action="{{route('class.delete',$item)}}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
                                         </form>
