@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Allclass;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -22,6 +23,7 @@ use App\Models\Partner;
 use App\Models\Shop;
 use App\Models\Teacher;
 use App\Models\Whyspecail;
+use PhpParser\Builder\Class_;
 
 class HomeController extends Controller
 {
@@ -53,7 +55,8 @@ class HomeController extends Controller
     }
 
     public function classes() {
-        return view('pages.website.classes');
+        $classes = Allclass::get();
+        return view('pages.website.classes', compact('classes'));
     }
 
     public function newsevents() {

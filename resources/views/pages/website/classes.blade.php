@@ -13,28 +13,32 @@
             </div>
         </div>
 
-        <div class="container">
-            <section id="primary" class="content-full-width pt-5 pb-5">
-                <div class="column dt-sc-one-half first">
-                    <div class="about-wrapper">
-                        <ul class="about">
-                            {{-- <li> <img src="{{ asset('website/images/activity1.jpg') }}" alt="" title=""> </li>
-                            <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li> --}}
-                            <li> <img src="{{ asset('website/images/activity3.jpg') }}" alt="" title=""> </li>
-                        </ul>
+        @foreach ($classes as $key=>$class)
+
+            <div class="container">
+                <section id="primary" class="content-full-width pt-5 pb-5">
+                    <div class="column dt-sc-one-half first">
+                        <div class="about-wrapper">
+                            <ul class="about">
+                                {{-- <li> <img src="{{ asset('website/images/activity1.jpg') }}" alt="" title=""> </li>
+                                <li> <img src="{{ asset('website/images/activity2.jpg') }}" alt="" title=""> </li> --}}
+                                <li> <img src="{{ asset($class->image) }}" alt="" title="" class="classImg"> </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="column dt-sc-one-half">
-                    <h2>Class Play</h2>
-                    <p class="justify">{{ $content->s_description }}</p>
-                </div>
+                    <div class="column dt-sc-one-half">
+                        <h2>{{ $class->title }}</h2>
+                        <p class="justify">{!! $class->description !!}</p>
+                    </div>
 
-                <div class="dt-sc-hr"></div>
-                <div class="dt-sc-hr"></div>
+                    <div class="dt-sc-hr"></div>
+                    <div class="dt-sc-hr"></div>
 
-            </section>
-        </div>
+                </section>
+            </div>
+
+        @endforeach
 
         <div class="container">
             <section id="primary" class="content-full-width pb-5">
