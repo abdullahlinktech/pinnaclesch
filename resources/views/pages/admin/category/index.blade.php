@@ -29,7 +29,7 @@
                                 <div class="d-flex justify-content-between heading card-header">
                                     <h4 class=""><i class="fas fa-plus"></i> Add new Category</h4>
                                 </div>
-                                <form action="{{ route('teacher.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">

@@ -200,6 +200,7 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::delete('admin-shop-delete/{shop}',[ShopController::class,'delete'])->name('shop.delete');
     //category
     Route::get('admin-category',[CategoryController::class,'index'])->name('category.index');
+    Route::post('admin-category-store',[CategoryController::class,'store'])->name('category.store');
     //class 
     Route::get('admin-class',[ClassController::class,'index'])->name('class.index');
     Route::post('admin-class-store',[ClassController::class,'store'])->name('class.store');
