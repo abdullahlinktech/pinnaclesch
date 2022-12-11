@@ -522,7 +522,7 @@
                       @foreach ($dress as $item)
                       <li class="dt-sc-one-fourth column {{ $key == 0 ? 'first' : '' }}">
                         <div class="product-thumb">
-                            <a href="#"><img src="{{ asset($item->image) }}" alt="" title=""></a>
+                            <a href="#"><img src="{{ asset($item->image) }}" alt="dress image" title=""></a>
                             <div class="image-overlay"></div>
                         </div>
                         <div class="product-details">
