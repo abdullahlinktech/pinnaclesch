@@ -13,10 +13,10 @@
                     <img src="{{ asset($item->image) }}" class="ls-bg"
                         alt="Slide background" />
                 </div>
-                    
+
                 @endforeach
-             
-           
+
+
             </div>
         </div>
 
@@ -296,18 +296,17 @@
                 <div class="container">
                     <h2 class="dt-sc-hr-white-title">Dress Code</h2>
                     <ul class="products">
-                      @foreach ($dress as $item)
-                      <li class="dt-sc-one-fourth column {{ $key == 0 ? 'first' : '' }}">
-                        <div class="product-thumb">
-                            <a href="#"><img src="{{ asset($item->image) }}" alt="dress image" title=""></a>
-                            <div class="image-overlay"></div>
-                        </div>
-                        <div class="product-details">
-                            <h5 style="text-align: center;">{{$item->title}}</h5>
-                        </div>
-                    </li>
-
-                      @endforeach
+                        @foreach ($dress as $key => $item)
+                            <li class="dt-sc-one-fourth column {{ $key == 0 ? 'first' : '' }}">
+                                <div class="product-thumb">
+                                    <a href="#"><img src="{{ asset($item->image) }}" alt="dress image" title="" class="dressCodeimg"></a>
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="product-details">
+                                    <h5 style="text-align: center;">{{$item->title}}</h5>
+                                </div>
+                            </li>
+                         @endforeach
                     </ul>
                 </div>
             </section>
