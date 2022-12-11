@@ -58,6 +58,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 // Shop
 Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->name('productdetails');
+Route::get('/categorywise-product/{id}', [HomeController::class, 'categorywiseproduct'])->name('categorywiseproduct');
 
 
 
@@ -65,9 +66,9 @@ Route::get('/product-details/{id}', [HomeController::class, 'productdetails'])->
 
 Route::get('/management', [HomeController::class, 'management'])->name('management');
 
-// Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
-// Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
-// Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
+Route::get('/category/subcategroy/{id}', [HomeController::class, 'subcategory'])->name('subcategory');
+Route::get('/category/subcategory/product/{id}', [HomeController::class, 'productSubcate'])->name('product.subcate');
+Route::get('/product-detail/{id}', [HomeController::class, 'productDetail'])->name('productDetail');
 
 
 // login
@@ -204,7 +205,8 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-category-edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
     Route::put('admin-category-update/{category}',[CategoryController::class,'update'])->name('category.update');
     Route::delete('admin-category-delete/{category}',[CategoryController::class,'delete'])->name('category.delete');
-    //class 
+
+    //class
     Route::get('admin-class',[ClassController::class,'index'])->name('class.index');
     Route::post('admin-class-store',[ClassController::class,'store'])->name('class.store');
     Route::get('admin-class-edit/{id}',[ClassController::class,'edit'])->name('class.edit');

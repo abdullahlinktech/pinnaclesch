@@ -20,13 +20,12 @@
                 <article class="blog-entry">
                     <div class="blog-entry">
                         <div class="entry-thumb">
-                            <a href="blog-detail.html"><img src="{{ asset($item->image) }}" alt=""
-                                    title=""></a>
+                            <a href="{{route('newsdetails',$item->id)}}"><img src="{{ asset($item->image) }}" alt="" title=""></a>
                         </div>
                         <div class="entry-details">
                             <div class="entry-title">
-                                <h3><a href="blog-detail.html"> {{$item->title}} </a></h3>
-                                <p>{{$item->date}}</p>
+                                <h3><a href="{{route('newsdetails',$item->id)}}"> {{$item->title}} </a></h3>
+                                <p><span class="fa fa-calendar"></span> {{$item->date}}</p>
                             </div>
 
                             <div class="entry-body">
@@ -38,11 +37,10 @@
                     </div>
                 </article>
             </div>
-                 
-             @endforeach
-        
-            </section>
 
+             @endforeach
+
+            </section>
 
             <section id="secondary">
                 <aside class="widget widget_categories ">
@@ -66,8 +64,11 @@
 
                     @endforeach
                 </aside>
-          
-                
+
+                <aside class="widget widget_text">
+                    <h3 class="widgettitle">Kids Achievements</h3>
+                    <p class="justify">Our kids are involved in many different things. They play multiple sports, are involved in other extracurricular activities, and have a wide variety of interests. Sometimes they achieve a lot, others they don’t achieve as much.</p>
+                </aside>
             </section>
         </div>
     </div>

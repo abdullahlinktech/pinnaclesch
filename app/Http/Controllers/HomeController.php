@@ -12,6 +12,7 @@ use App\Models\Video;
 use App\Models\News;
 use App\Models\Management;
 use App\Models\BackImage;
+use App\Models\Category;
 use App\Models\Dress;
 use App\Models\Facilities;
 use App\Models\Messenger;
@@ -26,8 +27,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // $category = Category::orderBy('rank', 'asc')->get();
-        // $slider = Slider::latest()->get();
         $video = Video::latest()->get();
         $gallery = Gallery::latest()->take(7)->get();
         $management = Management::take(1)->get();
@@ -37,7 +36,8 @@ class HomeController extends Controller
         $activities = Activity::take(8)->get();
         $dress = Dress::latest()->take(4)->get();
         $specials = Whyspecail::latest()->take(8)->get();
-        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management'));
+        $categories = Category::get();
+        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management', 'categories'));
     }
 
     public function about() {
@@ -64,8 +64,9 @@ class HomeController extends Controller
     public function newsdetails($id) {
         $news = News::find($id);
         if (isset($news)) {
+            $newslist = News::latest()->get();
             $backimage = BackImage::first();
-            return view('pages.website.newsDetails', compact('news', 'backimage'));
+            return view('pages.website.newsDetails', compact('news', 'backimage', 'newslist'));
         } else {
             $backimage = BackImage::first();
             return view('pages.website.not-found', compact('backimage'));
@@ -82,6 +83,12 @@ class HomeController extends Controller
         $product = Shop::find($id);
 
         return view('pages.website.product-details', compact('product'));
+    }
+
+    public function categorywiseproduct($category_id) {
+        $categorywiseproduct = Shop::where('category_id', $category_id)->orderBy('id', 'DESC')->get();
+
+        return view('pages.website.categorywiseproduct', compact('categorywiseproduct'));
     }
 
     public function gallery() {

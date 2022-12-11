@@ -65,17 +65,6 @@
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
                             </li>
-                            <li><a href="{{ route('product') }}">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Book</a></li>
-                                    <li><a href="#">Copy</a></li>
-                                    <li><a href="#">Stationery</a></li>
-                                    <li><a href="#">School Dress</a></li>
-                                    <li><a href="#">Sports Dress</a></li>
-                                    <li><a href="#">Bags</a></li>
-                                </ul>
-                                <a class="dt-menu-expand">+</a>
-                            </li>
                             <li><a href="{{ route('facilities') }}/#computer-lab">Computer Lab</a></li>
                             <li><a href="{{ route('facilities') }}/#science-lab">Science Lab</a></li>
                             <li><a href="{{ route('facilities') }}/#chemistry-lab">Chemistry Lab</a></li>
@@ -103,7 +92,20 @@
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="pink"><a href="{{ route('contact') }}" title="">Contact us</a></li>
+
+                    <li class="menu-item-simple-parent menu-item-depth-0 pink"><a href="{{ route('product') }}">Shop</a>
+                        <ul class="sub-menu">
+                            @php
+                                use App\Models\Category;
+                                $categories = Category::get();
+                            @endphp
+                            @foreach ($categories as $cat)
+                                <li><a href="{{ route('categorywiseproduct',$cat->id) }}">{{ $cat->name }}</a></li>
+                            @endforeach
+                        </ul>
+                        <a class="dt-menu-expand">+</a>
+                    </li>
+                    <li class="mustard"><a href="{{ route('contact') }}" title="">Contact us</a></li>
                 </ul>
             </nav>
 

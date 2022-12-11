@@ -1,4 +1,4 @@
-@extends('layouts.website', ['pageName' => 'product'])
+@extends('layouts.website', ['pageName' => 'categorywiseproduct'])
 @section('title', 'Product All')
 @section('web-content')
     <div id="main">
@@ -17,7 +17,7 @@
             <section id="primary" class="with-sidebar pt-5">
                 <ul class="products">
                     @php $prokey = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 165, 160, 164, 168, 172, 176, 180, 184, 188, 192, 196, 200]; @endphp
-                    @foreach ($products as $key=>$item)
+                    @foreach ($categorywiseproduct as $key=>$item)
                         <li class="dt-sc-one-third column {{ in_array($key, $prokey) ? 'first' : '' }}">
                             <div class="product-thumb">
                                 <a href="{{ route('productdetails',$item->id) }}">
@@ -37,18 +37,7 @@
                         </li>
                     @endforeach
                 </ul>
-
-                {{--  <div class="pagination">
-                    <div class="prev-post"></div>
-                    <ul>
-                        <li class="active-page">1</li>
-                        <li><a href="#" class="inactive">2</a></li>
-                    </ul>
-                    <div class="next-post"><a href="#">Next <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                </div>  --}}
             </section>
-
 
             <section id="secondary">
                 <aside class="widget widget_categories">
