@@ -1,0 +1,129 @@
+.signin-wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.signin-box {
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 20px;
+}
+.signin-box .slim-logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+.signin-title-secondary {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.5005rem + 2px);
+}
+.form-control, .dataTables_filter input {
+    display: block;
+    width: 100%;
+    padding: 0.594rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.mg-b-50 {
+    margin-bottom: 30px;
+}
+.btn-signin {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border: 0;
+    min-height: 40px;
+    background-image: linear-gradient(to right, #1b84e7 0%, #6f42c1 100%);
+    background-repeat: repeat-x;
+}
+.btn-back {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border: 0;
+    min-height: 40px;
+    background-repeat: repeat-x;
+}
+.btn, .sp-container button {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.594rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 3px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -ms-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1b84e7;
+    border-color: #1b84e7;
+    width: 100%;
+}
+a {
+    color: #1b84e7;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.text-center {
+    text-align: center !important;
+}
+@media (min-width: 992px)
+{
+    .slim-logo {
+        font-size: 36px;
+        margin-right: 60px;
+    }
+}
+input[type=number] {
+    background: #FFFFFF;
+    border: 1px solid #dddddd;
+    padding: 12px 5px 12px 10px;
+    display: block;
+    margin: 2px 0 10px;
+    width: 100%;
+    outline: none;
+}
+@media (min-width: 1024px) and (max-width: 1524px)
+{
+    .signin-box {
+    padding: 30px 40px;
+}
+}
+
+.login-page {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: 0px;
+    padding: 15px 0px 25px 0px;
+    background-image: url(../images/product_bg.png);
+    background-position: center center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}

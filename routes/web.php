@@ -54,6 +54,8 @@ Route::get('/notices', [HomeController::class, 'notices'])->name('notices');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/video', [HomeController::class, 'video'])->name('video');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/student-login', [HomeController::class, 'login'])->name('student.login');
+Route::get('/student-paasword-forget', [HomeController::class, 'forget'])->name('forget.password');
 
 // Shop
 Route::get('/product', [HomeController::class, 'product'])->name('product');

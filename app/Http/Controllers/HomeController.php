@@ -123,6 +123,12 @@ class HomeController extends Controller
     public function contact() {
         return view('pages.website.contact');
     }
+    public function login(){
+        return view('pages.website.login');
+    }
+    public function forget(){
+        return view('pages.website.forget');
+    }
 
 
 
