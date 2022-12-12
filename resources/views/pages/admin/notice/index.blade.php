@@ -100,7 +100,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="row my-2">
+                                            {{-- <div class="row my-2">
                                                 <div class="col-md-3">
                                                     <label for="image" class="">Pdf/Excel <small></small></label>
                                                 </div>
@@ -115,15 +115,15 @@
                                                         </span>
                                                     @enderror
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
 
                                         </div>
-                                        <div class="col-md-4 d-md-flex justify-content-center align-items-center">
-                                            {{-- <img class="form-controlo img-thumbnail" src="#" id="previewImage"
-                                                style="width: 150px;height: 120px; background: #3f4a49;"> --}}
+                                        {{-- <div class="col-md-4 d-md-flex justify-content-center align-items-center">
+                                            <img class="form-controlo img-thumbnail" src="#" id="previewImage"
+                                                style="width: 150px;height: 120px; background: #3f4a49;">
                                                 <iframe class="form-controlo img-thumbnail" src="#" frameborder="0" id="previewImage" style="width: 150px;height: 120px; background: #3f4a49;"></iframe>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <hr class="my-2">
                                     <div class="clearfix mt-1">
@@ -159,7 +159,7 @@
                                     <th>Date</th>
                                     {{-- <th>Description</th> --}}
                                     <th>Notice Type</th>
-                                    <th>file</th>
+                                    {{-- <th>file</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -171,8 +171,8 @@
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->notice_type }}</td>
                                     {{-- <td>{!! $item->description !!}</td> --}}
-                                    <td> <iframe src="{{ asset($item->link) }}" height="50px" width="50px" frameborder="0"></iframe>
-                                        {{-- <img class="border" style="height: 40px; width:50px;" src="{{ asset($item->link) }}" alt=""></td> --}}
+                                    {{-- <td> <iframe src="{{ asset($item->link) }}" height="50px" width="50px" frameborder="0"></iframe>
+                                        <img class="border" style="height: 40px; width:50px;" src="{{ asset($item->link) }}" alt=""></td> --}}
                                     <td>
                                         <a href="{{ route('notice.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="deletePartner({{ $item->id }})"><i class="fa fa-trash"></i></button>

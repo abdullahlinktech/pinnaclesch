@@ -135,8 +135,8 @@
                                 <input type="password" class="form-control" name="password" placeholder="Enter New password">
                             </div>
                             <div class="modal-footer">
-                                <button type="reset" class="btn btn-secondary">Reset</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save changes</button>
                             </div>
                         </form>
                     </div>

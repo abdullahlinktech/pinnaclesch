@@ -93,19 +93,19 @@
                                             </div>
                                         </div>
                           
-                                        <div class="row my-2">
+                                        {{-- <div class="row my-2">
                                             <div class="col-md-3">
                                                 <label for="link" class="mt-1"> Pdf/Excel <small></small></label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input class="form-control" id="image" type="file" name="link" onchange="readURL(this);">
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
-                                    <div class="col-md-4 offset-md-1 mt-3">
+                                    {{-- <div class="col-md-4 offset-md-1 mt-3">
                                         <iframe class="form-controlo img-thumbnail" src="#" frameborder="0" id="previewImage" style="width: 150px;height: 120px; background: #3f4a49;"></iframe>
-                                        {{-- <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 150px;height: 120px; background: #3f4a49;"> --}}
-                                    </div>
+                                        <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 150px;height: 120px; background: #3f4a49;">
+                                    </div> --}}
                                 </div>
                                 <hr class="my-2">
                                 <div class="clearfix mt-1">
