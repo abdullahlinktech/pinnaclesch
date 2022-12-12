@@ -212,6 +212,29 @@
 
             </section>
 
+            <section id="secondary">
+                <aside class="widget widget_categories">
+                    <h3 class="widgettitle">Events</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Play School<span>(16)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Academic Performance<span>(3)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Co-curricular<span>(26)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Visual Education<span>(18)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Inter Competition<span>(4)</span></a>
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
 
             {{-- <section id="secondary">
                 <aside class="widget widget_categories">

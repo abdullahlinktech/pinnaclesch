@@ -18,7 +18,7 @@
             <section id="primary" class="with-sidebar pt-5 pb-5">
                 <div class="images">
                     <a href="#">
-                        <img src="{{ asset('website/images/product5.jpg') }}" alt="" title="Product Image" class="proimg">
+                        <img src="{{ asset($product->image) }}" alt="" title="Product Image" class="proimg">
                     </a>
                 </div>
                 <div class="summary">
@@ -44,12 +44,13 @@
                 <aside class="widget widget_categories">
                     <h3 class="widgettitle">Categories</h3>
                     <ul>
-                        <li><a href="#">Book<span>(16)</span></a></li>
-                        <li><a href="#">Copy<span>(3)</span></a></li>
-                        <li><a href="#">Stationery<span>(26)</span></a></li>
-                        <li><a href="#">School Dress<span>(18)</span></a></li>
-                        <li><a href="#">Sports Dress<span>(4)</span></a></li>
-                        <li><a href="#">Bags<span>(4)</span></a></li>
+                        @php
+                            use App\Models\Category;
+                            $categories = Category::get();
+                        @endphp
+                        @foreach ($categories as $cat)
+                            <li><a href="{{ route('categorywiseproduct',$cat->id) }}">{{ $cat->name }}</a></li>
+                        @endforeach
                     </ul>
                 </aside>
                 <aside class="widget widget_text">

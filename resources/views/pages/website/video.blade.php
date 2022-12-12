@@ -20,7 +20,7 @@
                 <div class="column dt-sc-one-third {{ in_array($key, $newkey) ? 'first' : '' }}">
                     <iframe class="entry-thumb" width="100%" height="170" src="{{$item->link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                    
+
                 @endforeach
 
             </section>
@@ -28,7 +28,7 @@
 
             <section id="secondary">
                 <aside class="widget widget_categories">
-                    <h3 class="widgettitle">Categories</h3>
+                    <h3 class="widgettitle">Events</h3>
                     <ul>
                         <li>
                             <a href="#">Play School<span>(16)</span></a>
@@ -47,7 +47,6 @@
                         </li>
                     </ul>
                 </aside>
-      
             </section>
         </div>
     </div>
