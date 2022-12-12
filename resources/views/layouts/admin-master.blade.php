@@ -109,7 +109,7 @@
             <!-- Sidebar Area Start Here -->
            @include('layouts.partials.sidebar')
             <!-- Sidebar Area End Here -->
-            <div class="dashboard-content-one">
+            <div class="dashboard-content-one ">
 
                 <!-- Dashboard summery Start Here -->
                @yield('admin-content')
@@ -140,13 +140,13 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
-                <!-- Footer Area Start Here -->
-                {{-- <footer class="footer-wrap-layout1">
-                    <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
+                   </div>
+                  </div>
+                   <!-- Footer Area Start Here -->
+                   {{-- <footer class="footer-wrap-layout1">
+                     <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
                             href="#">Link-Up Technology LTD.</a></div>
-                </footer> --}}
+                   </footer> --}}
                 <!-- Footer Area End Here -->
             </div>
         </div>
