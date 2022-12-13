@@ -16,7 +16,7 @@
         <div class="container">
             <section id="primary" class="pt-5 pb-5">
                 <div class="dt-sc-one column first">
-                    {{--  Notice for Teacher  --}}
+                     {{-- Notice for Teacher  --}}
                     <h2 class="dt-sc-hr-green-title" id="teacher">Notice for Teacher</h2>
                     <div class="custom-card">
                         <div class="card-body">
