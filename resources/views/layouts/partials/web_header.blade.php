@@ -23,8 +23,8 @@
         </div>
         <div class="contact-details">
             <div class="topRegLog">
-                <a href="#" class="dt-sc-button small topbtns pink"> Register Now <span class="fa fa-user"> </span></a>
-                <a href="#" class="dt-sc-button small topbtns mustard"> Login <span class="fa fa-sign-in"> </span></a>
+                {{-- <a href="#" class="dt-sc-button small topbtns pink"> Register Now <span class="fa fa-user"> </span></a> --}}
+                <a href="{{route('student.login')}}" class="dt-sc-button small topbtns mustard"> Login <span class="fa fa-sign-in"> </span></a>
             </div>
         </div>
     </div>

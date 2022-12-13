@@ -3,6 +3,23 @@
 @push('admin-css')
 @endpush
 @section('admin-content')
+  <!-- Breadcubs Area Start Here -->
+
+  <div class="breadcrumbs-area d-flex justify-content-between">
+    <div>
+        <h3>Admin Profile Update</h3>
+    </div>
+    <div class="">
+        <ul>
+            <li>
+                <a href="{{ route('dashboard') }}">Home</a>
+            </li>
+            <li>Admin</li>
+        </ul>
+    </div>
+
+</div>
+<!-- Breadcubs Area End Here -->
 <main>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -60,8 +77,8 @@
 
                             <div class="clearfix border-top">
                                 <div class="float-md-right mt-2">
-                                    <button type="reset" class="btn btn-dark btn-sm">Reset</button>
-                                    <button type="submit" class="btn btn-info btn-sm">Update</button>
+                                    <a class="btn-fill-lg bg-blue-dark btn-hover-yellow" href="{{route('register.create')}}">Back</a>
+                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
                                 </div>
                             </div>
                         </form>

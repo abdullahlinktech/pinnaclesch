@@ -117,11 +117,22 @@ class HomeController extends Controller
     }
 
     public function notices() {
-        return view('pages.website.notices');
+        $notice = Notice::latest()->get();
+        $noticeTn = Notice::where('notice_type', 'tn')->latest()->get();
+        $noticeSn = Notice::where('notice_type', 'sn')->latest()->get();
+        $noticeGn = Notice::where('notice_type', 'gn')->latest()->get();
+        $noticeJn = Notice::where('notice_type', 'jn')->latest()->get();
+        return view('pages.website.notices',compact('notice','noticeTn','noticeSn','noticeGn','noticeJn'));
     }
 
     public function contact() {
         return view('pages.website.contact');
+    }
+    public function login(){
+        return view('pages.website.login');
+    }
+    public function forget(){
+        return view('pages.website.forget');
     }
 
 

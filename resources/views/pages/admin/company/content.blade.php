@@ -62,15 +62,6 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <label for="address"> Address <span class="text-danger">*</span></label>
-                                    <input type="text" name="address" value="{{ $company->address }}" class="form-control form-control-sm shadow-none @error('address') is-invalid @enderror" id="address">
-                                    @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6 mb-2">
                                     <label for="facebook"> Facebook</label>
                                     <input type="url" name="facebook" value="{{ $company->facebook }}" class="form-control form-control-sm shadow-none @error('facebook') is-invalid @enderror" id="facebook">
                                     @error('facebook')
@@ -107,7 +98,15 @@
                                         </span>
                                     @enderror
                                 </div>
-
+                                <div class="col-md-6 mb-2">
+                                    <label for="f_title"> Footer Title</label>
+                                    <input type="text" name="f_title" value="{{ $company->f_title }}" class="form-control form-control-sm shadow-none @error('f_title') is-invalid @enderror mb-2" id="f_title">
+                                    @error('f_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                                 <div class="col-md-6 mb-2">
                                     <label for="s_description">Footer Text</label>
                                     <textarea type="text" id="s_description" name="s_description" class="form-control form-control-sm shadow-none @error('s_description') is-invalid @enderror mb-2" rows="5">{{ $company->s_description }}</textarea>
@@ -117,6 +116,7 @@
                                         </span>
                                     @enderror
                                 </div>
+                             
 
                                 <div class="col-md-6 mb-2">
                                     <label for="map">Google Map</label>
@@ -127,10 +127,13 @@
                                         </span>
                                     @enderror
                                 </div>
+                            
+                           
                                 <div class="col-md-6 mb-2">
-                                    <label for="f_title"> Footer Title</label>
-                                    <input type="text" name="f_title" value="{{ $company->f_title }}" class="form-control form-control-sm shadow-none @error('f_title') is-invalid @enderror mb-2" id="f_title">
-                                    @error('f_title')
+                                    <label for="address"> Address <span class="text-danger">*</span></label>
+                                    <textarea type="text" id="address" name="address" class="form-control form-control-sm shadow-none @error('address') is-invalid @enderror mb-2" rows="5">{{ $company->address }}</textarea>
+                                    {{-- <input type="text" name="address" value="{{ $company->address }}" class="form-control form-control-sm shadow-none @error('address') is-invalid @enderror" id="address"> --}}
+                                    @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

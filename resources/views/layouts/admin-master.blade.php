@@ -109,7 +109,7 @@
             <!-- Sidebar Area Start Here -->
            @include('layouts.partials.sidebar')
             <!-- Sidebar Area End Here -->
-            <div class="dashboard-content-one">
+            <div class="dashboard-content-one ">
 
                 <!-- Dashboard summery Start Here -->
                @yield('admin-content')
@@ -135,18 +135,18 @@
                                 <input type="password" class="form-control" name="password" placeholder="Enter New password">
                             </div>
                             <div class="modal-footer">
-                                <button type="reset" class="btn btn-secondary">Reset</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save changes</button>
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
-                <!-- Footer Area Start Here -->
-                {{-- <footer class="footer-wrap-layout1">
-                    <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
+                   </div>
+                  </div>
+                   <!-- Footer Area Start Here -->
+                   {{-- <footer class="footer-wrap-layout1">
+                     <div class="copyright">© {{ date('Y') }} Copyrights <a href="{{ route('home') }}" target="_blank">{{ $content->name }}</a>. All rights reserved. Designed by <a
                             href="#">Link-Up Technology LTD.</a></div>
-                </footer> --}}
+                   </footer> --}}
                 <!-- Footer Area End Here -->
             </div>
         </div>

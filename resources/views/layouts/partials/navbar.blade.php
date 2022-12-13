@@ -51,7 +51,8 @@
                         <span>Admin</span>
                     </div>
                     <div class="admin-img">
-                        <img src="{{asset('backend/img/figure/admin.jpg')}}" alt="Admin">
+                        <img src="{{asset(Auth::guard()->user()->image)}}" style="max-height: 50px;max-width:50px" alt="Admin">
+             
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">

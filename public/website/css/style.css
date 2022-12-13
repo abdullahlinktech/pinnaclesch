@@ -1070,7 +1070,7 @@ ol.commentlist .comment_container{float:left; margin-right:20px; max-width:60px;
 
 /**events**/
 
-.events-list{width:100%; float:left; margin:0px 0px 6px; padding:0px 0px 10px; border-bottom:1px solid #d8e8ea;}
+.events-list{width:100%; float:left; margin:0px 0px 6px; padding:0px 0px 6px; border-bottom:1px solid #d8e8ea;}
 
 .column .events-list:last-child{border:none;}
 
@@ -1078,7 +1078,7 @@ ol.commentlist .comment_container{float:left; margin-right:20px; max-width:60px;
 
 .events-list .event-thumb img{max-width:100%;}
 
-.events-list h2{font-size:16px; margin-bottom:8px; display:block;}
+.events-list h2{font-size:16px; margin-bottom:0px; display:block;}
 
 .events-list h2 a{color:#000000; display:inherit;}
 
