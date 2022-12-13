@@ -414,6 +414,11 @@ color: #000 !important;
     width: 100%;
 }
 
+.socialImg {
+    height: auto;
+    width: 100%;
+}
+
 .classImg {
     height: 250px;
     width: 100%;
