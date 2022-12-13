@@ -16,6 +16,7 @@
         @php $clskey = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]; @endphp
         @foreach ($classes as $key=>$class)
 
+            {{--  Class Section  --}}
             <div class="container">
                 <section id="primary" class="content-full-width pt-5 pb-5">
                     @if (in_array($key, $clskey))

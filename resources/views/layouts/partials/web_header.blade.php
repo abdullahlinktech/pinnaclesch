@@ -79,7 +79,7 @@
                         <ul class="sub-menu">
                             <li><a href="{{ route('notices') }}/#teacher">Notice for Teacher</a></li>
                             <li><a href="{{ route('notices') }}/#student">Notice for Student</a></li>
-                            <li><a href="{{ route('notices') }}/#guardian">Notice for Guardian</a></li>
+                            <li><a href="{{ route('notices') }}/#gaurdian">Notice for Guardian</a></li>
                             <li><a href="{{ route('notices') }}/#career">Notice for Job</a></li>
                         </ul>
                         <a class="dt-menu-expand">+</a>
