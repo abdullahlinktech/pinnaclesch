@@ -31,12 +31,20 @@
                                     </div>
                                 </div>
                                 </div>
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
                                 @endforeach
 
                              @else
                              <p style="text-align: center;font-size: 20px">No Notice Available</p>
+<<<<<<< HEAD
                             @endif
+=======
+                            @endif 
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
                         </div>
                     </div>
 
@@ -56,10 +64,17 @@
                             </div>
                           </div>
                            @endforeach
+<<<<<<< HEAD
 
                            @else
                            <p style="text-align: center;font-size: 20px">No Notice Available</p>
                            @endif
+=======
+                          
+                           @else
+                           <p style="text-align: center;font-size: 20px">No Notice Available</p>
+                           @endif 
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
 
                         </div>
                     </div>
@@ -79,12 +94,20 @@
                                   </div>
                               </div>
                             </div>
+<<<<<<< HEAD
 
+=======
+                       
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
                             @endforeach
 
                             @else
                             <p style="text-align: center;font-size: 20px">No Notice Available</p>
+<<<<<<< HEAD
                             @endif
+=======
+                            @endif 
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
                         </div>
                     </div>
 
@@ -102,17 +125,30 @@
                                                 <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="">read more...</a></p>
                                             </div>
                                         </div>
+<<<<<<< HEAD
                                     </div>
                                 @endforeach
                              @else
                                 <p style="text-align: center;font-size: 20px">No Notice Available</p>
                             @endif
 
+=======
+                                    </div>                                    
+                                @endforeach
+                             @else
+                                <p style="text-align: center;font-size: 20px">No Notice Available</p>
+                            @endif                           
+                            
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
                         </div>
                     </div>
                 </div>
             </section>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0f87072a8200d0bb932234ecd3221ac5938efc53
         </div>
     </div>
 @endsection
