@@ -25,15 +25,16 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card heaight-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fa fa-edit"></i> Edit Teacher</h4>
+                            <div>
+                                <a href="{{ route('dashboard') }}"
+                                    class="btn btn-primary btn-sm overflow-hidden">Dashboard</a>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fa fa-edit"></i> Edit Teacher</h4>
-                                    <div>
-                                        <a href="{{ route('dashboard') }}"
-                                            class="btn btn-primary btn-sm overflow-hidden">Dashboard</a>
-                                    </div>
-                                </div>
+                              
                                 <form action="{{ route('teacher.update', $teacher) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
@@ -47,7 +48,7 @@
                                                 <div class="col-md-9">
                                                     <input class="form-control @error('name') is-invalid @enderror"
                                                         id="name" type="text" name="name"
-                                                        value="{{ $teacher->name }}" placeholder="Teacher name">
+                                                        value="{{ $teacher->name }}" placeholder=" name">
                                                     @error('name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -62,7 +63,7 @@
                                                 <div class="col-md-9">
                                                     <input class="form-control @error('phone') is-invalid @enderror"
                                                         id="phone" type="text" name="phone"
-                                                        value="{{ $teacher->phone }}" placeholder="Teacher phone">
+                                                        value="{{ $teacher->phone }}" placeholder=" phone">
                                                     @error('phone')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>

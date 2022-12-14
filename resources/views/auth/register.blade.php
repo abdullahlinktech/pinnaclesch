@@ -25,11 +25,12 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                <div class="card">
+                <div class="card-header">
+                    <h4 class="heading"><i class="fa fa-user-plus"></i> Add New User</h4>
+                </div>
                 <div class="card-body">
                     <div class="form">
-                        <div class="card-header">
-                            <h4 class="heading"><i class="fa fa-user-plus"></i> Add New User</h4>
-                        </div>
+                      
                         <form action="{{ route('register.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">

@@ -24,11 +24,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card height-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fas fa-plus"></i> Add Notice</h4>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Notice</h4>
-                                </div>
+                              
                                 <form action="{{ route('notice.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -169,7 +170,17 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->date }}</td>
-                                    <td>{{ $item->notice_type }}</td>
+                                    <td>
+                                        @if ($item->notice_type == 'sn')
+                                            Student Notice
+                                        @elseif ($item->notice_type == 'tn')
+                                            Teacher Notice
+                                        @elseif ($item->notice_type == 'gn')
+                                            Gaurdian Notice
+                                        @elseif ($item->notice_type == 'jn')
+                                            Job Notice
+                                        @endif                                        
+                                    </td>
                                     {{-- <td>{!! $item->description !!}</td> --}}
                                     {{-- <td> <iframe src="{{ asset($item->link) }}" height="50px" width="50px" frameborder="0"></iframe>
                                         <img class="border" style="height: 40px; width:50px;" src="{{ asset($item->link) }}" alt=""></td> --}}

@@ -65,11 +65,6 @@
 
                     @endforeach
                 </aside>
-
-                <aside class="widget widget_text">
-                    <h3 class="widgettitle">Kids Achievements</h3>
-                    <p class="justify">Our kids are involved in many different things. They play multiple sports, are involved in other extracurricular activities, and have a wide variety of interests. Sometimes they achieve a lot, others they don’t achieve as much.</p>
-                </aside>
             </section>
         </div>
     </div>

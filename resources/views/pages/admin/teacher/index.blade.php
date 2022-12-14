@@ -24,11 +24,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card height-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fas fa-plus"></i> Add new Teacher</h4>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add new Teacher</h4>
-                                </div>
+                              
                                 <form action="{{ route('teacher.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -41,7 +42,7 @@
                                                     <input
                                                         class="form-control form-control-sm @error('name') is-invalid @enderror"
                                                         id="name" type="text" name="name"
-                                                        value="{{ old('name') }}" placeholder="Teacher Name">
+                                                        value="{{ old('name') }}" placeholder=" Name">
                                                     @error('name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -57,7 +58,7 @@
                                                     <input
                                                         class="form-control form-control-sm @error('phone') is-invalid @enderror"
                                                         id="phone" type="text" name="phone"
-                                                        value="{{ old('phone') }}" placeholder="Teacher phone">
+                                                        value="{{ old('phone') }}" placeholder=" phone">
                                                     @error('phone')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -74,7 +75,7 @@
                                                     <input
                                                         class="form-control form-control-sm @error('specality') is-invalid @enderror"
                                                         id="specality" type="text" name="specality"
-                                                        value="{{ old('specality') }}" placeholder="Teacher specality">
+                                                        value="{{ old('specality') }}" placeholder=" specality">
                                                     @error('specality')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -91,7 +92,7 @@
                                                     <input
                                                         class="form-control form-control-sm @error('designation') is-invalid @enderror"
                                                         id="designation" type="text" name="designation"
-                                                        value="{{ old('designation') }}" placeholder="Teacher designation">
+                                                        value="{{ old('designation') }}" placeholder=" designation">
                                                     @error('designation')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>

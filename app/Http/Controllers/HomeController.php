@@ -32,12 +32,12 @@ class HomeController extends Controller
         $video = Video::latest()->get();
         $gallery = Gallery::latest()->take(7)->get();
         $management = Management::take(1)->get();
-        $news = News::latest()->get();
+        $news = News::latest()->take(4)->get();
         $notice = Notice::latest()->get();
-        $teacher = Teacher::latest()->get();
+        $teacher = Teacher::take(64)->get();
         $activities = Activity::take(8)->get();
         $dress = Dress::latest()->take(4)->get();
-        $specials = Whyspecail::latest()->take(8)->get();
+        $specials = Whyspecail::take(8)->get();
         return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management', 'slider'));
     }
 
@@ -48,7 +48,7 @@ class HomeController extends Controller
     }
 
     public function teachers() {
-        $teachers = Teacher::latest()->get();
+        $teachers = Teacher::get();
         return view('pages.website.teachers', compact('teachers'));
     }
 
@@ -73,6 +73,23 @@ class HomeController extends Controller
             return view('pages.website.not-found', compact('backimage'));
         }
     }
+    public function spacialDetails($id) {
+        $specials = Whyspecail::find($id);
+        $spaciallist = Whyspecail::first();
+     return view('pages.website.spacialDetails', compact('specials','spaciallist'));
+        
+    }
+    public function activeDetails($id) {
+        $active = Activity::find($id);
+        $activelist = Activity::first();
+     return view('pages.website.activDetails', compact('active','activelist'));
+        
+    }
+   public function noticeDetails($id){
+    $notice = Notice::find($id);
+    $noticelist = Notice::first();
+    return view('pages.website.noticeDetails',compact('notice','noticelist'));
+   }
 
     public function product() {
         $products = Shop::orderBy('id', 'DESC')->get();
@@ -93,9 +110,8 @@ class HomeController extends Controller
     }
 
     public function gallery() {
-        $backimage = BackImage::first();
         $gallery = Gallery::latest()->get();
-        return view('pages.website.gallery', compact('backimage', 'gallery'));
+        return view('pages.website.gallery', compact( 'gallery'));
     }
 
     public function video() {

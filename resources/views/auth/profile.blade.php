@@ -25,11 +25,12 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                <div class="card height-auto">
+                <div class="card-header">
+                    <h4 class="heading"><i class="fa fa-user-plus"></i> Update Profile</h4>
+                   </div>
                 <div class="card-body">
                     <div class="form">
-                       <div class="card-header">
-                        <h4 class="heading"><i class="fa fa-user-plus"></i> Update Profile</h4>
-                       </div>
+                     
                         <form action="{{ route('register.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

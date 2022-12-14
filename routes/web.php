@@ -51,11 +51,14 @@ Route::get('/facilities', [HomeController::class, 'facilities'])->name('faciliti
 Route::get('/news-events', [HomeController::class, 'newsevents'])->name('newsevents');
 Route::get('/news-details/{id}', [HomeController::class, 'newsdetails'])->name('newsdetails');
 Route::get('/notices', [HomeController::class, 'notices'])->name('notices');
+Route::get('/notice-details/{id}',[HomeController::class,'noticeDetails'])->name('notice.details');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/video', [HomeController::class, 'video'])->name('video');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/student-login', [HomeController::class, 'login'])->name('student.login');
 Route::get('/student-paasword-forget', [HomeController::class, 'forget'])->name('forget.password');
+Route::get('spacial-details/{id}',[HomeController::class,'spacialDetails'])->name('spacial.details');
+Route::get('active-details/{id}',[HomeController::class,'activeDetails'])->name('active.details');
 
 // Shop
 Route::get('/product', [HomeController::class, 'product'])->name('product');

@@ -684,7 +684,7 @@ margin:auto;}
 
 .front-portfolio:hover .link{left:35%;}
 
-.front-portfolio:hover .zoom{right:35%;}
+.front-portfolio:hover .zoom{right:47%;}
 
 .front-portfolio:hover .image-overlay h5{transform:scale(1); -webkit-transform:scale(1); -moz-transform:scale(1);}
 
@@ -775,7 +775,7 @@ margin:auto;}
 
 .portfolio.dt-sc-one-fourth{text-align:center;}
 
-.dt-sc-portfolio-container .portfolio{margin:0px 0px 30px 0px;}
+.dt-sc-portfolio-container .portfolio{margin:0px 0px 10px 0px;}
 
 .portfolio.dt-sc-one-third{width:292px; margin:0px 0px 30px 0px; text-align:center;}
 
@@ -904,7 +904,7 @@ top:0px; left:-15px;}
 
 #primary.with-sidebar .dt-sc-one-half .entry-meta .blog-author{max-width:50px; max-height:50px; margin-bottom:10px;}
 
-#primary.with-sidebar .dt-sc-one-half .date, #primary.with-sidebar .dt-sc-one-half .comments, #primary.with-sidebar .dt-sc-one-half .entry_format{margin:0px 0px 6px 14px;}
+#primary.with-sidebar .dt-sc-one-half .date, .with-sidebar .dt-sc-one-half .comments, #primary.with-sidebar .dt-sc-one-half .entry_format{margin:0px 0px 6px 14px;}
 
 /*--------------------------------------------------------------
 7.1 - Blog Comments Styles

@@ -24,11 +24,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card height-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fas fa-plus"></i> Add new Activity</h4>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add new Activity</h4>
-                                </div>
+                               
                                 <form action="{{ route('activity.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -125,7 +126,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Title</th>
-                                    <th>Description</th>
+                                    {{-- <th>Description</th> --}}
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -135,7 +136,7 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{!! $item->description !!}</td>
+                                    {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>
                                         <a href="{{ route('activity.edit',$item) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>

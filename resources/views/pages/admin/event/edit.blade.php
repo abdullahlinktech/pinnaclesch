@@ -21,60 +21,65 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="form-area">
-                    <div class="d-flex justify-content-between heading">
+                <div class="card height-auto">
+                    <div class="d-flex justify-content-between heading card-header">
                         <h4 class=""><i class="fa fa-edit"></i> Edit News & Event</h4>
                     </div>
-                    <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6 mb-2">
-                                <label for="title">News Title <span class="text-danger"> * </span></label>
-                                <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $news->title }}" placeholder="News Title">
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <label for="date">News Date <span class="text-danger"> * </span></label>
-                                <input class="form-control @error('date') is-invalid @enderror" id="date" type="date" name="date" value="{{ $news->date }}" placeholder="News date">
-                                @error('date')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                <label for="image" class="mt-1">Image</label>
-                                <input class="form-control @error('image') is-invalid @enderror" id="image" type="file" name="image" onchange="readURL(this);">
-                                <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 150px;height: 100px; background: #3f4a49;">
-                                @error('image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="col-md-6 mb-2">
-                                <div class="form-group">
-                                    <label for="description">News Details</label>
-                                    <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="editor" rows="4">{{ $news->description }}</textarea>
-                                    @error('description')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                    <div class="card-body">
+                        <div class="form">
+                          
+                            <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label for="title">News Title <span class="text-danger"> * </span></label>
+                                        <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $news->title }}" placeholder="News Title">
+                                        @error('title')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <label for="date">News Date <span class="text-danger"> * </span></label>
+                                        <input class="form-control @error('date') is-invalid @enderror" id="date" type="date" name="date" value="{{ $news->date }}" placeholder="News date">
+                                        @error('date')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+        
+                                        <label for="image" class="mt-1">Image</label>
+                                        <input class="form-control @error('image') is-invalid @enderror" id="image" type="file" name="image" onchange="readURL(this);">
+                                        <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 150px;height: 100px; background: #3f4a49;">
+                                        @error('image')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-group">
+                                            <label for="description">News Details</label>
+                                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="editor" rows="4">{{ $news->description }}</textarea>
+                                            @error('description')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <hr class="my-2">
+                                <div class="clearfix mt-1">
+                                    <div class="float-md-left">
+                                        <a href="{{ route('news.index') }}" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Back</a>
+                                        <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
+                                    </div>
+                                </div>
+        
+                            </form>
+        
                         </div>
-                        <hr class="my-2">
-                        <div class="clearfix mt-1">
-                            <div class="float-md-left">
-                                <a href="{{ route('news.index') }}" class="btn btn-sm btn-dark">Back</a>
-                                <button type="submit" class="btn btn-sm btn-info">Update</button>
-                            </div>
-                        </div>
-
-                    </form>
-
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,12 +22,14 @@
 <!-- Breadcubs Area End Here -->
 <main>
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-md-7">
               <div class="card height-auto">
+                <div class="card-header">
+                    <h4 class="heading"><i class="fas fa-plus"></i> Add a Video </h4>
+                </div>
                 <div class="card-body">
                     <div class="form">
-                        <h4 class="heading"><i class="fas fa-plus"></i> Add a Video </h4>
                         <form action="{{ route('store.video') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -79,11 +81,12 @@
     </div>
     <div class="container-fluid">
         <div class="card my-3">
+            <div class="card-header">
+                <i class="fas fa-list"></i>
+                Video List
+            </div>
             <div class="card-body">
-                <div class="card-header">
-                    <i class="fas fa-list"></i>
-                    Video List
-                </div>
+               
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                         <thead>

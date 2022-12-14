@@ -10,7 +10,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teacher = Teacher::latest()->get();
+        $teacher = Teacher::get();
         return view('pages.admin.teacher.index', compact('teacher'));
     }
 

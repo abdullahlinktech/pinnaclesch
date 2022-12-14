@@ -24,10 +24,10 @@
                                 @foreach ($noticeTn as $item)
                                 <div class="events-list">
                                 <div class="event-details">
-                                    <h2><a href="#">{{$item->title}}</a></h2>
+                                    <h2><a href="{{route('notice.details',$item->id)}}">{{$item->title}}</a></h2>
                                     <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
                                     <div class="event-excerpt">
-                                        <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="">read more...</a></p>
+                                        <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more...</a></p>
                                     </div>
                                 </div>
                                 </div>
@@ -48,10 +48,10 @@
                            @foreach ($noticeSn as $item)
                            <div class="events-list">
                             <div class="event-details">
-                                <h2><a href="#">{{$item->title}}</a></h2>
+                                <h2><a href="{{route('notice.details',$item->id)}}">{{$item->title}}</a></h2>
                                 <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
                                 <div class="event-excerpt">
-                                    <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="">read more...</a></p>
+                                    <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more...</a></p>
                                 </div>
                             </div>
                           </div>
@@ -72,10 +72,10 @@
                             @foreach ($noticeGn as $item)
                             <div class="events-list">
                               <div class="event-details">
-                                  <h2><a href="#">{{$item->title}}</a></h2>
+                                  <h2><a href="{{route('notice.details',$item->id)}}">{{$item->title}}</a></h2>
                                   <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
                                   <div class="event-excerpt">
-                                      <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="">read more...</a></p>
+                                      <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more...</a></p>
                                   </div>
                               </div>
                             </div>
@@ -96,10 +96,10 @@
                                 @foreach ($noticeJn as $item)
                                     <div class="events-list">
                                         <div class="event-details">
-                                            <h2><a href="#">{{$item->title}}</a></h2>
+                                            <h2><a href="{{route('notice.details',$item->id)}}">{{$item->title}}</a></h2>
                                             <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
                                             <div class="event-excerpt">
-                                                <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="">read more...</a></p>
+                                                <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more...</a></p>
                                             </div>
                                         </div>
                                     </div>                                    

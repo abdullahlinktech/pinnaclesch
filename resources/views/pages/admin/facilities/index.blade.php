@@ -24,11 +24,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card height-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fas fa-plus"></i> Add Facilities</h4>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Facilities</h4>
-                                </div>
+                               
                                 <form action="{{ route('facilities.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">

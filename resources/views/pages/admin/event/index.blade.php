@@ -22,9 +22,12 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
               <div class="card height-auto">
+                <div class="card-header">
+                    <h4 class="heading"><i class="fas fa-plus"></i> Add News & Event</h4>
+                </div>
                 <div class="card-body">
                     <div class="form">
-                        <h4 class="heading"><i class="fas fa-plus"></i> Add News & Event</h4>
+                        
                         <form action="{{ route('store.news') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">

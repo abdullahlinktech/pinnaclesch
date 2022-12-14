@@ -80,14 +80,16 @@
                         <div class="dt-sc-ico-content type1">
                             <div class="icon">
                                 <span class="icon-outer">
-                                    <img src="{{ asset($activity->image) }}" class="actImg" alt="" title="">
-                                    {{--  <img src="{{ asset('website/images/service1.jpg') }}" alt="" title="">  --}}
+                                    <a href="{{route('active.details',$activity->id)}}">
+                                        <img src="{{ asset($activity->image) }}" class="actImg" alt="" title="">
+                                    </a>
+                                  
                                     <span class="infolayer">
-                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <a href="{{route('active.details',$activity->id)}}"><i class="fa fa-link"></i></a>
                                     </span>
                                 </span>
                             </div>
-                            <h4><a href="#">{{ $activity->title }}</a></h4>
+                            <h4><a href="{{route('active.details',$activity->id)}}">{{ $activity->title }}</a></h4>
                             <div class="actDescript">{!! $activity->description !!}</div>
                         </div>
                     </div>
@@ -107,12 +109,12 @@
                                     <div class="dt-sc-one-fourth column">
                                         <div class="icon">
                                             <span class="icon-outer">
-                                                <img src="{{ asset($spcl->image) }}" class="spcImg" alt="" title="">
+                                                <a href="{{route('spacial.details',$spcl->id)}}"><img src="{{ asset($spcl->image) }}" class="spcImg" alt="" title=""></a>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="dt-sc-one-half column spclhead">
-                                        <h4><a href="#" target="_blank"> {{ $spcl->title }} </a></h4>
+                                        <h4><a href="{{route('spacial.details',$spcl->id)}}"> {{ $spcl->title }} </a></h4>
                                     </div>
                                     <div class="justify spcldes">{!! $spcl->description !!}</div>
                                 </div>
@@ -182,10 +184,10 @@
                              @foreach ($notice as $item)
                              <div class="events-list">
                                 <div class="event-details">
-                                    <h2><a href="#">{{$item->title}}</a></h2>
+                                    <h2><a href="{{route('notice.details',$item->id)}}">{{$item->title}}</a></h2>
                                     <div class="event-meta"><span class="fa fa-calendar"></span> {{$item->date}}</div>
                                     <div class="event-excerpt">
-                                        {!! Str::of($item->description)->words(16, '...');!!} <a href="{{route('newsdetails',$item->id)}}">read more</a>
+                                        {!! Str::of($item->description)->words(16, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more</a>
                                     </div>
                                 </div>
                             </div>
@@ -214,10 +216,7 @@
                                         <img src="{{ asset('uploads/gallery/'.$item->image) }}" alt=""
                                             title="">
                                         <div class="image-overlay">
-                                            <h5><a href="portfolio-detail.html">{{$item->title}}</a></h5>
-                                            <a href="portfolio-detail.html" class="link"><span
-                                                    class="fa
-                                                fa-link"></span></a>
+                                            <h5><a href="#">{{$item->title}}</a></h5>
                                             <a href="{{ asset('uploads/gallery/'.$item->image) }}"
                                                 data-gal="prettyPhoto[gallery]" class="zoom"><span
                                                     class="fa
@@ -242,9 +241,9 @@
 
                 <div class="container">
                     <h2 class="dt-sc-hr-white-title">Video Gallery</h2>
-
+                    @php $newkey = [0, 4, 8, 12, 16, 20]; @endphp
                     @foreach ($video as $key => $item)
-                        <div class="column dt-sc-one-fourth {{ $key == 0 ? 'first' : '' }} video_gall">
+                        <div class="column dt-sc-one-fourth {{ in_array($key, $newkey) ? 'first' : '' }} video_gall">
                             <div class="video">
                                 <iframe width="100%" height="150" src="{{$item->link}}"
                                     title="YouTube video player" frameborder="0"

@@ -35,7 +35,7 @@
                 {{-- Founder Message --}}
                 @foreach ($management as $chair)
                     <div class="dt-sc-one column" id="chairman-message">
-                        <h2>Meet Our Founder</h2>
+                        <h2>Chairman Message </h2>
                         <div class="author-details">
                             <div class="author-thumb">
                                 <img class="item-mask" src="{{ asset('website/images/author-hexa-bg.png') }}" alt="" title="">
@@ -49,55 +49,8 @@
                         </div>
                     </div>
                 @endforeach
-
-                {{--  <div class="dt-sc-hr"></div>
-
-                <div class="dt-sc-one-half column first">
-                    <h2>Our Mission</h2>
-                    <div class="author-description justify">
-                        <p>Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. Sed cursus ipsum vitae
-                            justo scelerisque, ac viverra tellus eleifend. Etiam interdum justo nunc, ac volutpat erat
-                            elementum id. Fusce dapibus mauris ac dictum porta. Sed pretium luctus elementum. In
-                            sollicitudin felis semper purus imperdiet lobortis. In odio tellus, rhoncus eget dolor in,
-                        </p>
-                    </div>
-                </div>
-
-                <div class="dt-sc-one-half column">
-                    <h2>Our Vission</h2>
-                    <div class="author-description justify">
-                        <p>Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. Sed cursus ipsum vitae
-                            justo scelerisque, ac viverra tellus eleifend. Etiam interdum justo nunc, ac volutpat erat
-                            elementum id. Fusce dapibus mauris ac dictum porta. Sed pretium luctus elementum. In
-                            sollicitudin felis semper purus imperdiet lobortis. In odio tellus, rhoncus eget dolor in,
-                        </p>
-                    </div>
-                </div>  --}}
-
-                {{--  <div class="dt-sc-hr"></div>
-                <h2>Our Sponsors</h2>
-                <div class="dt-sc-sponsor-carousel-wrapper">
-                    <ul class="dt-sc-sponsor-carousel">
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo1.png') }}" alt=""
-                                    title=""> </a> </li>
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo2.png') }}" alt=""
-                                    title=""> </a> </li>
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo3.png') }}" alt=""
-                                    title=""> </a> </li>
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo4.png') }}" alt=""
-                                    title=""> </a> </li>
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo1.png') }}" alt=""
-                                    title=""> </a> </li>
-                        <li> <a href="#" title=""> <img src="{{ asset('website/images/client-logo2.png') }}" alt=""
-                                    title=""> </a> </li>
-                    </ul>
-                    <div class="carousel-arrows">
-                        <a class="sponsor-prev" href="#"> </a>
-                        <a class="sponsor-next" href="#"> </a>
-                    </div>
-                </div>  --}}
-
             </section>
+          
         </div>
     </div>
 @endsection
