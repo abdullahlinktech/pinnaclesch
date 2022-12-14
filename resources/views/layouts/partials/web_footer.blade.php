@@ -30,17 +30,17 @@
                     <h3 class="widgettitle yellow_sketch"> Social Links </h3>
 
                     <div class="dt-sc-one-half column first">
-                        <a href="{{ $content->facebook }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/facebook.png') }}" alt="" title=""> </a>
+                        <a href="{{ $content->facebook }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/facebook.png') }}" alt="" title="" class="socialImg"> </a>
                     </div>
                     <div class="dt-sc-one-half column">
-                        <a href="{{ $content->youtube }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/youtube.png') }}" alt="" title=""> </a>
+                        <a href="{{ $content->youtube }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/youtube.png') }}" alt="" title="" class="socialImg"> </a>
                     </div>
 
                     <div class="dt-sc-one-half column first">
-                        <a href="{{ $content->linkedin }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/linkedin.png') }}" alt="" title=""> </a>
+                        <a href="{{ $content->linkedin }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/linkedin.png') }}" alt="" title="" class="socialImg"> </a>
                     </div>
                     <div class="dt-sc-one-half column">
-                        <a href="{{ $content->twitter }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/twitter.png') }}" alt="" title=""> </a>
+                        <a href="{{ $content->twitter }}" target="_blank" title=""> <img src="{{ asset('website/images/socialicons/twitter.png') }}" alt="" title="" class="socialImg"> </a>
                     </div>
 
                     <div class="schoolmap">

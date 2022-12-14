@@ -31,12 +31,11 @@
                                     </div>
                                 </div>
                                 </div>
-                        
                                 @endforeach
 
                              @else
                              <p style="text-align: center;font-size: 20px">No Notice Available</p>
-                            @endif 
+                            @endif
                         </div>
                     </div>
 
@@ -56,10 +55,10 @@
                             </div>
                           </div>
                            @endforeach
-                          
+
                            @else
                            <p style="text-align: center;font-size: 20px">No Notice Available</p>
-                           @endif 
+                           @endif
 
                         </div>
                     </div>
@@ -79,12 +78,12 @@
                                   </div>
                               </div>
                             </div>
-                       
+
                             @endforeach
 
                             @else
                             <p style="text-align: center;font-size: 20px">No Notice Available</p>
-                            @endif 
+                            @endif
                         </div>
                     </div>
 
@@ -102,17 +101,16 @@
                                                 <p>{!!Str::of($item->description)->words(60, '...');!!} <a href="{{route('notice.details',$item->id)}}">read more...</a></p>
                                             </div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 @endforeach
                              @else
                                 <p style="text-align: center;font-size: 20px">No Notice Available</p>
-                            @endif                           
-                            
+                            @endif
+
                         </div>
                     </div>
                 </div>
             </section>
-        
         </div>
     </div>
 @endsection
