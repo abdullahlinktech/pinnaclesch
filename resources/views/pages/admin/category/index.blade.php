@@ -41,7 +41,7 @@
                                                     <input
                                                         class="form-control form-control-sm @error('name') is-invalid @enderror"
                                                         id="name" type="text" name="name"
-                                                        value="{{ old('name') }}" placeholder="Teacher Name">
+                                                        value="{{ old('name') }}" placeholder="Category Name">
                                                     @error('name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <i class="fas fa-list"></i>
-                            All Categoris
+                            All Categorys
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

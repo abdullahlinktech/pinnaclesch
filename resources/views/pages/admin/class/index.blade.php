@@ -24,25 +24,39 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card height-auto">
+                        <div class="d-flex justify-content-between heading card-header">
+                            <h4 class=""><i class="fas fa-plus"></i> Add Class</h4>
+                        </div>
                         <div class="card-body">
                             <div class="form">
-                                <div class="d-flex justify-content-between heading card-header">
-                                    <h4 class=""><i class="fas fa-plus"></i> Add Class</h4>
-                                </div>
+                               
                                 <form action="{{ route('class.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6 mb-2">
                                             <div class="row my-2">
                                                 <div class="col-md-3">
-                                                    <label for="title"> Title <span class="text-danger"> *
+                                                    <label for="header"> School Type</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select class=" form-control form-control-sm" name="school_id" id="school_id" for="school_id" >
+                                                        <option value="" label="-- Select Class type--"></option>
+                                                        @foreach ($school as $item)
+                                                        <option value="{{$item->id}}">{{$item->name}}</option>  
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-md-3">
+                                                    <label for="title"> Class Name <span class="text-danger"> *
                                                         </span></label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input
                                                         class="form-control form-control-sm @error('title') is-invalid @enderror"
                                                         id="title" type="text" name="title"
-                                                        value="{{ old('title') }}" placeholder=" title">
+                                                        value="{{ old('title') }}" placeholder=" Class Name">
                                                     @error('title')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
@@ -120,7 +134,8 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Title</th>
+                                    <th>Class Name</th>
+                                    <th>School Type</th>
                                     {{-- <th>Description</th> --}}
                                     <th>Image</th>
                                     <th>Action</th>
@@ -131,6 +146,7 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->title }}</td>
+                                    <td>{{ $item->school->name }}</td>
                                     {{-- <td>{!! $item->description !!}</td> --}}
                                     <td><img class="border" style="height: 40px; width:50px;" src="{{ asset($item->image) }}" alt=""></td>
                                     <td>

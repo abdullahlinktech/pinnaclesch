@@ -54,7 +54,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="row my-2">
+                                        {{-- <div class="row my-2">
                                             <div class="col-md-3">
                                                 <label for="description">Slider Sub Text</label>
                                             </div>
@@ -66,7 +66,7 @@
                                                     </span>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
         
                                         <div class="row my-2">
                                             <div class="col-md-3">
@@ -109,10 +109,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Headline</th>
                                 <th>Image</th>
                                 {{-- <th>Slogan</th> --}}
-                                <th>Headline</th>
-                                <th>Text</th>
+                                {{-- <th>Text</th> --}}
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -120,10 +120,10 @@
                             @forelse ($sliders as $key=>$slider)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
+                                    <td>{{ $slider->headerline }}</td>
                                     <td><img class="border" style="height: 80px; width:auto;" src="{{ asset($slider->image) }}" alt=""></td>
                                     {{-- <td>{{ $slider->slogan }}</td> --}}
-                                    <td>{{ $slider->headerline }}</td>
-                                    <td>{{ $slider->description }}</td>
+                                    {{-- <td>{{ $slider->description }}</td> --}}
                                     <td>
                                         <a href="{{ route('slider.edit',$slider->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         <a href="{{ route('slider.delete', $slider->id) }}" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure?')"><i class="fa fa-trash"></i></a>

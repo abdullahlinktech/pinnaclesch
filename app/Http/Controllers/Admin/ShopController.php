@@ -63,4 +63,11 @@ class ShopController extends Controller
         }
         return redirect()->back()->withInput()->with('success', 'Update Success');
     }
+    public function delete(Shop $shop){
+        if (!empty($shop->image) && file_exists($shop->image)) {
+            unlink($shop->image);
+        }
+        $shop->delete();
+        return redirect()->back()->with('success', 'Deleted Successfull');
+    }
 }

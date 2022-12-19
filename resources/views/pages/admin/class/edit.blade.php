@@ -38,10 +38,23 @@
                                     <div class="col-md-6 mb-2">
                                         <div class="row my-2">
                                             <div class="col-md-3">
-                                                <label for="title"> Title <span class="text-danger"> * </span></label>
+                                                <label for="header"> School Type</label>
                                             </div>
                                             <div class="col-md-9">
-                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $class->title }}" placeholder="title">
+                                                <select class=" form-control form-control-sm" name="school_id" id="school_id" >
+                                                    <option value="" label="-- Select type--"></option>
+                                                    @foreach ($school as $item)
+                                                    <option value="{{$item->id}}" {{ $item->id == $class->school_id ? 'selected' : ''}}>{{$item->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-3">
+                                                <label for="title"> Class Name <span class="text-danger"> * </span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                            <input class="form-control @error('title') is-invalid @enderror" id="title" type="text" name="title" value="{{ $class->title }}" placeholder="Class Name">
                                             @error('title')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

@@ -1,5 +1,5 @@
-@extends('layouts.website', ['pageName' => 'news'])
-@section('title', 'News Details')
+@extends('layouts.website', ['pageName' => 'notice'])
+@section('title', 'Notice Details')
 @section('web-content')
     <div id="main">
         <div class="breadcrumb-section">
@@ -32,11 +32,11 @@
                     </div>
                 </article>
             </section>
-{{-- 
+
             <section id="secondary">
                 <aside class="widget widget_categories ">
                     <h3 class="widgettitle">Latest News</h3>
-                    @foreach ($newslist as $item)
+                    @foreach ($noticelist as $item)
                     <div class="events-list "height="365">
                        <div class="event-thumb">
                            <a href="{{route('newsdetails',$item->id)}}" title="">
@@ -55,7 +55,7 @@
 
                     @endforeach
                 </aside>
-            </section> --}}
+            </section>
         </div>
     </div>
 @endsection

@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Allclass;
+use App\Models\School;
 use Illuminate\Http\Request;
 
 class ClassController extends Controller
 {
     public function index(){
         $class = Allclass::get();
-        return view('pages.admin.class.index',compact('class'));
+        $school = School::get();
+        return view('pages.admin.class.index',compact('class','school'));
     }
     public function store(Request $request){
         $request->validate([
@@ -19,6 +21,7 @@ class ClassController extends Controller
         ]);
         $class = new Allclass();
         $class->title = $request->title;
+        $class->school_id = $request->school_id;
         $class->description = $request->description;
         $class->image = $this->imageUpload($request, 'image', 'uploads/class') ?? '';
         $class->save();
@@ -29,7 +32,8 @@ class ClassController extends Controller
     }
     public function edit($id){
         $class = Allclass::find($id);
-        return view('pages.admin.class.edit',compact('class'));
+        $school = School::get();
+        return view('pages.admin.class.edit',compact('class','school'));
     }
     public function update(Request $request ,Allclass $class){
         $classImage = '';
@@ -42,6 +46,7 @@ class ClassController extends Controller
             $classImage = $class->image;
         }
         $class->title = $request->title;
+        $class->school_id = $request->school_id;
         $class->description = $request->description;
         $class->image = $classImage;
         $class->save();

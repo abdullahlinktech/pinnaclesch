@@ -1,5 +1,5 @@
-@extends('layouts.website', ['pageName' => 'news'])
-@section('title', 'News Details')
+@extends('layouts.website', ['pageName' => 'Specail'])
+@section('title', 'Specail Details')
 @section('web-content')
     <div id="main">
         <div class="breadcrumb-section">
@@ -38,7 +38,7 @@
                     </div>
                 </article>
             </section>
-{{-- 
+
             <section id="secondary">
                 <aside class="widget widget_categories ">
                     <h3 class="widgettitle">Why We Are spacial</h3>
@@ -61,7 +61,7 @@
 
                     @endforeach
                 </aside>
-            </section> --}}
+            </section>
         </div>
     </div>
 @endsection

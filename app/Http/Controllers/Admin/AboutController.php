@@ -41,7 +41,7 @@ class AboutController extends Controller
             }
         
             $company->about = $request->about;
-            $company->s_description = $request->s_description;
+            // $company->s_description = $request->s_description;
             $company->about_image = $AboutImage;
             $company->bg_image = $BgImage;
             $company->save();

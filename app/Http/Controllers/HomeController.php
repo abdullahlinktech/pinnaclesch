@@ -18,6 +18,8 @@ use App\Models\Facilities;
 use App\Models\Messenger;
 use App\Models\Notice;
 use App\Models\Partner;
+use App\Models\School;
+use App\Models\Section;
 use App\Models\Shop;
 use App\Models\Teacher;
 use App\Models\Whyspecail;
@@ -34,11 +36,15 @@ class HomeController extends Controller
         $management = Management::take(1)->get();
         $news = News::latest()->take(4)->get();
         $notice = Notice::latest()->get();
-        $teacher = Teacher::take(64)->get();
+        $teacher = Teacher::get();
         $activities = Activity::take(8)->get();
         $dress = Dress::latest()->take(4)->get();
         $specials = Whyspecail::take(8)->get();
-        return view('pages.website.index',compact('news','notice','gallery','video','teacher','activities','dress','specials', 'management', 'slider'));
+        $school =School::with('allclass')->get();
+        // $allclass = Allclass::get();
+        // $section = Section::get();
+        $spslider = BackImage::get();
+        return view('pages.website.index',compact('spslider','school','news','notice','gallery','video','teacher','activities','dress','specials', 'management', 'slider'));
     }
 
     public function about() {
@@ -52,9 +58,13 @@ class HomeController extends Controller
         return view('pages.website.teachers', compact('teachers'));
     }
 
-    public function classes() {
-        $classes = Allclass::get();
+    public function classes($id) {
+        $classes = Allclass::find($id);
         return view('pages.website.classes', compact('classes'));
+    }
+    public function section($id){
+        $section = Section::find($id);
+        return view('pages.website.section',compact('section'));
     }
 
     public function newsevents() {
@@ -73,23 +83,27 @@ class HomeController extends Controller
             return view('pages.website.not-found', compact('backimage'));
         }
     }
-    public function spacialDetails($id) {
-        $specials = Whyspecail::find($id);
-        $spaciallist = Whyspecail::first();
-     return view('pages.website.spacialDetails', compact('specials','spaciallist'));
-        
-    }
     public function activeDetails($id) {
         $active = Activity::find($id);
-        $activelist = Activity::first();
-     return view('pages.website.activDetails', compact('active','activelist'));
-        
+        if (isset($active)) {
+            $activelist = Activity::latest()->get();
+            return view('pages.website.activDetails', compact('active','activelist'));
+        }
     }
-   public function noticeDetails($id){
-    $notice = Notice::find($id);
-    $noticelist = Notice::first();
-    return view('pages.website.noticeDetails',compact('notice','noticelist'));
-   }
+    public function spacialDetails($id) {
+        $specials = Whyspecail::find($id);
+        if (isset($specials)) {
+            $spaciallist = Whyspecail::latest()->get();
+            return view('pages.website.spacialDetails', compact('specials','spaciallist'));
+        }
+    }
+    public function noticeDetails($id) {
+        $notice = Notice::find($id);
+        if (isset($notice)) {
+            $noticelist = Notice::latest()->get();
+            return view('pages.website.noticeDetails', compact('notice','noticelist'));
+        }
+    }
 
     public function product() {
         $products = Shop::orderBy('id', 'DESC')->get();

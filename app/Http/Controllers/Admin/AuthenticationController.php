@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticationController extends Controller
 {
@@ -19,20 +20,35 @@ class AuthenticationController extends Controller
     // Authentication check
     public function AuthCheck(Request $request)
     {
+
         $request->validate([
-            'username' => 'required|string',
-            'password' => 'required|min:1',
+            'username' => 'required',
+            'password' => 'required|min:1'
         ]);
-        try {
-            $credentials = $request->only('username', 'password');
-            if(Auth::attempt($credentials))
-            {
-                return redirect()->intended('dashboard');
-            }
-        } catch (\Throwable $th) {
-            // return redirect()->route('login')->withInput();
-            return redirect()->route('login')->with('error', 'Login Failed!');
+        $credentials  = $request->only('username', 'password');
+        if (Auth::attempt($credentials)) {
+            // Toastr::success('Login successfully');
+            return redirect()->intended('dashboard');
+        } else {
+            Session::flash('errors', 'value');
+            return redirect()->route('login');
         }
+
+
+        // $request->validate([
+        //     'username' => 'required|string',
+        //     'password' => 'required|min:1',
+        // ]);
+        // try {
+        //     $credentials = $request->only('username', 'password');
+        //     if(Auth::attempt($credentials))
+        //     {
+        //         return redirect()->intended('dashboard');
+        //     }
+        // } catch (\Throwable $th) {
+        //     // return redirect()->route('login')->withInput();
+        //     return redirect()->route('login')->with('errors', 'Something is wrong Login field!',$th);
+        // }
     }
 
     // logout 

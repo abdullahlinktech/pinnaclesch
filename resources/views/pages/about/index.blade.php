@@ -49,19 +49,19 @@
                             <div class="row">
                             
                                 <div class="col-md-4 mb-2">
-                                    <label for="about_image">About Image 1</label>
+                                    <label for="about_image">About Image </label>
                                     <input class="form-control form-control-sm" id="about_image" type="file" name="about_image" onchange="readAboutURL(this);">
                                     <div class="form-group mt-2">
                                         <img class="form-controlo img-thumbnail" src="#" id="previewAboutImage" style="width: 160px;height: 130px;">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-2">
+                                {{-- <div class="col-md-4 mb-2">
                                     <label for="bg_image">About Image 2</label>
                                     <input class="form-control form-control-sm" id="bg_image" type="file" name="bg_image" onchange="readBgURL(this);">
                                     <div class="form-group mt-2">
                                         <img class="form-controlo img-thumbnail" src="#" id="previewBgImage" style="width: 160px;height: 130px;">
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             
                             <hr class="mt-0">

@@ -3,7 +3,7 @@
  <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
     <div class="mobile-sidebar-header d-md-none">
          <div class="header-logo">
-             <a href="{{ route('dashboard') }}"><img src="img/logo1.png" alt="logo"></a>
+             <a href="{{ route('dashboard') }}"><img src="{{ asset($content->logo) }}" alt="logo"></a>
          </div>
     </div>
      <div class="sidebar-menu-content">
@@ -49,10 +49,29 @@
                  </ul>
              </li>
      
-             <li class="nav-item">
+             {{-- <li class="nav-item">
                  <a href="{{route('class.index')}}" class="nav-link"><i
                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                </li>
+                    
+                </li> --}}
+                <li class="nav-item sidebar-nav-item">
+                 <a href="#" class="nav-link"><i
+                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class Entry</span></a>
+                 <ul class="nav sub-group-menu">
+                     <li class="nav-item">
+                         <a href="{{route('school.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add School Type</a>
+                     </li>
+                  
+                     <li class="nav-item">
+                         <a href="{{route('class.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                             Class</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="{{route('section.index')}}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Add Section</a>
+                    </li>
+                 </ul>
+              </li> 
                 <li class="nav-item">
                     <a href="{{ route('slider.index') }}" class="nav-link"><i
                             class="flaticon-open-book"></i><span>Slider</span></a>
@@ -113,6 +132,10 @@
              <li class="nav-item">
                  <a href="{{route('specail.index')}}" class="nav-link"><i
                     class="flaticon-chat"></i><span>Why We Specail</span></a>
+             </li>
+             <li class="nav-item">
+                 <a href="{{route('bgslider.index')}}" class="nav-link"><i
+                    class="flaticon-chat"></i><span>Specail Slider</span></a>
              </li>
               <li class="nav-item">
                  <a href="{{route('notice.index')}}" class="nav-link"><i

@@ -178,6 +178,24 @@
     <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script src="{{asset('backend/js/main.js')}}"></script>
 
+    <!-- Current Timer in Header -->
+    <script type="text/javascript">
+        setInterval(function() {
+            var currentTime = new Date();
+            var currentHours = currentTime.getHours();
+            var currentMinutes = currentTime.getMinutes();
+            var currentSeconds = currentTime.getSeconds();
+            currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
+            currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
+            var timeOfDay = currentHours < 12 ? "AM" : "PM";
+            currentHours = currentHours > 12 ? currentHours - 12 : currentHours;
+            currentHours = currentHours == 0 ? 12 : currentHours;
+            var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+            document.getElementById("timer").innerHTML = currentTimeString;
+        }, 1000);
+    </script>
+    <!-- Current Timer in Header -->
+    
     <script>
         @if(Session::has('success'))
         toastr.options =

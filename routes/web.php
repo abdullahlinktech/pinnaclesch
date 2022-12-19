@@ -27,6 +27,8 @@ use App\Http\Controllers\Admin\DressController;
 use App\Http\Controllers\Admin\FacilitiesController;
 use App\Http\Controllers\Admin\HostelController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\SchoolController;
+use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\ShopController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\WhyspecailController;
@@ -46,7 +48,8 @@ use App\Http\Controllers\WhyspecailController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
-Route::get('/classes', [HomeController::class, 'classes'])->name('classes');
+Route::get('/classes/{id}', [HomeController::class, 'classes'])->name('classes');
+Route::get('/section/{id}',[HomeController::class,'section'])->name('section');
 Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/news-events', [HomeController::class, 'newsevents'])->name('newsevents');
 Route::get('/news-details/{id}', [HomeController::class, 'newsdetails'])->name('newsdetails');
@@ -145,8 +148,11 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('/messenger', [MessengerController::class, 'edit'])->name('messenger.edit');
     Route::put('/messenger/{messenger}', [MessengerController::class, 'update'])->name('messenger.update');
 
-    Route::get('backimage', [BackImageController::class, 'edit'])->name('backimage.edit');
-    Route::put('backimage/{backimage}', [BackImageController::class, 'update'])->name('backimage.update');
+    Route::get('admin-bgslider',[BackImageController::class,'index'])->name('bgslider.index');
+    Route::post('admin-bgslider-store',[BackImageController::class,'store'])->name('bgslider.store');
+    Route::get('admin-bgslider-edit/{id}',[BackImageController::class,'edit'])->name('bgslider.edit');
+    Route::put('backimage-update/{spslider}', [BackImageController::class, 'update'])->name('backimage.update');
+    Route::delete('backimage-delete/{spslider}', [BackImageController::class, 'delete'])->name('backimage.delete');
 
     Route::get('/messages', [MessageController::class, 'message'])->name('admin.message');
     Route::post('/messages-store', [MessageController::class, 'store'])->name('store.message');
@@ -195,9 +201,9 @@ Route::group(['middleware' => ['auth']] , function(){
     // facilities
     Route::get('admin-facilities',[FacilitiesController::class,'index'])->name('facilities.index');
     Route::post('admin-facilities-store',[FacilitiesController::class,'store'])->name('facilities.store');
-    Route::get('admin-facilities-edit{id}',[FacilitiesController::class,'edit'])->name('facilities.edit');
-    Route::put('admin-facilities-update{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
-    Route::delete('admin-facilities-delete{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
+    Route::get('admin-facilities-edit/{id}',[FacilitiesController::class,'edit'])->name('facilities.edit');
+    Route::put('admin-facilities-update/{facilities}',[FacilitiesController::class,'update'])->name('facilities.update');
+    Route::delete('admin-facilities-delete/{facilities}',[FacilitiesController::class,'delete'])->name('facilities.delete');
     //shop
     Route::get('admin-product',[ShopController::class,'index'])->name('product.index');
     Route::post('admin-product-store',[ShopController::class,'store'])->name('product.store');
@@ -217,4 +223,19 @@ Route::group(['middleware' => ['auth']] , function(){
     Route::get('admin-class-edit/{id}',[ClassController::class,'edit'])->name('class.edit');
     Route::put('admin-class-update/{class}',[ClassController::class,'update'])->name('class.update');
     Route::delete('admin-class-delete/{class}',[ClassController::class,'delete'])->name('class.delete');
+   // school
+   Route::get('admin-school',[SchoolController::class,'index'])->name('school.index');
+   Route::post('admin-school-store',[SchoolController::class,'store'])->name('school.store');
+   Route::get('admin-school-edit/{id}',[SchoolController::class,'edit'])->name('school.edit');
+   Route::put('admin-school-update/{school}',[SchoolController::class,'update'])->name('school.update');
+   Route::delete('admin-school-delete/{school}',[SchoolController::class,'delete'])->name('school.delete');
+   //section
+   Route::get('admin-section',[SectionController::class,'index'])->name('section.index');
+   Route::post('admin-section-store',[SectionController::class,'store'])->name('section.store');
+   Route::get('admin-section-edit/{id}',[SectionController::class,'edit'])->name('section.edit');
+   Route::put('admin-section-update/{section}',[SectionController::class,'update'])->name('section.update');
+   Route::delete('admin-section-delete/{section}',[SectionController::class,'delete'])->name('section.delete');
+
+   //get class
+   Route::get('get-allclass/{id}',[SectionController::class,'getAllclass'])->name('get.allclass');
 });

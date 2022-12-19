@@ -44,6 +44,7 @@
     </div>
     <a href="#" title="Go to Top" class="back-to-top">To Top ↑</a>
 
+
     <script type="text/javascript" src="{{ asset('website/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('website/js/jquery-migrate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('website/js/jquery.tabs.min.js') }}"></script>
@@ -67,6 +68,39 @@
     <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script type="text/javascript">var lsjQuery = jQuery;</script>
     <script  type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_1','jquery'); } else { lsjQuery("#layerslider_4").layerSlider({responsiveUnder: 1170, layersContainer: 1170, skinsPath: 'js/layerslider/skins/'}) } }); </script>
+
+        <!-- Messenger Chat plugin Code -->
+   <div id="fb-root"></div>
+
+   <!-- Your Chat plugin code -->
+   <div id="fb-customer-chat" class="fb-customerchat">
+   </div>
+
+   <script>
+     var chatbox = document.getElementById('fb-customer-chat');
+     chatbox.setAttribute("page_id", "2360943467559240");
+     chatbox.setAttribute("attribution", "biz_inbox");
+   </script>
+
+   <!-- Your SDK code -->
+   <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         xfbml            : true,
+         version          : 'v14.0'
+       });
+     };
+
+     (function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+   </script>
+
+
     <script>
         @if(Session::has('success'))
         toastr.options =

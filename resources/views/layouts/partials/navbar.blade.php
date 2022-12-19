@@ -2,7 +2,7 @@
     <div class="nav-bar-header-one">
         <div class="header-logo">
             <a href="{{ route('dashboard') }}">
-                <img src="{{asset('backend/img/logo.png')}}" alt="logo">
+                <img style="height: 70px;width:80px" src="{{ asset($content->logo) }}" alt="logo">
             </a>
         </div>
          <div class="toggle-button sidebar-toggle">
@@ -25,6 +25,9 @@
     </div>
     <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
         <ul class="navbar-nav">
+            <li class="nav-item">
+                <h5 class="mt-3"><i class="fa fa-clock"></i> <?= date('l, j F Y,') ?> <span id="timer"></span></h5>
+            </li>
             <li class="navbar-item header-search-bar">
                 <div class="input-group stylish-input-group">
                     <!-- <form class="  form-inline ms-auto me-0 me-md-3 my-2 my-md-0">

@@ -1,4 +1,14 @@
 @extends('layouts.website', ['pageName' => 'home'])
+@push('web-css') 
+<style>
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+@endpush
+
 @section('title', 'Home')
 
 @section('web-content')
@@ -127,12 +137,13 @@
                         <h2>With Music4Kids, music is childs play!</h2>
                         <div class="add-slider-wrapper">
                             <ul class="add-slider">
-                                <li> <img src="{{ asset('website/images/sch1.png') }}" alt="" title="">
-                                </li>
-                                <li> <img src="{{ asset('website/images/sch2.png') }}" alt="" title="">
+                                @foreach ($spslider as $item)
+                                <li> <img src="{{ asset($item->image) }}" alt="" title=""> </li>
+                                @endforeach
+                                {{-- <li> <img src="{{ asset('website/images/sch2.png') }}" alt="" title="">
                                 </li>
                                 <li> <img src="{{ asset('website/images/sch3.png') }}" alt="" title="">
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -267,27 +278,29 @@
             </section>
 
             <div class="dt-sc-hr"></div>
-
-            <div class="container">
-                <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
-                @php $techkey = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200]; @endphp
-                @foreach ($teacher as $key=>$item)
-                    <div class="column dt-sc-one-eighth teachersec {{ in_array($key, $techkey) ? 'first' : '' }}">
-                        <div class="dt-sc-team">
-                            <div class="image">
-                                <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt="" title="">
-                                <img src="{{ asset($item->image) }}" class="techImages" alt="Teacher Image" title="Teacher Image">
-                                <div class="dt-sc-image-overlay"></div>
-                            </div>
-                            <div class="team-details">
-                                <h5> {{ $item->name }} </h5>
-                                <h6> {{ $item->designation }} </h6>
-                                <p> {{ $item->specality }} </p>
+            <section id="teacher" class="teacher">
+                <div class="container clearfix">
+                    <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
+                    @php $techkey = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200]; @endphp
+                    @foreach ($teacher as $key=>$item)
+                        <div class="column dt-sc-one-eighth teachersec {{ in_array($key, $techkey) ? '' : '' }}">
+                            <div class="dt-sc-team">
+                                <div class="image">
+                                    <img class="item-mask" src="{{ asset('website/images/mask.png') }}" alt="" title="">
+                                    <img src="{{ asset($item->image) }}" class="techImages" alt="Teacher Image" title="Teacher Image">
+                                    <div class="dt-sc-image-overlay"></div>
+                                </div>
+                                <div class="team-details">
+                                    <h5> {{ $item->name }} </h5>
+                                    <h6> {{ $item->designation }} </h6>
+                                    <p> {{ $item->specality }} </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            </section>
+           
 
             <div class="dt-sc-hr"></div>
 

@@ -15,6 +15,9 @@ class CreateAllclassesTable extends Migration
     {
         Schema::create('allclasses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('school_id')
+            ->constrained('schools')
+            ->onDelete('cascade');
             $table->string('title');
             $table->longText('description');
             $table->string('image');

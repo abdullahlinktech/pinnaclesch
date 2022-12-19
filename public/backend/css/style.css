@@ -1521,7 +1521,7 @@ ul {
 }
 .nav-bar-header-one .header-logo a {
   display: block;
-  padding: 10px 0;
+  padding: 0px 0;
 }
 @media only screen and (max-width: 767px) {
   .nav-bar-header-one .toggle-button {
